@@ -1,0 +1,74 @@
+/* ==========================================================================
+   #TIMELINE/DEFAULT
+   ========================================================================== */
+
+.timeline {
+    padding: 4rem 0;
+    position: relative;
+
+    // Line
+    &:after {
+        bottom: 0;
+        content: "";
+        left: 3.5rem;
+        position: absolute;
+        top: 0;
+        width: $border-width;
+
+        background-color: var(--colorBorder);
+    }
+
+    &__achievement {
+        font-size: var(--fontSizeSmall);
+        text-transform: uppercase;
+    }
+
+    &__item {
+        padding-left: 7.2rem;
+        margin-top: $spacing-5;
+        position: relative;
+
+        a {
+            color: var(--colorTextProminent);
+        }
+
+        // Dot
+        &:after {
+            border-radius: 50%;
+            content: "";
+            height: .7rem;
+            left: 3.2rem;
+            position: absolute;
+            top: .9rem;
+            width: .7rem;
+            z-index: 1;
+
+            background-color: var(--colorPrimary);
+        }
+    }
+
+    &__year {
+        align-items: center;
+        border: $border-width solid var(--colorBorder);
+        border-radius: 3rem;
+        display: flex;
+        height: 4rem;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        width: 7rem;
+        z-index: $z-index-default;
+
+        background-color: var(--colorBlack);
+        font-size: var(--fontSizeSmall);
+        text-align: center;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+
+        &:after {
+            bottom: 1rem;
+        }
+    }
+}

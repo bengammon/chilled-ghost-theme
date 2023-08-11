@@ -1,0 +1,23 @@
+/**
+ * -----------------------------------------------------------------------------
+ * $COLUMN
+ * -----------------------------------------------------------------------------
+ */
+
+$columns: 18;
+
+@for $column from 1 to $columns {
+    .col-start--#{$column} {
+        @media (min-width: var(--bpDesktopSmall)) {
+            grid-column-start: #{$column};
+        }
+    }
+}
+
+@for $column from 1 to $columns {
+    .col-end--#{$column} {
+        @media (min-width: var(--bpDesktopSmall)) {
+            grid-column-end: #{$column};
+        }
+    }
+}

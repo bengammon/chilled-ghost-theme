@@ -1,0 +1,54 @@
+/* ==========================================================================
+   #VARIABLES/COLOR
+   ========================================================================== */
+
+:root {   
+   --colorAlertBg: #d7e2e3;
+   --colorAlertDangerBg: #e7dbdb;
+   --colorAlertWarningBg: #e7e6da;
+   --colorAnchorUnderline: #185731;
+   --colorBackground: var(--colorWhite);
+   --colorBadge: #222;
+   --colorBlack: #040407;
+   --colorButtonBg: rgb(15, 15, 15);
+   --colorBookmarkBg: var(--colorCodeBg);
+   --colorCodeBg: #d6d6d6;
+   --colorBorder: #dcdcdc;
+   --colorHeaderNavBg: rgba(237, 237, 237, .84);
+   --colorHR: var(--colorBorder);
+   --colorPreBg: var(--colorCodeBg);
+   --colorPreFunction: #dd4a68;
+   --colorPreProperty: #905;
+   --colorPrePunctuation: #999;
+   --colorPreSelector: #690;
+   --colorPreToken: #07a;
+   --colorPreUrl: #9a6e3a;
+   --colorPrimary: #703bc6;
+   --colorSecondary: #26120c;
+   --colorRelatedContentBg: transparent;
+   --colorSectionFeatureBg: var(--colorBlack);
+   --colorSectionHeroBg: transparent;
+   --colorText: #5b5b5b;
+   --colorTextProminent: #262626;
+   --colorTextDark: #444444;
+   --colorTextSubtle: #535353;
+   --colorTextInverted: var(--colorWhite);
+   --colorWhite: #e5e5e5;
+
+   @media (prefers-color-scheme: dark) {
+      --colorAlertBg: #1f3f42;
+      --colorAlertDangerBg: #461a1a;
+      --colorAlertWarningBg: #403e22;
+      --colorBackground: #1f1f1f;
+      --colorBorder: #333;
+      --colorCodeBg: var(--colorBorder);
+      --colorHeaderNavBg: rgba(41, 41, 41, .84);
+      --colorPreProperty: #e872b3;
+      --colorPreSelector: #adce6a;
+      --colorPrePunctuation: #c4c4c4;
+      --colorPreToken: #4ca3c8;
+      --colorText: #b0b0b0;
+      --colorTextProminent: #e0e0e0;
+      --colorTextSubtle: #7b7b7b;
+    }
+}

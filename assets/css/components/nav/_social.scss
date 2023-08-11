@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #NAV/SOCIAL
+   ========================================================================== */
+
+.nav--social {
+    display: flex;
+
+    li {
+        margin-right: $spacing-4;
+
+        @media (min-width: var(--bpTablet)) {
+            margin-right: $spacing-2;
+        }
+    }
+
+    a {
+        width: auto;
+    }
+}

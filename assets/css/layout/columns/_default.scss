@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #COLUMNS/DEFAULT
+   ========================================================================== */
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: $spacing-6;
+
+    @media (min-width: var(--bpTablet)) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &--three {
+        @media (min-width: var(--bpTablet)) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+
+    &--four {
+        @media (min-width: var(--bpTablet)) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    }
+}

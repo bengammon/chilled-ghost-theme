@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #LINK/CTA
+   ========================================================================== */
+
+.link--cta {
+    &-large {
+        @include rem(padding-bottom, $spacing-2);
+        @include rem(padding-left, $spacing-3);
+        @include rem(padding-right, $spacing-3);
+        @include rem(padding-top, $spacing-2);
+
+        @include themify($themes) {
+            @include rem(font-size, themed('fontSize.h3'));
+        }
+    }
+}

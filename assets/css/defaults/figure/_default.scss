@@ -1,0 +1,35 @@
+/**
+ * -----------------------------------------------------------------------------
+ * $FIGURE/DEFAULT
+ * -----------------------------------------------------------------------------
+ */
+
+figure {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+
+    img,
+    picture {
+        display: block;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    figcaption {
+        padding-top: $spacing-2;
+
+        color: var(--colorTextSubtle);
+        font-size: var(--fontSizeSmall);
+        font-style: italic;
+    }
+
+    &.kg-width-wide,
+    &.kg-width-full {
+        figcaption {
+            padding-left: $spacing-3;
+            padding-right: $spacing-3;
+        }
+    }
+}

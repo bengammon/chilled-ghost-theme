@@ -1,0 +1,46 @@
+/* ==========================================================================
+   #BODY
+   ========================================================================== */
+
+/**
+ * `body` element which will control default font variables.
+ */
+
+/**
+ * 1. Sets the default font size back to 16px (unless $font-size-default has
+ *    changed value). This is the only time `em` should be used to define the
+ *    font-size. This has to be `em` because of a bug in Chrome described in
+ *    a link below.
+ *    https://code.google.com/p/chromium/issues/detail?id=320754
+ */
+body {
+    height: 100%;
+    margin-left: $spacing-3;
+    margin-right: $spacing-3;
+
+    background-attachment: fixed;
+    background-color: var(--colorBackground);
+    background-image: var(--imageBackground);
+    background-repeat: repeat;
+    color: var(--colorText);
+    font-family: $font-family;
+    font-size: var(--fontSizeBase); /* 1. */
+    font-weight: var(--fontWeightDefault);
+    letter-spacing: var(--letterSpacingDefault);
+    line-height: var(--lineHeightDefault);
+
+    @media (min-width: var(--bpTablet)) {
+        max-width: $content-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    > footer {
+        position: sticky;
+        top: 100vh;
+    }
+
+    &.is-nav-visible {
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,40 @@
+/* ==========================================================================
+   #CONTENT
+   ========================================================================== */
+
+@mixin content-default {
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: var(--bpTablet)) {
+        max-width: $content-width;
+    }
+}
+
+@mixin content-default-margin {
+    margin-left: $spacing-3;
+    margin-right: $spacing-3;
+
+    @media (min-width: var(--bpTablet)) {
+        max-width: calc(#{$content-width} - (#{$spacing-6} * 2));
+        margin-left: $spacing-6;
+        margin-right: $spacing-6;
+    }
+}
+
+@mixin content-wide {
+
+    @media (min-width: var(--bpTablet)) {
+        max-width: $content-width-wide;
+    }
+}
+
+@mixin content-wide-margin {
+    margin-left: $spacing-3;
+    margin-right: $spacing-3;
+
+    @media (min-width: var(--bpTablet)) {
+        margin-left: $spacing-6;
+        margin-right: $spacing-6;
+    }
+}

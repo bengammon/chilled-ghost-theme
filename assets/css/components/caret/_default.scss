@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #CARET/DEFAULT
+   ========================================================================== */
+
+.caret {
+    border-right: 2px solid;
+    border-color: inherit;
+    display: inline;
+    padding-right: .4rem;
+
+    animation-name: caretBlink;
+    animation-duration: 1s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+}
+
+@keyframes caretBlink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: inherit;
+    }
+}

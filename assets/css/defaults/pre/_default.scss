@@ -1,0 +1,172 @@
+/* ==========================================================================
+   #PRE/DEFAULT
+   ========================================================================== */
+
+/**
+ * Styling for <pre> element.
+ */
+
+pre {
+    margin-top: 0;
+    padding: $spacing-3;
+
+    background: var(--colorPreBg);
+    border: 0;
+    border-radius: var(--borderRadius);
+
+    code {
+        background: transparent;
+        border: 0;
+    }
+}
+
+/* PrismJS 1.26.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+
+code[class*=language-],
+pre[class*=language-] {
+    color: var(--colorText);
+    background: 0 0;
+    text-shadow: none;
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    font-size: var(--fontSizeCode);
+    text-align: left;
+    white-space: pre-wrap;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+code[class*=language-] ::-moz-selection,
+code[class*=language-]::-moz-selection,
+pre[class*=language-] ::-moz-selection,
+pre[class*=language-]::-moz-selection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
+
+code[class*=language-] ::selection,
+code[class*=language-]::selection,
+pre[class*=language-] ::selection,
+pre[class*=language-]::selection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
+
+@media print{
+    code[class*=language-],
+    pre[class*=language-] {
+        text-shadow: none;
+    }
+}
+
+pre[class*=language-] {
+    padding: 0;
+    position: relative;
+
+    &:after {
+        content: "";
+        inset: -#{$spacing-2} -#{$spacing-3};
+        position: absolute;
+        z-index: $z-index-under;
+
+        background-color: var(--colorPreBg);
+
+        @media (min-width: var(--bpTablet)) {
+            border-radius: $border-radius;
+            inset: -#{$spacing-2} -#{$spacing-3};
+        }
+    }
+}
+
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+    background: transparent;
+}
+
+:not(pre)>code[class*=language-] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+    color: #708090;
+}
+
+.token.punctuation {
+    color: var(--colorPrePunctuation);
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.boolean,
+.token.constant,
+.token.deleted,
+.token.number,
+.token.property,
+.token.symbol,
+.token.tag {
+    color: var(--colorPreProperty);
+}
+
+.token.attr-name,
+.token.builtin,
+.token.char,
+.token.inserted,
+.token.selector,
+.token.string {
+    color: var(--colorPreSelector);
+}
+
+.language-css 
+.token.string,
+.style .token.string,
+.token.entity,
+.token.operator,
+.token.url {
+    color: var(--colorPreUrl);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: var(--colorPreToken);
+}
+
+.token.class-name,
+.token.function {
+    color: var(--colorPreFunction);
+}
+
+.token.important,
+.token.regex,
+.token.variable {
+    color: #e90;
+}
+
+.token.bold,
+.token.important {
+    font-weight: 700;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}

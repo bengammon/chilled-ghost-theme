@@ -1,0 +1,83 @@
+/* ==========================================================================
+   #NAV/DEFAULT
+   ========================================================================== */
+
+.nav {
+    @include list-reset;
+    display: flex;
+    height: 100%;
+
+    li {
+        align-items: center;
+        display: flex;
+        flex: 1;
+        margin: 0;
+        padding: $spacing-1 0;
+        position: relative;
+
+        @media (min-width: var(--bpTablet)) {
+            margin-right: $spacing-5;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.nav-current {
+            a {
+                color: var(--colorTextSubtle);
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    .header__nav & {
+        li {
+            &:first-child {
+                @media (min-width: var(--bpTablet)) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    a {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        padding: $spacing-3 0;
+        width: 100%;
+
+        background: transparent;
+        color: var(--colorText);
+        text-decoration-color: var(--colorText);
+        text-decoration-thickness: 1px;
+
+        @media (min-width: var(--bpTablet)) {
+            padding: 0;
+        }
+
+        svg {
+            margin-right: $spacing-1;
+
+            @media (min-width: var(--bpTablet)) {
+                margin-right: $spacing-1;
+            }
+
+            path {
+                stroke: var(--colorText);
+            }
+        }
+
+        &:hover {
+            color: var(--colorTextProminent);
+            text-decoration: none;
+            
+            svg {
+                path {
+                    stroke: var(--colorTextProminent);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+/* ==========================================================================
+   #ANCHOR
+   ========================================================================== */
+
+/**
+ * Base styling for anchor links. See component 'links' for modifying these further
+ */
+ 
+a {
+    @include active-states();
+    position: relative;
+
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: inherit;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .15em;
+}

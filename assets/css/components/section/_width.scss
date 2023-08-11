@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #SECTION/WIDTH
+   ========================================================================== */
+
+.section {
+    &--full {
+        .section__content {
+            max-width: none;
+        }
+    }
+
+    &--narrow {
+        .section__content {
+            max-width: $content-width;
+        }
+    }
+    
+    &--wide {
+        .section__content {
+            max-width: $content-width-wide;
+        }
+    }
+}

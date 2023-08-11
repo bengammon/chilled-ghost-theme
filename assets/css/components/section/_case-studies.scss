@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #SECTION/CASE-STUDIES
+   ========================================================================== */
+
+.section--case-studies {
+    margin: var(--sectionCaseStudiesMargin);
+    padding: 0;
+
+    .section__content {
+        grid-column: full;
+        min-height: 2rem;
+
+        background-color: var(--colorPrimary);
+        color: var(--colorTextInverted);
+
+        @media (min-width: var(--bpDesktop)) {
+            grid-column: 3 / 15;
+        }
+
+        > * {
+            grid-column: main-content;
+
+            @media (min-width: var(--bpDesktopSmall)) {
+                grid-column: 4 / 12;
+            }
+        }
+    }
+}

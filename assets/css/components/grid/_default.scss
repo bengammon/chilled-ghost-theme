@@ -1,0 +1,14 @@
+/* ==========================================================================
+   #GRID/DEFAULT
+   ========================================================================== */
+
+/**
+ * The default implementation uses a 3 column grid on desktop.
+ */
+
+.grid {
+    display: grid;
+
+    gap: $spacing-5;
+    grid-template-columns: repeat(4, 1fr);
+}

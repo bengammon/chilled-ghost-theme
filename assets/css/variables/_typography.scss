@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #VARIABLES/TYPOGRAPHY
+   ========================================================================== */
+
+$font-family: 'Satoshi', sans-serif;
+
+:root {
+   --fontSizeBase: clamp(1.8rem, calc(0.8rem + 0.98vw), 2.6rem);
+   --fontSizeBlockquote: var(--fontSizeLarge);
+   --fontSizeCode: .94em;
+   --fontSizeH1: calc(var(--fontSizeBase) * 2); // 36
+   --fontSizeH2: calc(var(--fontSizeBase) * 1.5); // 27
+   --fontSizeH3: var(--fontSizeBase);
+   --fontSizeLarge: calc(var(--fontSizeBase) * 1.333); // 24
+   --fontSizeSmall: calc(var(--fontSizeBase) * 0.888); // 16
+   --fontSizeTiny: calc(var(--fontSizeBase) * 0.777); // 14
+
+   --fontWeightDefault: 400;
+   --fontWeightBold: 700;
+   --fontWeightBlack: 900;
+   --fontWeightH1: var(--fontWeightBlack);
+   --fontWeightH2: var(--fontWeightBlack);
+   --fontWeightH3: var(--fontWeightBlack);
+
+   --letterSpacingDefault: -.011rem;
+   --letterSpacingH1: -.1rem;
+
+   --lineHeightDefault: 1.375; // 22/16
+   --lineHeightH1: 1.2;
+   --lineHeightH2: 1.4;
+
+   @media (min-width: var(--bpTablet)) {
+      --fontSizeSmall: calc(var(--fontSizeBase) * 0.818); // 18
+      --fontSizeTiny: calc(var(--fontSizeBase) * 0.727); // 16
+
+   --fontSizeH1: calc(var(--fontSizeBase) * 2.2); // 36
+
+      --letterSpacingDefault: -.03rem;
+
+      --lineHeightDefault: 1.6; // 28/20
+  }
+}

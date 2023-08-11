@@ -1,0 +1,118 @@
+/* ==========================================================================
+   #HEADER/DEFAULT
+   ========================================================================== */
+
+.header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: $spacing-3 0;
+    width: 100%;
+
+    font-size: var(--fontSizeSmall);
+
+    @media (min-width: var(--bpTablet)) {
+        padding: $spacing-4 0;
+    }
+
+    &__site-info {
+        align-items: center;
+        display: flex;
+    }
+
+    &__site-logo {
+        display: block;
+        height: 4.8rem;
+        margin-right: .8rem;
+        overflow: hidden;
+        position: relative;
+        width: 4.8rem;
+        z-index: $z-index-front;
+
+        @media (min-width: var(--bpTablet)) {
+            margin-right: $spacing-5;
+        }
+
+        svg {
+            height: 100%;
+            width: 100%;
+
+            fill: var(--colorText);
+
+            transform: rotate(0deg);
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            path {
+                fill: inherit;
+            }
+        }
+
+        &:hover {
+            &:after {
+                background-color: greenyellow;
+            }
+
+            svg {
+                animation-name: turntableSpin;
+            }
+        }
+    }
+
+    &__site-title {
+        display: none;
+        flex: none;
+        position: relative;
+        z-index: $z-index-front;
+
+        text-decoration: none;
+    }
+
+    &__nav {
+        bottom: 0;
+        left: 0;
+        position: fixed;
+        right: 0;
+        z-index: $z-index-nav;
+
+        background-color: var(--colorHeaderNavBg);
+
+        backdrop-filter: blur(4px);
+
+        @media (min-width: var(--bpTablet)) {
+            position: relative;
+            align-items: center;
+            display: flex;
+            height: 100%;
+    
+            background-color: transparent;   
+        }
+    }
+}
+
+.is-nav-visible {
+    .header {
+        &__nav {
+            display: flex;
+        }
+
+        &__nav-button {
+            display: none;
+
+            &--close {
+                display: flex;
+            }
+        }
+    }
+}
+
+@keyframes turntableSpin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,45 @@
+/* ==========================================================================
+   #ARTICLE
+   ========================================================================== */
+
+article {
+    margin-bottom: $spacing-7;
+    margin-top: $spacing-7;
+
+    header {
+        margin-bottom: $content-vertical-spacing;
+
+        h1 {
+            margin: $spacing-2 0 $spacing-3;
+        }
+    }
+
+    a {
+        color: var(--colorTextProminent);
+    }
+
+    > * {
+        margin-bottom: $content-vertical-spacing;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        & + h2 {
+            padding-top: $spacing-5;
+        }
+
+        & + h3 {
+            margin-bottom: $spacing-2;
+        }
+    } 
+
+    hr {
+        margin-bottom: $content-vertical-spacing * 2;
+        margin-top: $content-vertical-spacing * 2;
+
+        & + h2 {
+            padding-top: 0;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+/* ==========================================================================
+   #HEART/DEFAULT
+   ========================================================================== */
+
+.heart {
+    display: inline-flex;
+    position: relative;
+    color: var(--colorPrimary);
+
+    &:before {
+        content: '♥';
+        position: absolute;
+        z-index: 2;
+
+        opacity: 1;
+
+        animation-name: heartBeat;
+        animation-delay: 2s;
+        animation-duration: 2.2s;
+        animation-iteration-count: infinite;
+
+        @media (min-width: var(--bpTablet)) {
+            display: block;
+        }
+    }
+
+    &:after {
+        content: '♥';
+        position: absolute;
+        z-index: 1;
+
+        opacity: 0;
+
+        animation-name: heartFade;
+        animation-delay: 2s;
+        animation-duration: 2.2s;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    10% {
+        transform: scale(1.3);
+    }
+    20% {
+        transform: scale(1.1);
+    }
+    30% {
+        transform: scale(1.3);
+    }
+    70% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes heartFade {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    20% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    24% {
+        opacity: .2;
+        transform: scale(1.3);
+    }
+    50% {
+        opacity: 0;
+        transform: scale(6);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(10);
+    }
+}

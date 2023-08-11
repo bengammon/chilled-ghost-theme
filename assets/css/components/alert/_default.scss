@@ -1,0 +1,34 @@
+/* ==========================================================================
+   #ALERT/DEFAULT
+   ========================================================================== */
+
+.alert {
+    position: relative;
+
+    &:after {
+        content: "";
+        inset: -#{$spacing-2} -#{$spacing-3};
+        position: absolute;
+        z-index: $z-index-under;
+
+        background-color: var(--colorAlertBg);
+        background-image: var(--imageAlertBg);
+
+        @media (min-width: var(--bpTablet)) {
+            border-radius: $border-radius;
+            inset: -#{$spacing-2} -#{$spacing-3};
+        }
+    }
+
+    &--danger {
+        &:after {    
+            background-color: var(--colorAlertDangerBg);
+        }
+    }
+
+    &--warning {
+        &:after {    
+            background-color: var(--colorAlertWarningBg);
+        }
+    }
+}

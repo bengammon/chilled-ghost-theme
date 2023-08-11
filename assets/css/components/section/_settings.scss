@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #SECTION/SETTINGS
+   ========================================================================== */
+
+$section-vertical-padding-mobile: $spacing-5;
+$section-vertical-padding: $spacing-6;
+
+$section-hero-brand-size: 16rem;
+$section-hero-brand-size-tablet: 20rem;
+$section-hero-brand-size-desktop-small: 25rem 32.5rem;
+$section-hero-margin-bottom: 3rem;
+
+:root {
+   --sectionCaseStudiesMargin: 0 0 8rem;
+   --sectionHeroH1Margin: 0 0 4.8rem;
+   --sectionHeroPadding: 12.8rem 0 6.4rem;
+   --sectionHeroPaddingTablet: 20rem 0 6.4rem;
+   --sectionHeroParagraphMargin: 0 0 4rem;
+   --sectionHeroParagraphMarginTablet: 0 0 4rem;
+   --sectionLoopsH3Margin: 0 0 3.6rem;
+   --sectionLoopsDivLastChildMargin: 8rem 0 0;
+   --sectionLoopsDivLastChildMarginDesktop: 0 0 auto;
+   --sectionHeroH1AnchorTextDecorationThickness: .4rem;
+   --sectionHeroH1AnchorTextUnderlineOffset: .6rem;
+}

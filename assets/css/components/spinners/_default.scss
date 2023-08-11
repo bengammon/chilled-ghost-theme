@@ -1,0 +1,66 @@
+/* ==========================================================================
+   #SPINNERS/DEFAULT
+   ========================================================================== */
+
+.spinners {
+    align-items: center;
+    display: flex;
+    height: 60rem;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 60rem;
+    z-index: $z-index-under;
+
+    transform: translate(50%, -50%);
+
+    @media (min-width: var(--bpTablet)) {
+        height: 90rem;
+        right: $spacing-6;
+        top: 100%;
+        width: 90rem;
+    
+        transform: translateY(-50%);
+    }
+
+    &__logo {
+        height: 70%;
+        position: absolute;
+        width: 70%;
+
+        fill: var(--colorSecondary);
+
+        animation-name: spinningLogo;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    &__text {
+        fill: var(--colorSecondary);
+
+        animation-name: spinningText;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes spinningLogo {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinningText {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

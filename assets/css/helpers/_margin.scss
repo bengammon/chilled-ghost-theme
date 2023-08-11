@@ -1,0 +1,71 @@
+/* ==========================================================================
+   #MARGIN
+   ========================================================================== */
+
+.margin {
+    &-bottom {
+        &--tiny {
+            margin-bottom: $spacing-1;
+        }
+
+        &--small {
+            margin-bottom: $spacing-2;
+        }
+
+        &--default {
+            margin-bottom: $spacing-3;
+        }
+
+        &--medium {
+            margin-bottom: $spacing-4;
+        }
+
+        &--large {
+            margin-bottom: $spacing-5;
+        }
+
+        &--huge {
+            margin-bottom: $spacing-6;
+        }
+
+        &--gigantic {
+            margin-bottom: $spacing-7;
+        }
+        &--none {
+            margin-bottom: 0;
+        }
+    }
+
+    &-top {
+        &--tiny {
+            margin-top: $spacing-1;
+        }
+
+        &--small {
+            margin-top: $spacing-2;
+        }
+
+        &--default {
+            margin-top: $spacing-3;
+        }
+
+        &--medium {
+            margin-top: $spacing-4;
+        }
+
+        &--large {
+            margin-top: $spacing-5;
+        }
+
+        &--huge {
+            margin-top: $spacing-6;
+        }
+
+        &--gigantic {
+            margin-top: $spacing-7;
+        }
+        &--none {
+            margin-top: 0;
+        }
+    }
+}

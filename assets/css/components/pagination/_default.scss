@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #PAGINATION/DEFAULT
+   ========================================================================== */
+
+.pagination {
+    padding-top: $spacing-7;
+
+    font-size: var(--fontSizeSmall);
+
+    .newer-posts {
+        @include rem(margin-right, $content-gutter-small);
+    }
+    
+    .older-posts {
+        @include rem(margin-left, $content-gutter-small);
+    }
+}

@@ -1,0 +1,92 @@
+/* ==========================================================================
+   #LIST/TIMELINE
+   ========================================================================== */
+
+.list--timeline {
+    position: relative;
+
+    &:before {
+        content: "";
+        height: 100%;
+        left: $list-timeline-before-left;
+        position: absolute;
+        top: 0;
+        @include rem(width, $list-timeline-before-width);
+
+        background-color: var(--colorButtonBg);
+    }
+
+    &:last-of-type {
+        z-index: $z-index-under;
+
+        &:before {
+            bottom: 3rem;
+            height: $list-timeline-last-of-type-height;
+            top: auto;
+        }
+    }
+
+    > li {
+        @include rem(padding-left, $list-timeline-li-padding-left);
+        position: relative;
+
+        &:before {
+            content: "";
+            @include rem(height, $list-timeline-li-before-height);
+            @include rem(left, $list-timeline-li-before-left);
+            position: absolute;
+            @include rem(top, $list-timeline-li-before-top);
+            @include rem(width, $list-timeline-li-before-width);
+
+            border: $list-timeline-li-before-border-width solid var(--colorButtonBg);
+            border-radius: 50%;
+
+            background-color: var(--colorBackground);
+        }
+
+        &:first-child {
+            display: inline-block;
+            @include rem(margin-bottom, $list-timeline-li-first-child-margin-bottom);
+            @include rem(min-width, $list-timeline-li-first-child-min-width);
+            @include rem(padding-left, $list-timeline-li-first-child-padding-horizontal);
+            @include rem(padding-right, $list-timeline-li-first-child-padding-horizontal);
+            position: relative;
+
+            background-color: var(--colorButtonBg);
+            color: var(--colorText);
+            font-weight: var(--fontWeightBold);
+            @include rem(border-radius, $list-timeline-li-first-child-border-radius);
+            text-align: center;
+            text-transform: uppercase;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        &:not(:first-child) {
+            @include rem(padding-bottom, $list-timeline-li-not-first-child-padding-bottom);
+        }
+
+        span + ul {
+            @include rem(padding-top, $list-timeline-li-span-ul-padding-top);
+        }
+
+        > ul {
+            padding-left: 0;
+
+            list-style: none;
+
+            color: var(--colorGrey7);
+            font-size: var(--fontSizeSmall);
+
+            > li {
+                @include rem(padding-bottom, $list-timeline-li-ul-li-padding-bottom);
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+            }
+        }
+    }  
+}

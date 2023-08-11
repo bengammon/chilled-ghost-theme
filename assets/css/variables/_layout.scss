@@ -1,0 +1,54 @@
+/* ==========================================================================
+   #VARIABLES/LAYOUT
+   ========================================================================== */
+
+:root {
+   --gridGutter: 0;
+   --gridOffset: #{$spacing-3};
+   --gridPrimary: [full-start]
+                  var(--gridOffset)
+                  [main-content-start]
+                  repeat(6, 1fr)
+                  [main-content-end]
+                  var(--gridOffset)
+                  [full-end];
+
+   @media (min-width: var(--bpTablet)) {
+      --gridOffset: #{$spacing-5};
+   }
+
+   @media (min-width: var(--bpDesktopSmall)) {
+      --gridOffset: #{$spacing-5};
+      --gridPrimary: 
+            [full-start]
+            var(--gridOffset)
+            [main-content-start]
+            repeat(4, 1fr)
+            [main-content-end]
+            repeat(2, 1fr)
+            [full-content-end]
+            var(--gridOffset)
+            [full-end];
+   }
+
+   @media (min-width: var(--bpDesktop)) {
+      --gridMaxWidth: calc( 50vw - 68.8rem ); // 1376px
+      --gridPrimary: 
+            [full-start]
+            var(--gridOffset)
+            var(--gridMaxWidth)
+            repeat(1, 1fr)
+            [main-content-start]
+            repeat(7, 1fr)
+            [main-content-end]
+            repeat(4, 1fr)
+            [full-content-end]
+            var(--gridMaxWidth)
+            var(--gridOffset)
+            [full-end];
+   }
+
+   @media (min-width: var(--bpDesktopMedium)) {
+      --gridOffset: 0;
+   }
+}

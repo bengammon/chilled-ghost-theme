@@ -1,0 +1,31 @@
+/* ==========================================================================
+   #TABLE/STRIPED
+   ========================================================================== */
+
+.table--striped {
+    tbody {
+        tr {
+            &:nth-child(odd) {
+                @media (min-width: var(--bpTablet)) {
+                    @include themify($themes) {
+                        background-color: themed('color.tableRowLight');
+                    }
+                }
+            }
+        }
+
+        td {    
+            &:nth-child(even) {
+                @include themify($themes) {
+                    background-color: themed('color.tableRowLight');
+                }
+    
+                @media (min-width: var(--bpTablet)) {
+                    @include themify($themes) {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+}

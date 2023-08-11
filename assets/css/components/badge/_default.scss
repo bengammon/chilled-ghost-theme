@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #BADGE/DEFAULT
+   ========================================================================== */
+
+.badge {
+    border-radius: 2rem;
+    padding: $spacing-1 $spacing-3 .5rem;
+    display: inline-block;
+
+    background-color: var(--colorBadge);
+    color: var(--colorTextSubtle);
+    font-size: var(--fontSizeSmall);
+    font-weight: var(--fontWeightBold);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}

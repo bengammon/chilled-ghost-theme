@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #META/DEFAULT
+   ========================================================================== */
+
+.meta {
+    color: var(--colorTextSubtle);
+    font-family: $font-family;
+    font-size: var(--fontSizeTiny);
+
+    a {
+        color: inherit;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__date {      
+        margin-right: .4rem;
+
+        font-variant-numeric: tabular-nums;
+    }
+}

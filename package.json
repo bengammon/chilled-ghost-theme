@@ -50,7 +50,9 @@
         "postcss-preset-env": "^8.0.1",
         "rollup": "^3.18.0",
         "rollup-plugin-livereload": "^2.0.5",
-        "rollup-plugin-postcss": "^4.0.2"
+        "rollup-plugin-postcss": "^4.0.2",
+        "rollup-plugin-scss": "^3.0.0",
+        "sass": "^1.65.1"
     },
     "browserslist": [
         "defaults"

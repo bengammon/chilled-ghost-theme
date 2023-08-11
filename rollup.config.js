@@ -9,6 +9,8 @@ import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
 
 // CSS
+// rollup.config.js
+import scss from 'rollup-plugin-scss';
 // Enable the PostCSS preprocessor
 import postcss from 'rollup-plugin-postcss';
 // Use @import to include other CSS files
@@ -42,6 +44,7 @@ export default defineConfig({
             ], 
             minimize: true,
         }),
+        scss(),
         process.env.BUILD !== "production" && livereload({
             watch: resolve('.'),
             extraExts: ['hbs'],

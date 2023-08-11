@@ -1,0 +1,20 @@
+/* ==========================================================================
+   #SECTION/FEATURE
+   ========================================================================== */
+
+.section--feature {
+    margin-bottom: $spacing-7;
+
+    .section__content {
+        border-radius: $border-radius;
+        padding-bottom: $spacing-6;
+        padding-top: $spacing-6;
+
+        background-color: var(--colorSectionFeatureBg);
+        background-image: var(--imageSectionFeatureBg);
+    }
+
+    .heading {
+        margin-bottom: 0;
+    }
+}

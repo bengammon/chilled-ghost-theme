@@ -1,0 +1,42 @@
+/* ==========================================================================
+   #POST-TEASER/DEFAULT
+   ========================================================================== */
+
+.post-teaser {
+    display: flex;
+    margin: 0 auto 1.6rem;
+
+    font-size: var(--fontSizeSmall);
+
+    > * {
+        margin-bottom: 0;
+        padding-top: 0;
+    }
+
+    &__title {
+        flex: 1;
+
+        font-size: inherit;
+        line-height: inherit;
+
+        a {
+            color: var(--colorText);
+
+            text-decoration: none;
+
+            transition: color .4s ease-in-out;
+        }
+    }
+
+    &__meta {
+        display: block;
+        margin-right: 1.2rem;
+
+        color: var(--colorTextSubtle);
+        font-variant-numeric: tabular-nums;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        transition: color .4s ease-in-out;
+    }
+}

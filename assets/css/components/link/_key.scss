@@ -1,0 +1,75 @@
+/* ==========================================================================
+   #LINK/KEY
+   ========================================================================== */
+
+.link--key {
+    align-items: center;
+    display: inline-flex;
+    @include rem(padding-bottom, $link-key-padding-vertical);
+    @include rem(padding-right, $link-key-padding-right);
+    @include rem(padding-top, $link-key-padding-vertical);
+    position: relative;
+    z-index: $z-index-default;
+
+    transition: color $link-key-transition-delay ease-in-out;
+
+    @include themify($themes) {
+        @include rem(font-size, themed('fontSize.small'));
+    }
+
+    &:after {
+        display: none;
+    }
+
+    &:before {
+        bottom: 0;
+        content: "";
+        height: 100%;
+        left: $link-key-before-left-pos;
+        position: absolute;
+        top: 0;
+        width: $link-key-before-width;
+        z-index: $z-index-under;
+
+        transition: width $link-key-transition-delay ease-in-out;
+        
+        @include themify($themes) {
+            background-color: themed('color.tag.todayilearned');
+        }
+    }
+
+    &:hover {
+        &:before {
+            width: 100%;
+        }
+    }
+
+    &-events {
+        &:before {
+            @include themify($themes) {
+                background-color: themed('color.tag.events');
+            }
+        }
+    }
+
+    &-ghost-cms {
+        &:hover {
+            @include themify($themes) {
+                color: themed('color.white');
+            }
+        }
+        &:before {
+            @include themify($themes) {
+                background-color: themed('color.tag.ghost');
+            }
+        }
+    }
+
+    &-thoughts {
+        &:before {
+            @include themify($themes) {
+                background-color: themed('color.tag.thoughts');
+            }
+        }
+    }
+}

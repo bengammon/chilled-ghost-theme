@@ -1,0 +1,79 @@
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+
+/**
+ * Classes to style text in various different ways.
+ */
+   
+.font {
+    &--default {
+        font-family: $font-family;
+    }
+}
+
+.text {
+    &--align {
+        &-left { text-align: left; }
+        &-center { text-align: center; }
+        &-right { text-align: right; }
+    }
+
+    &--h1 { 
+        @include text-heading('H1');
+    }
+
+    &--h2 { 
+        @include text-heading('H2');
+    }
+
+    &--h3 { 
+        @include text-heading('H3');
+    }
+
+    &--line-through { text-decoration: line-through; }
+    &--subheading {
+        @include text-subheading;
+    }
+    &--underline { text-decoration: underline; }
+    &--uppercase { text-transform: uppercase; }
+
+    &--size {
+        &-h1 { 
+            font-size: var(--fontSizeH1);
+            line-height: var(--lineHeightH1);
+        }
+
+        &-h2 { 
+            font-size: var(--fontSizeH2);
+            line-height: var(--lineHeightH2);
+        }
+
+        &-h3 { 
+            font-size: var(--fontSizeH3);
+        }
+        &-large {
+            font-size: var(--fontSizeLarge);
+        }
+        &-small {
+            font-size: var(--fontSizeSmall);
+        }
+        &-tiny {
+            font-size: var(--fontSizeTiny);
+        }
+    }
+
+    &--prominent {
+        color: var(--colorTextProminent);
+    }
+
+    &--weight {
+        &-bold {
+            font-weight: var(--fontWeightBold);
+        }
+
+        &-normal {
+            font-weight: var(--fontWeightRegular);
+        }
+    }
+}  

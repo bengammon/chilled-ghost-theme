@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #PAGINATION
+   ========================================================================== */
+
+.pagination {
+    font-size: var(--fontSizeSmall);
+
+    .newer-posts {
+        @include rem(margin-right, $content-gutter-small);
+    }
+    
+    .older-posts {
+        @include rem(margin-left, $content-gutter-small);
+    }
+}

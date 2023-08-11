@@ -1,0 +1,29 @@
+/* ==========================================================================
+   #COLOR
+   ========================================================================== */
+
+/**
+ * Classes to colour text in various different ways.
+ */
+   
+.color {
+    &--primary {
+        color: var(--colorPrimary);
+    }
+    
+    &--text {
+        color: var(--colorText);
+
+        &-dark {
+            color: var(--colorTextDark);
+        }
+        
+        &-prominent {
+            color: var(--colorTextProminent);
+        }
+
+        &-subtle {
+            color: var(--colorTextSubtle);
+        }
+    }
+}  

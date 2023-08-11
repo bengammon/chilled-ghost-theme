@@ -1,0 +1,31 @@
+/* ==========================================================================
+   #LIST/DIVIDED
+   ========================================================================== */
+   
+.list--divided {
+    display: flex;
+    flex-wrap: wrap;
+
+    > li {
+        align-items: center;
+        display: flex;
+        margin-right: .6rem;
+
+        &:after {
+            content: "\2022";
+            margin-left: .6rem;
+
+            opacity: .4;
+
+            color: var(--colorTextSubtle);
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            &:after {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+/* ==========================================================================
+   #FOOTER/DEFAULT
+   ========================================================================== */
+
+.footer {
+    padding: $spacing-4 0 $spacing-7;
+    width: 100%;
+
+    @media (min-width: var(--bpTablet)) {
+        padding: $spacing-5 0;
+    }
+
+    a {
+        color: var(--colorText);
+        text-decoration-color: var(--colorText);
+        text-decoration-thickness: 1px;
+    }
+}

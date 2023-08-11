@@ -1,0 +1,30 @@
+/* ==========================================================================
+   #TEXT
+   ========================================================================== */
+
+/**
+ * Mixins & functions for working with text styles.
+ */
+
+@mixin text-default() {
+    font-size: var(--fontSizeBase);
+    font-style: var(--fontStyleDefault);
+    font-weight: var(--fontWeightRegular);
+    letter-spacing: var(--letterSpacingDefault);
+}
+
+@mixin text-heading($size) {
+    font-style: var(--fontStyleDefault);
+    font-size: var(--fontSize#{$size});
+    font-weight: var(--fontWeight#{$size});
+    letter-spacing: var(--letterSpacing#{$size});
+    line-height: var(--lineHeight#{$size});
+}
+
+@mixin text-subheading() {
+    @include text-default();
+    font-size: var(--fontSizeSubheading);
+    font-weight: var(--fontWeightLight);
+    letter-spacing: var(--letterSpacingSubheading);
+    line-height: var(--lineHeightSubheading);
+}

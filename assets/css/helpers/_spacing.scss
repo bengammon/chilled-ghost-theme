@@ -1,0 +1,30 @@
+/**
+ * -----------------------------------------------------------------------------
+ * $SPACING
+ * -----------------------------------------------------------------------------
+ */
+
+$sides: (
+    't': 'top',
+    'b': 'bottom',
+    'l': 'left',
+    'r': 'right',
+    '': ('top', 'left', 'bottom', 'right'),
+    'x': ('left', 'right'),
+    'y': ('top', 'bottom'),
+);
+
+@each $space-number, $space-value in $spacers {
+    @each $prefix, $positions in $sides {
+        .p#{$prefix}-#{$space-number} {
+            @each $pos in $positions {
+                padding-#{$pos}: $space-value;
+            }
+        }
+        .m#{$prefix}-#{$space-number} {
+            @each $pos in $positions {
+                margin-#{$pos}: $space-value;
+            }
+        }
+    }
+}

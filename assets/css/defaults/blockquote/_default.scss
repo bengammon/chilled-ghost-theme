@@ -1,0 +1,43 @@
+/**
+ * -----------------------------------------------------------------------------
+ * $BLOCKQUOTE/DEFAULT
+ * -----------------------------------------------------------------------------
+ */
+
+blockquote {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $spacing-5;
+    position: relative;
+
+    color: var(--colorTextSubtle);
+    font-size: var(--fontSizeLarge);
+
+    @media (min-width: var(--bpTablet)) {
+        padding-left: $spacing-6;
+    } 
+
+    &:before {
+        content: "“";
+        left: 2rem;
+        position: absolute;
+        top: 0;
+
+        @media (min-width: var(--bpTablet)) {
+            left: 5.2rem;
+        }  
+    }
+
+
+    a {
+        color: inherit;
+    }
+
+    p {
+        font-size: var(--fontSizeLarge);
+    }
+
+    footer {
+        margin-top: $spacing-3;
+    }
+}

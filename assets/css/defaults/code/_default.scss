@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #CODE/DEFAULT
+   ========================================================================== */
+
+code {
+    border: var(--borderWidth) solid var(--colorCodeBg);
+    border-radius: var(--borderRadius);
+    padding: var(--codePadding);
+    white-space: break-spaces;
+
+    background: var(--colorCodeBg);
+    font-size: var(--fontSizeCode);
+}

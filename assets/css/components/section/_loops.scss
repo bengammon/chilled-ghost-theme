@@ -1,0 +1,38 @@
+/* ==========================================================================
+   #SECTION/LOOPS
+   ========================================================================== */
+
+.section--loops {
+    margin: var(--sectionCaseStudiesMargin);
+    padding: 0;
+
+    > div {
+        grid-column: main-content;
+
+        @media (min-width: var(--bpDesktopSmall)) {
+            grid-column: 3 / 7;
+        }
+
+        @media (min-width: var(--bpDesktop)) {
+            grid-column: 4 / 11;
+        }
+
+        &:last-child {
+            grid-column: main-content;
+            margin: var(--sectionLoopsDivLastChildMargin);
+
+            @media (min-width: var(--bpDesktopSmall)) {
+                grid-column: 9 / 13;
+                margin: var(--sectionLoopsDivLastChildMarginDesktopSmall);
+            }
+
+            @media (min-width: var(--bpDesktop)) {
+                grid-column: 10 / 14;
+            }
+        }
+
+        h3 {
+            margin: var(--sectionLoopsH3Margin);
+        }
+    }
+}

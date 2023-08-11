@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #MEDIA/DEFAULT
+   ========================================================================== */
+
+.media {
+
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+
+    @media (min-width: var(--bpTablet)) {
+        display: flex; 
+    }
+
+    &__body {
+        @include rem(padding-top, $content-gutter-small);
+
+        @media (min-width: var(--bpTablet)) {
+            @include rem(margin-left, $content-gutter);
+            padding-top: 0;
+        }
+    }
+}
