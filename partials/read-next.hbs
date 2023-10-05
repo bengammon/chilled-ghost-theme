@@ -1,0 +1,11 @@
+<div class="columns">
+	{{#get "posts" include="tags" limit="2" filter="id:-{{id}}+tag:{{primary_tag.slug}}" as |related|}}
+		{{#foreach related}}
+			<div class="column">
+				{{> post-teaser}}
+			</div>
+		{{/foreach}}
+		{{else}}
+			<p>There are no related posts available.</p>
+	{{/get}}
+</div>

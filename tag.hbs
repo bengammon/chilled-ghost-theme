@@ -1,35 +1,29 @@
 {{!< default}}
 
-<div class="gh-page">
-    <div class="gh-container">
+<main role="main">
 
-        {{#tag}}
-        <header class="gh-page-head">
+    {{#tag}}
 
-            <h1>{{name}}</h1>
+    <section class="section section--narrow">
 
-            <p>
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </p>
+        <h1 class="mb-3">
+            <span class="color--text-subtle">Tag:</span> {{name}}
+        </h1>
+        
+        <p class="color--text-subtle">{{plural ../pagination.total empty='0 posts' singular='% post' plural='% posts'}}{{#if description}}{{description}}{{/if}}.</p>
 
-            {{#if feature_image}}
-                <img class="gh-page-image" src="{{feature_image}}" alt="{{name}}" />
-            {{/if}}
+    </section>
 
-        </header>
-        {{/tag}}
+    {{/tag}}
 
-        <div class="gh-postfeed">
+    <section class="section section--narrow">
+        
         {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
+            {{> post-teaser}}
         {{/foreach}}
-        </div>
 
-    </div>
-</div>
+        {{pagination}}
+
+    </section>
+
+</main>

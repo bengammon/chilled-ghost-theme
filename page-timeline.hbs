@@ -1,0 +1,29 @@
+{{!< default}}
+
+{{> header}}
+
+<main class="content" id="content">
+
+    <article class="page {{post_class}}">
+        {{#post}}
+
+            <section class="section">
+                <div class="section__content">
+            
+                    <header class="post__header">
+                        <h1 class="post__title margin--bottom-none">{{title}}</h1>
+                    </header>
+
+                </div>
+            </section>
+
+            <section class="section padding--top-none">
+                <div class="section__content">
+                    {{content}}
+                </div>
+            </section>
+            
+        {{/post}}
+    </article>
+
+</main>
