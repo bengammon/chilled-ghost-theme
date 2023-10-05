@@ -15,7 +15,7 @@
 
     transform: translate(50%, -50%);
 
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
         height: 90rem;
         right: $spacing-6;
         top: 100%;

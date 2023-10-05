@@ -23,7 +23,7 @@
     &__year {
         inset: $spacing-5 auto 0 0;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             position: absolute;
         }
 
@@ -35,7 +35,7 @@
             @include text-heading(H2);
             color: var(--colorTextSubtle);
 
-            @media (min-width: var(--bpTablet)) {
+            @media (min-width: $bp-tablet) {
                 margin-bottom: 5.7rem;
             }
         }
@@ -52,7 +52,7 @@
             flex-direction: column;
             margin-bottom: 0;
 
-            @media (min-width: var(--bpTablet)) {
+            @media (min-width: $bp-tablet) {
                 padding-left: 12rem;
             }
         }

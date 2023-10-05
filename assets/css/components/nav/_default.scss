@@ -15,7 +15,7 @@
         padding: $spacing-1 0;
         position: relative;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             margin-right: $spacing-5;
         }
 
@@ -34,7 +34,7 @@
     .header__nav & {
         li {
             &:first-child {
-                @media (min-width: var(--bpTablet)) {
+                @media (min-width: $bp-tablet) {
                     display: none;
                 }
             }
@@ -53,14 +53,14 @@
         text-decoration-color: var(--colorText);
         text-decoration-thickness: 1px;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             padding: 0;
         }
 
         svg {
             margin-right: $spacing-1;
 
-            @media (min-width: var(--bpTablet)) {
+            @media (min-width: $bp-tablet) {
                 margin-right: $spacing-1;
             }
 

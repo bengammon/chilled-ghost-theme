@@ -1,8 +1,9 @@
 /* ==========================================================================
-   #FORM/FORM-GROUP
+   #SUBHEADING/DEFAULT
    ========================================================================== */
 
-.form-group {
-    margin-bottom: $spacing-5;
-    width: 100%;
+.subheading {    
+    font-size: var(--fontSizeTiny);
+    letter-spacing: var(--letterSpacingSubheading);
+    text-transform: uppercase;
 }

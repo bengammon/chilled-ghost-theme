@@ -8,15 +8,15 @@
     margin-right: auto;
     position: relative;
 
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
         display: flex; 
     }
 
     &__body {
-        @include rem(padding-top, $content-gutter-small);
+        padding-top: $content-gutter-small;
 
-        @media (min-width: var(--bpTablet)) {
-            @include rem(margin-left, $content-gutter);
+        @media (min-width: $bp-tablet) {
+            margin-left: $content-gutter;
             padding-top: 0;
         }
     }

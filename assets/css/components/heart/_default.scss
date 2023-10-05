@@ -19,7 +19,7 @@
         animation-duration: 2.2s;
         animation-iteration-count: infinite;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             display: block;
         }
     }

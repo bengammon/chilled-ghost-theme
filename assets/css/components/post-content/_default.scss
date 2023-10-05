@@ -36,7 +36,7 @@
 
         width: calc(100% - 3.2rem);
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             width: calc(100% - 12.8rem);
         }
     }

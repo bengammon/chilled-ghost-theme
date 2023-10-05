@@ -3,10 +3,16 @@
    ========================================================================== */
 
 .footer {
-    padding: $spacing-4 0 $spacing-7;
+    padding: $spacing-4 $spacing-3 $spacing-7;
     width: 100%;
 
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
+        padding: $spacing-5 $spacing-3;
+    }
+
+    @media (min-width: $bp-desktop) {
+        margin: 0 auto;
+        max-width: var(--contentWidthWide);
         padding: $spacing-5 0;
     }
 

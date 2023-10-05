@@ -20,6 +20,18 @@ $mq-breakpoints: (
     contentWideWithGutter: 1412px,
 );
 
+$bp-mobileSmall: 320px;
+$bp-mobile: 375px;
+$bp-mobileLarge: 425px;
+$bp-tabletSmall: 600px;
+$bp-tablet: 768px;
+$bp-desktopSmall: 1024px;
+$bp-desktop: 1280px;
+$bp-desktopMedium: 1440px;
+$bp-desktopLarge: 1920px;
+$bp-desktopHuge: 2200px;
+$bp-contentWideWithGutter: 1412px;
+
 
 :root {
     --bpMobileSmall: 320px,

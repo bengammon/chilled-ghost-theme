@@ -17,7 +17,7 @@
     }
 
     &--wide {
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             left: 0%;
             margin-left: calc(25% - 25vw);
             margin-right: calc(25% - 25vw);
@@ -28,16 +28,16 @@
     }
 
     &--left {
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             float: left;
-            @include rem(margin-right, $content-gutter);
+            margin-right: $content-gutter;
         }
     }
     
     &--right {
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             float: right;
-            @include rem(margin-left, $content-gutter);
+            margin-left: $content-gutter;
         }
     }
 }

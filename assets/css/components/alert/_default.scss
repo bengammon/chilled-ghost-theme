@@ -14,7 +14,7 @@
         background-color: var(--colorAlertBg);
         background-image: var(--imageAlertBg);
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             border-radius: $border-radius;
             inset: -#{$spacing-2} -#{$spacing-3};
         }

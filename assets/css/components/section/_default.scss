@@ -3,7 +3,11 @@
    ========================================================================== */
 
 .section {
-    margin-bottom: $spacing-7;
-    margin-top: $spacing-7;
+    margin: $spacing-7 auto;
+    padding: 0 $spacing-3;
     position: relative;
+
+    &--narrow {
+        max-width: var(--contentWidthNarrow);
+    }
 }

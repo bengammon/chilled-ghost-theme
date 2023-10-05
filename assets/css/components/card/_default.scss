@@ -18,7 +18,7 @@
         border-right-color: transparent;
         background-color: transparent;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             border-color: var(--colorBorder);
             border-radius: $border-radius;
             inset: -1.2rem -#{$spacing-3} -1.2rem;

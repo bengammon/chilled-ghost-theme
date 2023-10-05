@@ -9,12 +9,12 @@
 
 .embed {
     display: block;
-    @include rem(margin-bottom, $spacing-3);
+    margin-bottom: $spacing-3;
 }
 
     .embed__source {
         height: 0;
-        @include rem(margin-bottom, $spacing-3);
+        margin-bottom: $spacing-3;
         overflow: hidden;
         padding-bottom: 56.25%;
         position: relative;

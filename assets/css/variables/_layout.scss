@@ -13,7 +13,7 @@
                   var(--gridOffset)
                   [full-end];
 
-   @media (min-width: var(--bpTablet)) {
+   @media (min-width: $bp-tablet) {
       --gridOffset: #{$spacing-5};
    }
 

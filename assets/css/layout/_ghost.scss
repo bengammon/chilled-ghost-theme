@@ -48,7 +48,7 @@
         top: 0;
         width: 100%;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             border-radius: var(--borderRadius);
         }
     }
@@ -61,7 +61,7 @@
 
     &.kg-width-wide {
         img {
-            @media (min-width: var(--bpTablet)) {
+            @media (min-width: $bp-tablet) {
                 border-radius: var(--borderRadius);
             }
         }
@@ -84,7 +84,7 @@
 }
 
 .kg-width-wide {
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
         position: relative;
         width: 70vw;
         left: 50%;
@@ -120,7 +120,7 @@
         background-color: var(--colorBookmarkBg);
         background-image: var(--imageBookmarkBg);
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             border-radius: var(--borderRadius) 0 0 var(--borderRadius);
             border-right: var(--borderWidth) solid var(--colorCodeBg);
         }
@@ -146,7 +146,7 @@
     &-thumbnail {
         display: none;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
             display: block;
             max-height: 100%;

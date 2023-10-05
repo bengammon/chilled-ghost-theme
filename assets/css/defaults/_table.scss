@@ -16,21 +16,21 @@ table {
     thead {
         display: none;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             display: table-header-group;
         }
     }
 
     tr {
         display: block;
-        @include rem(margin-bottom, $spacing-3);
-        @include rem(padding-bottom, $spacing-3);
+        margin-bottom: $spacing-3;
+        padding-bottom: $spacing-3;
 
         @include themify($themes) {
             border-bottom: $table-border-width solid themed('color.border');
         }
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             display: table-row;
             margin-bottom: 0;
         }
@@ -39,25 +39,25 @@ table {
     th,
     td {
         display: block;
-        @include rem(padding-bottom, $table-cell-padding-vertical-mobile);
-        @include rem(padding-left, $table-cell-padding-horizontal);
-        @include rem(padding-right, $table-cell-padding-horizontal);
-        @include rem(padding-top, $table-cell-padding-vertical-mobile);
+        padding-bottom: $table-cell-padding-vertical-mobile;
+        padding-left: $table-cell-padding-horizontal;
+        padding-right: $table-cell-padding-horizontal;
+        padding-top: $table-cell-padding-vertical-mobile;
 
         text-align: right;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             display: table-cell;
-            @include rem(padding-bottom, $table-cell-padding-vertical);
+            padding-bottom: $table-cell-padding-vertical;
             padding-right: 0;
-            @include rem(padding-top, $table-cell-padding-vertical);
+            padding-top: $table-cell-padding-vertical;
             vertical-align: top;
 
             text-align: left;
         }
 
         &:last-child {
-            @include rem(padding-right, $table-cell-padding-horizontal);
+            padding-right: $table-cell-padding-horizontal;
         }
     }
 
@@ -66,9 +66,9 @@ table {
             content: attr(data-label);
             float: left;
             font-weight: bold;
-            @include rem(margin-right, $table-cell-padding-horizontal);
+            margin-right: $table-cell-padding-horizontal;
 
-            @media (min-width: var(--bpTablet)) {
+            @media (min-width: $bp-tablet) {
                 display: none;
             }
         }

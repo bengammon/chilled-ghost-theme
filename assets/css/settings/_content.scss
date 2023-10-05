@@ -17,3 +17,9 @@ $content-width: 76rem;
 $content-width-wide: 116rem;
 
 $content-vertical-spacing: 4rem;
+
+:root {
+    --contentWidth: 76rem;
+    --contentWidthNarrow: 60rem;
+    --contentWidthWide: 116rem;
+}

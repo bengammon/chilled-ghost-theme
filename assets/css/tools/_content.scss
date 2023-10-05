@@ -6,7 +6,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
         max-width: $content-width;
     }
 }
@@ -15,7 +15,7 @@
     margin-left: $spacing-3;
     margin-right: $spacing-3;
 
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
         max-width: calc(#{$content-width} - (#{$spacing-6} * 2));
         margin-left: $spacing-6;
         margin-right: $spacing-6;
@@ -24,7 +24,7 @@
 
 @mixin content-wide {
 
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
         max-width: $content-width-wide;
     }
 }
@@ -33,7 +33,7 @@
     margin-left: $spacing-3;
     margin-right: $spacing-3;
 
-    @media (min-width: var(--bpTablet)) {
+    @media (min-width: $bp-tablet) {
         margin-left: $spacing-6;
         margin-right: $spacing-6;
     }

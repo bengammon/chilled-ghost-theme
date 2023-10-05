@@ -1,9 +1,15 @@
 /* ==========================================================================
-   #TABLE/DEFAULT
+   #OVERRIDES/GHOST
    ========================================================================== */
 
-.table {
-    &__caption {
-        margin-bottom: $spacing-3;
+.gh {
+    &-viewport {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+
+    &-main {
+        flex: 1;
     }
 }

@@ -15,8 +15,7 @@
  */
 body {
     height: 100%;
-    margin-left: $spacing-3;
-    margin-right: $spacing-3;
+    margin: 0;
 
     background-attachment: fixed;
     background-color: var(--colorBackground);
@@ -28,17 +27,6 @@ body {
     font-weight: var(--fontWeightDefault);
     letter-spacing: var(--letterSpacingDefault);
     line-height: var(--lineHeightDefault);
-
-    @media (min-width: var(--bpTablet)) {
-        max-width: $content-width;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    > footer {
-        position: sticky;
-        top: 100vh;
-    }
 
     &.is-nav-visible {
         overflow: hidden;

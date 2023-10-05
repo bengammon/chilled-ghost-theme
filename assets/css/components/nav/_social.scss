@@ -8,7 +8,7 @@
     li {
         margin-right: $spacing-4;
 
-        @media (min-width: var(--bpTablet)) {
+        @media (min-width: $bp-tablet) {
             margin-right: $spacing-2;
         }
     }
