@@ -1,48 +1,44 @@
 {{!< default}}
 
-<main>
+<article class="{{post_class}}">
 
-    <article class="{{post_class}}">
+    <section class="section section--narrow">
 
-        <section class="section section--narrow">
+        {{#post}}
 
-            {{#post}}
+        <header>
 
-            <header>
+            <h1>{{title}}</h1>
 
-                <h1>{{title}}</h1>
+            {{>date-published}}
+            {{>tags}}
 
-                {{>date-published}}
-                {{>tags}}
+        </header>
 
-            </header>
+        {{content}}
 
-            {{content}}
+        <hr class="mb-5">
 
-            <hr class="mb-5">
+        {{>date-updated}}
 
-            {{>date-updated}}
+        <h2 class="mb-2">Like this post? Got a question?</h2>
+        <p>Reply via: <a href="mailto:hello@bengammon.co.uk?subject={{title}}">Email</a>, <a rel="me" href="https://bsky.app/profile/bengammon.bsky.social" target="_blank">Bluesky</a>, <a rel="me" href="https://mas.to/@bengammon" target="_blank">Mastodon</a>, <a href="https://twitter.com/bengammon" target="_blank">Twitter</a></p>
 
-            <h2 class="mb-2">Like this post? Got a question?</h2>
-            <p>Reply via: <a href="mailto:hello@bengammon.co.uk?subject={{title}}">Email</a>, <a rel="me" href="https://bsky.app/profile/bengammon.bsky.social" target="_blank">Bluesky</a>, <a rel="me" href="https://mas.to/@bengammon" target="_blank">Mastodon</a>, <a href="https://twitter.com/bengammon" target="_blank">Twitter</a></p>
+        <hr class="mb-5 mt-4">
 
-            <hr class="mb-5 mt-4">
+        {{!-- <section class="section section--feature">
+            <div class="section__content">
 
-            {{!-- <section class="section section--feature">
-                <div class="section__content">
+                <aside class="read-next">
+                    <h6 class="margin-bottom--medium">Read next</h6>
+                    {{>read-next}}
+                </aside>
 
-                    <aside class="read-next">
-                        <h6 class="margin-bottom--medium">Read next</h6>
-                        {{>read-next}}
-                    </aside>
+            </div>
+        </section> --}}
 
-                </div>
-            </section> --}}
+        {{/post}}
 
-            {{/post}}
+    </section>
 
-        </section>
-
-    </article>
-
-</main>
+</article>
