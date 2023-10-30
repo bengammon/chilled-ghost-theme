@@ -20,5 +20,10 @@
         color: var(--colorText);
         text-decoration-color: var(--colorText);
         text-decoration-thickness: 1px;
+
+        &:hover {
+            color: var(--colorPrimary);
+            text-decoration: none;
+        }
     }
 }

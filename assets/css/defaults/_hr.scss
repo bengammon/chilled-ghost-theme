@@ -11,7 +11,7 @@ hr {
     box-sizing: border-box;
     display: block;
     grid-column: main-content;
-    height: $border-width;
+    height: var(--borderWidth);
     margin-top: 0;
     width: 100%;
     

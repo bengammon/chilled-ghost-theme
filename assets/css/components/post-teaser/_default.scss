@@ -15,14 +15,15 @@
     &__heading {
         flex: 1;
 
-        font-size: var(--fontSizeLarge);
+        font-size: var(--fontSizeH1);
         line-height: var(--lineHeightH3);
     }
 
     &__title {
-        color: var(--colorText);
+        color: var(--colorPrimary);
 
         text-decoration: none;
+        text-wrap: balance; 
 
         transition: color .4s ease-in-out;
     }

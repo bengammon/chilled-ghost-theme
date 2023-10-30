@@ -70,12 +70,12 @@
         }
 
         &:hover {
-            color: var(--colorTextProminent);
+            color: var(--colorPrimary);
             text-decoration: none;
             
             svg {
                 path {
-                    stroke: var(--colorTextProminent);
+                    stroke: var(--colorPrimary);
                 }
             }
         }

@@ -15,7 +15,11 @@ article {
     }
 
     a {
-        color: var(--colorTextProminent);
+        color: var(--colorPrimary);
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     > * {

@@ -5,10 +5,10 @@
 $font-family: 'Inter', sans-serif;
 
 :root {
-   --fontSizeBase: clamp(1.8rem, calc(0.8rem + 0.98vw), 2.6rem);
+   --fontSizeBase: clamp(1.8rem, calc(0.8rem + 0.98vw), 2.2rem);
    --fontSizeBlockquote: var(--fontSizeLarge);
    --fontSizeCode: .94em;
-   --fontSizeH1: calc(var(--fontSizeBase) * 2); // 36
+   --fontSizeH1: calc(var(--fontSizeBase) * 2); // 36 <-- For headings
    --fontSizeH2: calc(var(--fontSizeBase) * 1.5); // 27
    --fontSizeH3: var(--fontSizeBase);
    --fontSizeLarge: calc(var(--fontSizeBase) * 1.333); // 24
@@ -35,7 +35,7 @@ $font-family: 'Inter', sans-serif;
    @media (min-width: $bp-tablet) {
       --fontSizeSmall: calc(var(--fontSizeBase) * 0.818); // 18
 
-   --fontSizeH1: calc(var(--fontSizeBase) * 2.2); // 36
+   --fontSizeH1: 4.8rem; // 36
 
       --letterSpacingDefault: -.03rem;
 

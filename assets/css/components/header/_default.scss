@@ -62,6 +62,10 @@
 
             svg {
                 animation-name: turntableSpin;
+
+                path {
+                    fill: var(--colorPrimary);
+                }
             }
         }
     }

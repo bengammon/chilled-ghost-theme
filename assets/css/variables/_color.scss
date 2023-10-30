@@ -3,39 +3,40 @@
    ========================================================================== */
 
 :root {   
-   --colorAlertBg: #d7e2e3;
-   --colorAlertDangerBg: #e7dbdb;
-   --colorAlertWarningBg: #e7e6da;
-   --colorAnchorUnderline: #185731;
-   --colorBackground: #eee6e1;
-   --colorBadge: #222;
-   --colorBlack: #040407;
-   --colorButtonBg: rgb(15, 15, 15);
-   --colorBookmarkBg: var(--colorCodeBg);
-   --colorCodeBg: #d6d6d6;
-   --colorBorder: #dcdcdc;
-   --colorHeaderNavBg: rgba(237, 237, 237, .84);
-   --colorHR: var(--colorBorder);
-   --colorPreBg: var(--colorCodeBg);
-   --colorPreFunction: #dd4a68;
-   --colorPreProperty: #905;
-   --colorPrePunctuation: #999;
-   --colorPreSelector: #690;
-   --colorPreToken: #07a;
-   --colorPreUrl: #9a6e3a;
-   --colorPrimary: #703bc6;
-   --colorSecondary: #26120c;
-   --colorRelatedContentBg: transparent;
-   --colorSectionFeatureBg: var(--colorBlack);
-   --colorSectionHeroBg: transparent;
-   --colorText: #312d2c;
-   --colorTextProminent: #262626;
-   --colorTextDark: #444444;
-   --colorTextSubtle: #615956;
-   --colorTextInverted: var(--colorWhite);
-   --colorWhite: #e5e5e5;
+    --colorPrimary: #EBA937;
+	--colorSecondary: #26120c;
 
-   @media (prefers-color-scheme: dark) {
-     
-    }
+	--colorGrey1: #161410;
+	--colorGrey2: #201f1b;
+
+	--colorAlertBg: #d7e2e3;
+	--colorAlertDangerBg: #e7dbdb;
+	--colorAlertWarningBg: #e7e6da;
+	--colorAnchorUnderline: #185731;
+	--colorBackground: var(--colorGrey1);
+	--colorBadge: #222;
+	--colorBlack: #040407;
+	--colorButtonBg: rgb(15, 15, 15);
+	--colorBookmarkBg: var(--colorCodeBg);
+	--colorBorder: var(--colorGrey2);
+	--colorCodeBg: var(--colorGrey2);
+	--colorHeaderNavBg: rgba(237, 237, 237, .84);
+	--colorHR: var(--colorBorder);
+	--colorPreBg: var(--colorCodeBg);
+	--colorPreFunction: #dd4a68;
+	--colorPreProperty: #905;
+	--colorPrePunctuation: #999;
+	--colorPreSelector: #690;
+	--colorPreToken: #07a;
+	--colorPreUrl: #9a6e3a;
+	
+	--colorRelatedContentBg: transparent;
+	--colorSectionFeatureBg: var(--colorBlack);
+	--colorSectionHeroBg: transparent;
+	--colorText: #e9dcc5;
+	--colorTextProminent: #262626;
+	--colorTextDark: #444444;
+	--colorTextSubtle: #a89b85;
+	--colorTextInverted: var(--colorWhite);
+	--colorWhite: #e5e5e5;
 }
