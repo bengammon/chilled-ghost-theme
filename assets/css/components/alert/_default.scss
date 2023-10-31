@@ -5,6 +5,12 @@
 .alert {
     position: relative;
 
+    color: var(--colorAlertText);
+
+    a {
+        color: inherit;
+    }
+
     &:after {
         content: "";
         inset: -#{$spacing-2} -#{$spacing-3};
@@ -21,12 +27,16 @@
     }
 
     &--danger {
+        color: var(--colorAlertDangerText);
+        
         &:after {    
             background-color: var(--colorAlertDangerBg);
         }
     }
 
     &--warning {
+        color: var(--colorAlertWarningText);
+
         &:after {    
             background-color: var(--colorAlertWarningBg);
         }

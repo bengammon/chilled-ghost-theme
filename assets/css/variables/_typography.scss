@@ -5,40 +5,44 @@
 $font-family: 'Inter', sans-serif;
 
 :root {
-   --fontSizeBase: clamp(1.8rem, calc(0.8rem + 0.98vw), 2.2rem);
-   --fontSizeBlockquote: var(--fontSizeLarge);
-   --fontSizeCode: .94em;
-   --fontSizeH1: calc(var(--fontSizeBase) * 2); // 36 <-- For headings
-   --fontSizeH2: calc(var(--fontSizeBase) * 1.5); // 27
-   --fontSizeH3: var(--fontSizeBase);
-   --fontSizeLarge: calc(var(--fontSizeBase) * 1.333); // 24
-   --fontSizeSmall: calc(var(--fontSizeBase) * 0.888); // 16
-   --fontSizeTiny: calc(var(--fontSizeBase) * 0.666); // 12
+	--fontSizeBase: 1.8rem;
+	--fontSizeBaseVariable: clamp(1.8rem, calc(0.8rem + 0.98vw), 2.2rem);
 
-   --fontWeightLight: 300;
-   --fontWeightDefault: 400;
-   --fontWeightBold: 700;
-   --fontWeightBlack: 900;
-   --fontWeightH1: var(--fontWeightBold);
-   --fontWeightH2: var(--fontWeightBold);
-   --fontWeightH3: var(--fontWeightBold);
+	--fontSizeBlockquote: var(--fontSizeLarge);
+	--fontSizeCode: .94em;
+	--fontSizeH1: calc(var(--fontSizeBase) * 2); // 36 <-- For headings
+	--fontSizeH2: calc(var(--fontSizeBase) * 1.5); // 27
+	--fontSizeH3: var(--fontSizeBase);
+	--fontSizeLarge: calc(var(--fontSizeBase) * 1.333); // 24
+	--fontSizeSmall: calc(var(--fontSizeBase) * 0.888); // 16
+	--fontSizeTiny: calc(var(--fontSizeBase) * 0.666); // 12
 
-   --letterSpacingDefault: -.011rem;
-   --letterSpacingH1: -.1rem;
-   --letterSpacingSubheading: 0.15rem;
+	--fontWeightLight: 300;
+	--fontWeightDefault: 400;
+	--fontWeightBold: 700;
+	--fontWeightBlack: 900;
+	--fontWeightH1: var(--fontWeightBold);
+	--fontWeightH2: var(--fontWeightBold);
+	--fontWeightH3: var(--fontWeightBold);
 
-   --lineHeightDefault: 1.375; // 22/16
-   --lineHeightH1: 1.2;
-   --lineHeightH2: 1.2;
-   --lineHeightH3: 1.3;
+	--letterSpacingDefault: -.011rem;
+	--letterSpacingH1: -.1rem;
+	--letterSpacingSubheading: 0.15rem;
 
-   @media (min-width: $bp-tablet) {
-      --fontSizeSmall: calc(var(--fontSizeBase) * 0.818); // 18
+	--lineHeightDefault: 1.375; // 22/16
+	--lineHeightH1: 1.2;
+	--lineHeightH2: 1.2;
+	--lineHeightH3: 1.3;
 
-   --fontSizeH1: 4.8rem; // 36
+	@media (min-width: $bp-tablet) {
+		--fontSizeBase: 2.2rem;
 
-      --letterSpacingDefault: -.03rem;
+		--fontSizeSmall: calc(var(--fontSizeBase) * 0.818); // 18
 
-      --lineHeightDefault: 1.6; // 28/20
-  }
+		--fontSizeH1: 4.8rem; // 36
+
+		--letterSpacingDefault: -.03rem;
+
+		--lineHeightDefault: 1.6; // 28/20
+	}
 }
