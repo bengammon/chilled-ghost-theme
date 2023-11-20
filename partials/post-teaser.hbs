@@ -1,18 +1,13 @@
 <article class="post-teaser {{post_class}} post-year-{{date format="Y"}}">
-    
-    <time class="post-teaser__meta" datetime="{{date format='MMMM DD, YYYY'}}">
-        <ul class="d--inline-flex list list--divided ml-0 font--alt text--size-tiny color--text-subtle">
-            <li>
-                {{date format="MMMM DD, YYYY"}}
-            </li>
-            <li>
-                {{#primary_tag}}
-		            <a class="tag" href="{{url}}" title="{{name}}">{{name}}</a>
-                {{/primary_tag}}
-            </li>
-        </ul> 
-    </time>
 
-    <h3 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a></h3>
+    <div class="post-teaser__content">
+
+        <h2 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a></h2>
+
+        <p class="post-teaser__excerpt">{{excerpt}}</p>
+
+    </div>
+
+    <div class="post-teaser__date">{{date format="MMM YYYY"}}</div>
 
 </article>

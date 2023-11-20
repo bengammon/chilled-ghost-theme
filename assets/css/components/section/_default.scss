@@ -7,7 +7,15 @@
     padding: 0 $spacing-3;
     position: relative;
 
+    @media (min-width: $bp-desktop) {
+        padding: 0;
+    }
+
     &--narrow {
         max-width: var(--contentWidthNarrow);
+    }
+
+    &--wide {
+        max-width: var(--contentWidthWide);
     }
 }

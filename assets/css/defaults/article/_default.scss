@@ -20,6 +20,9 @@ article {
     
             h1 {
                 margin: $spacing-2 0 $spacing-3;
+                
+                color: var(--colorTextProminent);
+                text-wrap: balance;
             }
         }
 

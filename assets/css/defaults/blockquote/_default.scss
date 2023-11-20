@@ -9,8 +9,7 @@ blockquote {
     margin-right: auto;
     padding-left: $spacing-5;
     position: relative;
-
-    color: var(--colorTextSubtle);
+    
     font-size: var(--fontSizeLarge);
 
     @media (min-width: $bp-tablet) {
