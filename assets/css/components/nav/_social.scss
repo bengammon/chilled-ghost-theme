@@ -15,5 +15,11 @@
 
     a {
         width: auto;
+
+        svg {
+            path {
+                stroke: var(--colorText);
+            }
+        }
     }
 }

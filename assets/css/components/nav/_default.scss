@@ -49,12 +49,15 @@
         width: 100%;
 
         background: transparent;
-        color: var(--colorText);
-        text-decoration-color: var(--colorText);
+        color: var(--colorTextInverted);
+        text-decoration-color: var(--colorTextInverted);
         text-decoration-thickness: 1px;
 
         @media (min-width: $bp-tablet) {
             padding: 0;
+            
+            color: var(--colorText);
+            text-decoration-color: var(--colorText);
         }
 
         svg {
@@ -65,7 +68,11 @@
             }
 
             path {
-                stroke: var(--colorText);
+                stroke: var(--colorTextInverted);
+
+                @media (min-width: $bp-tablet) {                    
+                    stroke: var(--colorText);
+                }
             }
         }
 
