@@ -16,7 +16,7 @@
         border: $border-width solid var(--colorBorder);
         border-left-color: transparent;
         border-right-color: transparent;
-        background-color: transparent;
+        background-color: var(--colorBorder);
 
         @media (min-width: $bp-tablet) {
             border-color: var(--colorBorder);
@@ -36,5 +36,11 @@
             background-color: var(--colorBlack);
             border: 0;
         }
+    }
+
+    .post-teaser {
+        flex-wrap: wrap;
+        gap: $spacing-1;
+        margin-bottom: 0;
     }
 }
