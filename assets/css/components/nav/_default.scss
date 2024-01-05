@@ -19,13 +19,6 @@
         margin: 0;
         padding: $spacing-1 0;
         position: relative;
-
-        &.nav-current {
-            a {
-                color: var(--colorTextSubtle);
-                text-decoration: line-through;
-            }
-        }
     }
 
     .header__nav & {
@@ -58,6 +51,17 @@
             color: var(--colorPrimary);
             text-decoration: none;
             
+            svg {
+                path {
+                    stroke: var(--colorPrimary);
+                }
+            }
+        }
+
+        &.nav-current {
+            color: var(--colorPrimary);
+            text-decoration: none;
+
             svg {
                 path {
                     stroke: var(--colorPrimary);

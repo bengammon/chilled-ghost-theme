@@ -1,13 +1,19 @@
-<article class="post-teaser {{post_class}} post-year-{{date format="Y"}}">
+<article class="{{#has tag="note"}}format-note{{else}}format-standard{{/has}} post-teaser {{post_class}}">
+
+    <a class="post-teaser__date" href="{{url}}">{{date format="dddd, D MMMM YYYY"}}</a>
+
+    {{#has tag="note"}}
 
     <div class="post-teaser__content">
-
-        <h2 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a></h2>
-
-        <p class="post-teaser__excerpt">{{excerpt}}</p>
-
+        {{content}}
     </div>
 
-    <div class="post-teaser__date">{{date format="MMM YYYY"}}</div>
+    {{else}}
+
+    <h2 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a></h2>
+
+    {{#match custom_excerpt}}<p class="post-teaser__excerpt">{{custom_excerpt}}</p>{{/match}}
+    
+    {{/has}}    
 
 </article>

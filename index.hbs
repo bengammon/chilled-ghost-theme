@@ -12,20 +12,4 @@
 
     </section>
 
-    <section class="section section--narrow">
-
-        <h2 class="subheading">Tags</h2>
-
-        {{#get "tags" limit="all"}}
-        <ul class="list list--divided">
-            {{#foreach tags}}
-            <li>
-                <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
-            </li>
-            {{/foreach}}
-        </ul>
-        {{/get}}
-
-    </section>
-
 </main>

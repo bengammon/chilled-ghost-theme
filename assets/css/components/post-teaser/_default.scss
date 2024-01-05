@@ -5,19 +5,11 @@
 .post-teaser {
     align-items: baseline;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: $spacing-1;
     justify-content: space-between;
-    margin: 0 auto $spacing-5;
+    margin: 0 auto $spacing-6;
     width: 100%;
-
-    @media (min-width: $bp-tablet) {
-        flex-wrap: nowrap;
-        gap: $spacing-5;
-    }
-
-    &__content {
-    }
 
     &__heading {
         margin: 0 0 $spacing-1;
@@ -26,16 +18,25 @@
     &__title {
         color: var(--colorTextProminent);
         font-weight: var(--fontWeightBold);
-        font-size: var(--fontSizeBase);
+        font-size: var(--fontSizeH2);
         line-height: var(--lineHeightH3);
     }
 
+    &__content,
     &__excerpt {
     }
 
     &__date {
         flex-shrink: 0;
 
-        color: var(--colorTextSubtle);
+        color: var(--colorPrimary);
+        font-size: var(--fontSizeSmall);
+        text-decoration: none;
+    }
+
+    &.format-note {
+        .post-teaser__heading {
+            display: none;
+        }
     }
 }

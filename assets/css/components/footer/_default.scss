@@ -7,13 +7,9 @@
     width: 100%;
 
     @media (min-width: $bp-tablet) {
-        padding: $spacing-5 $spacing-3;
-    }
-
-    @media (min-width: $bp-desktop) {
         margin: 0 auto;
         max-width: var(--contentWidthNarrow);
-        padding: $spacing-5 0;
+        padding: $spacing-4 0;
     }
 
     a {
