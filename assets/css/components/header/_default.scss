@@ -5,38 +5,40 @@
 .header {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: $spacing-3;
+    padding: $spacing-3 $spacing-3 0;
     width: 100%;
-
-    font-size: var(--fontSizeSmall);
+    z-index: $z-index-front;
 
     @media (min-width: $bp-tablet) {
-        padding: $spacing-4 $spacing-3;
-    }
-
-    @media (min-width: $bp-desktop) {
         margin: 0 auto;
         max-width: var(--contentWidthNarrow);
-        padding: $spacing-4 0;
+        padding: $spacing-4 0 0;
     }
 
     &__site-info {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
+        gap: $spacing-3;
+        width: 100%;
+
+        @media (min-width: $bp-tablet) {
+            gap: $spacing-4;
+        }
     }
 
     &__site-logo {
         display: block;
-        height: 4.8rem;
-        margin-right: .8rem;
-        overflow: hidden;
+        flex-shrink: 0;
+        height: var(--headerSiteLogoDimensions);
         position: relative;
-        width: 4.8rem;
-        z-index: $z-index-front;
+        width: var(--headerSiteLogoDimensions);
 
-        @media (min-width: $bp-tablet) {
-            margin-right: $spacing-5;
+        img {
+            border-radius: 50%;
+ 
+            box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
         }
 
         svg {
@@ -71,33 +73,17 @@
     }
 
     &__site-title {
-        display: none;
         flex: none;
         position: relative;
         z-index: $z-index-front;
 
+        font-size: var(--fontSizeH2);
+        font-weight: var(--fontWeightBold);
         text-decoration: none;
     }
 
-    &__nav {
-        bottom: 0;
-        left: 0;
-        position: fixed;
-        right: 0;
-        z-index: $z-index-nav;
-
-        background-color: var(--colorHeaderNavBg);
-
-        backdrop-filter: blur(4px);
-
-        @media (min-width: $bp-tablet) {
-            position: relative;
-            align-items: center;
-            display: flex;
-            height: 90%;
-    
-            background-color: transparent;   
-        }
+    &__site-strapline {
+        font-size: var(--fontSizeSmall);
     }
 }
 

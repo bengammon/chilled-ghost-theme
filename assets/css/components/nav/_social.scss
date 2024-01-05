@@ -5,6 +5,10 @@
 .nav--social {
     display: flex;
 
+    @media (min-width: $bp-tablet) {
+        gap: $spacing-1;
+    }
+
     li {
         margin-right: $spacing-4;
 

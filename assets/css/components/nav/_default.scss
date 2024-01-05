@@ -5,7 +5,12 @@
 .nav {
     @include list-reset;
     display: flex;
+    gap: $spacing-3;
     height: 100%;
+
+    @media (min-width: $bp-tablet) {
+        gap: $spacing-5;
+    }
 
     li {
         align-items: center;
@@ -14,14 +19,6 @@
         margin: 0;
         padding: $spacing-1 0;
         position: relative;
-
-        @media (min-width: $bp-tablet) {
-            margin-right: $spacing-5;
-        }
-
-        &:last-child {
-            margin-right: 0;
-        }
 
         &.nav-current {
             a {
@@ -34,9 +31,7 @@
     .header__nav & {
         li {
             &:first-child {
-                @media (min-width: $bp-tablet) {
-                    display: none;
-                }
+                display: none;
             }
         }
     }
@@ -44,35 +39,18 @@
     a {
         align-items: center;
         display: flex;
+        gap: $spacing-1;
         justify-content: center;
-        padding: $spacing-3 0;
         width: 100%;
 
         background: transparent;
-        color: var(--colorTextInverted);
-        text-decoration-color: var(--colorTextInverted);
+        color: var(--colorText);
+        text-decoration-color: var(--colorText);
         text-decoration-thickness: 1px;
 
-        @media (min-width: $bp-tablet) {
-            padding: 0;
-            
-            color: var(--colorText);
-            text-decoration-color: var(--colorText);
-        }
-
         svg {
-            margin-right: $spacing-1;
-
-            @media (min-width: $bp-tablet) {
-                margin-right: $spacing-1;
-            }
-
             path {
-                stroke: var(--colorTextInverted);
-
-                @media (min-width: $bp-tablet) {                    
-                    stroke: var(--colorText);
-                }
+                stroke: var(--colorText);
             }
         }
 

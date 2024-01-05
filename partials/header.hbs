@@ -1,17 +1,19 @@
 <header class="header" role="banner">
     <div class="header__site-info">
         <a class="header__site-logo" href="/">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48 24c0 13.2548-10.7452 24-24 24S0 37.2548 0 24 10.7452 0 24 0c10.4498 0 19.3396 6.67846 22.6344 16H24c-4.4183 0-8 3.5817-8 8 0 4.4182 3.5817 8 8 8 4.4182 0 8-3.5818 8-8 0-1.4572-.3896-2.8234-1.0702-4h16.7384c.2182 1.3008.3318 2.6372.3318 4Z" fill="#000"/></svg>
+            <img src="{{asset 'images/me.jpg'}}" />
+
+            {{!-- <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48 24c0 13.2548-10.7452 24-24 24S0 37.2548 0 24 10.7452 0 24 0c10.4498 0 19.3396 6.67846 22.6344 16H24c-4.4183 0-8 3.5817-8 8 0 4.4182 3.5817 8 8 8 4.4182 0 8-3.5818 8-8 0-1.4572-.3896-2.8234-1.0702-4h16.7384c.2182 1.3008.3318 2.6372.3318 4Z" fill="#000"/></svg> --}}
         </a>
 
-        <a class="header__site-title" href="/">Ben Gammon</a>
+        <div class="header__site-copy">
+            <a class="header__site-title" href="/">Ben Gammon</a>
+
+            <p class="header__site-strapline">Designing and building cool stuff for the games industry.</p>
+        </div>
     </div>
 
-    <nav class="header__nav nav-container">
-        {{> navigation-static}}
-    </nav>
-
-    <div class="header__social">
+    {{!-- <div class="header__social">
         {{> social}}
-    </div>
+    </div> --}}
 </header>

@@ -1,0 +1,25 @@
+/* ==========================================================================
+   #NAV-CONTAINER/DEFAULT
+   ========================================================================== */
+
+.nav-container {
+    align-items: center;
+    border-bottom: var(--borderWidth) solid var(--colorBorder);
+    display: flex;
+    padding: $spacing-3;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: $z-index-nav;
+
+    background-color: var(--colorHeaderNavBg);
+    font-size: var(--fontSizeSmall);
+
+    backdrop-filter: blur(4px);
+
+    @media (min-width: $bp-tablet) {
+        margin: 0 auto;
+        max-width: var(--contentWidthNarrow);
+        padding: $spacing-3 0;
+    }
+}
