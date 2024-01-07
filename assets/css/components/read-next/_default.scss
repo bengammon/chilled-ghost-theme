@@ -2,3 +2,10 @@
    #READ-NEXT/DEFAULT
    ========================================================================== */
 
+.read-next {
+    .post-teaser {
+        &__title {
+            font-size: var(--fontSizeH3);
+        }
+    }
+}
