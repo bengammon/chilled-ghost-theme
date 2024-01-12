@@ -7,36 +7,29 @@
 blockquote {
     margin-left: auto;
     margin-right: auto;
-    padding-left: $spacing-5;
+    padding-left: $spacing-4;
     position: relative;
-    
-    font-size: var(--fontSizeLarge);
-
-    @media (min-width: $bp-tablet) {
-        padding-left: $spacing-6;
-    } 
 
     &:before {
-        content: "“";
-        left: 2rem;
+        bottom: 0;
+        content: "";
+        left: 0;
         position: absolute;
         top: 0;
+        width: .2rem;
 
-        @media (min-width: $bp-tablet) {
-            left: 5.2rem;
-        }  
+        background: var(--colorBorder);
     }
-
 
     a {
         color: inherit;
     }
 
     p {
-        font-size: var(--fontSizeLarge);
+        font-style: italic;
     }
 
     footer {
-        margin-top: $spacing-3;
+        margin-top: 0;
     }
 }
