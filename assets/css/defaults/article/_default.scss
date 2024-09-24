@@ -15,6 +15,10 @@ article {
     }
 
     section {
+        &:first-of-type {
+            margin-top: 0;
+        }
+        
         header {
             margin-bottom: $content-vertical-spacing;
     
