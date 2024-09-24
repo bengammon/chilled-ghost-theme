@@ -31,6 +31,14 @@
         @include text-heading('H3');
     }
 
+    &--gradient {
+        display: inline-block;
+
+        color: transparent;
+        background: linear-gradient(90deg, var(--colorPrimary) 0%, var(--colorPrimaryDark) 100%);
+        background-clip: text;
+    }
+
     &--line-through { text-decoration: line-through; }
     &--subheading {
         @include text-subheading;
@@ -69,7 +77,7 @@
 
     &--weight {
         &-bold {
-            font-weight: var(--fontWeightBold);
+            font-weight: var(--fontWeightSemiBold);
         }
 
         &-normal {

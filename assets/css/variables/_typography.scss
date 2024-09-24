@@ -5,44 +5,44 @@
 $font-family: 'Inter', sans-serif;
 
 :root {
-	--fontSizeBase: 1.8rem;
-	--fontSizeBaseVariable: clamp(1.8rem, calc(0.8rem + 0.98vw), 2.2rem);
+	--fontSizeBase: 1.6rem;
+	--fontSizeBaseEm: 1.6em;
 
 	--fontSizeBlockquote: var(--fontSizeLarge);
 	--fontSizeCode: .94em;
-	--fontSizeH1: calc(var(--fontSizeBase) * 2); // 36 <-- For headings
-	--fontSizeH2: calc(var(--fontSizeBase) * 1.5); // 27
+	--fontSizeH1: 2.8rem;
+	--fontSizeH2: 2.2rem;
 	--fontSizeH3: var(--fontSizeBase);
-	--fontSizeLarge: calc(var(--fontSizeBase) * 1.333); // 24
-	--fontSizeSmall: calc(var(--fontSizeBase) * 0.888); // 16
-	--fontSizeTiny: calc(var(--fontSizeBase) * 0.666); // 12
+	--fontSizeLarge: 1.8rem;
+	--fontSizeSmall: 1.4rem;
+	--fontSizeTiny: 1.2rem;
 
-	--fontWeightLight: 300;
 	--fontWeightDefault: 400;
-	--fontWeightBold: 700;
-	--fontWeightBlack: 900;
-	--fontWeightH1: var(--fontWeightBold);
-	--fontWeightH2: var(--fontWeightBold);
-	--fontWeightH3: var(--fontWeightBold);
+	--fontWeightSemiBold: 600;
+	--fontWeightH1: var(--fontWeightSemiBold);
+	--fontWeightH2: var(--fontWeightSemiBold);
+	--fontWeightH3: var(--fontWeightSemiBold);
 
-	--letterSpacingDefault: -.011rem;
-	--letterSpacingH1: -.1rem;
-	--letterSpacingSubheading: 0.15rem;
+	--letterSpacingDefault: 0;
+	--letterSpacingHeading: -.08rem;
+	--letterSpacingH1: var(--letterSpacingHeading);
+	--letterSpacingH2: var(--letterSpacingHeading);
+	--letterSpacingH3: var(--letterSpacingDefault);
 
-	--lineHeightDefault: 1.375; // 22/16
-	--lineHeightH1: 1.2;
+	--lineHeightDefault: 1.375;
+	--lineHeightH1: 1.3;
 	--lineHeightH2: 1.2;
-	--lineHeightH3: 1.3;
+	--lineHeightH3: var(--lineHeightDefault);
 
 	@media (min-width: $bp-tablet) {
-		--fontSizeBase: 2rem;
+		--fontSizeBase: 1.8rem;
+		--fontSizeBaseEm: 1.8em;
+		--fontSizeH1: 3.6rem;
+		--fontSizeH2: 2.8rem;
+		--fontSizeLarge: 2rem;
+		--fontSizeSmall: 1.6rem;
+		--fontSizeTiny: 1.4rem;
 
-		--fontSizeSmall: calc(var(--fontSizeBase) * 0.818); // 18
-
-		--fontSizeH1: 4.8rem; // 36
-
-		--letterSpacingDefault: -.03rem;
-
-		--lineHeightDefault: 1.6; // 28/20
+		--lineHeightDefault: 1.6;
 	}
 }

@@ -37,34 +37,34 @@
         width: 100%;
 
         background: transparent;
-        color: var(--colorText);
-        text-decoration-color: var(--colorText);
+        color: var(--colorTextSubtle);
+        text-decoration-color: var(--colorTextSubtle);
         text-decoration-thickness: 1px;
 
         svg {
             path {
-                stroke: var(--colorText);
+                stroke: var(--colorTextSubtle);
             }
         }
 
         &:hover {
-            color: var(--colorPrimary);
+            color: var(--colorText);
             text-decoration: none;
             
             svg {
                 path {
-                    stroke: var(--colorPrimary);
+                    stroke: var(--colorText);
                 }
             }
         }
 
         &.nav-current {
-            color: var(--colorPrimary);
+            color: var(--colorText);
             text-decoration: none;
 
             svg {
                 path {
-                    stroke: var(--colorPrimary);
+                    stroke: var(--colorText);
                 }
             }
         }

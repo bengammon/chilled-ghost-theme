@@ -5,26 +5,21 @@
 .header {
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: $spacing-3 $spacing-3 0;
+    padding: 0 $spacing-3;
     width: 100%;
     z-index: $z-index-front;
 
-    @media (min-width: $bp-tablet) {
-        margin: 0 auto;
-        max-width: var(--contentWidthNarrow);
-        padding: $spacing-4 0 0;
-    }
-
     &__site-info {
-        align-items: flex-start;
+        align-items: center;
         display: flex;
         gap: $spacing-3;
         width: 100%;
+        
+        text-decoration: none;
 
         @media (min-width: $bp-tablet) {
-            gap: $spacing-4;
+            gap: $spacing-3;
         }
     }
 
@@ -41,20 +36,46 @@
             box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
         }
 
-        svg {
-            height: 100%;
-            width: 100%;
+        // svg {
+        //     height: 100%;
+        //     width: 100%;
 
-            fill: var(--colorTextProminent);
+        //     // fill: var(--colorTextProminent);
 
+        //     transform: rotate(0deg);
+        //     animation-name: turntableSpin;
+        //     animation-duration: 3s;
+        //     animation-iteration-count: infinite;
+        //     animation-timing-function: linear;
+
+        //     path {
+        //         fill: inherit;
+        //     }
+        // }
+
+        .record {
             transform: rotate(0deg);
+            transform-origin: 50%;
+            animation-name: turntableSpin;
             animation-duration: 3s;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
+        }
 
-            path {
-                fill: inherit;
-            }
+        .turntable {
+            fill: var(--colorGrey9);
+        }
+
+        .power {
+            fill: springgreen;
+        }
+
+        .vinyl {
+            fill: var(--colorGrey7);
+        }
+
+        .label {
+            fill: var(--colorTextProminent);
         }
 
         &:hover {
@@ -72,19 +93,30 @@
         }
     }
 
+    &__site-copy {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-2;
+    }
+
     &__site-title {
         flex: none;
+        margin: 0;
         position: relative;
         z-index: $z-index-front;
 
         color: var(--colorTextProminent);
-        font-size: var(--fontSizeH2);
-        font-weight: var(--fontWeightBold);
-        text-decoration: none;
+        font-size: inherit;
+        font-weight: var(--fontWeightSemiBold);
+        line-height: 1;
     }
 
     &__site-strapline {
-        font-size: var(--fontSizeSmall);
+        margin: 0;
+
+        color: var(--colorTextSubtle);
+        font-size: inherit;
+        line-height: 1;
     }
 }
 

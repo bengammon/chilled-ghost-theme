@@ -7,10 +7,6 @@
     padding: 0 $spacing-3;
     position: relative;
 
-    @media (min-width: $bp-tablet) {
-        padding: 0;
-    }
-
     &--narrow {
         @media (min-width: $bp-tablet) {
             max-width: var(--contentWidthNarrow);

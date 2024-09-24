@@ -1,19 +1,22 @@
 <header class="header" role="banner">
-    <div class="header__site-info">
-        <a class="header__site-logo" href="/">
-            <img src="{{asset 'images/me.jpg'}}" />
+    <a class="header__site-info" href="/">
+        <div class="header__site-logo">
+            {{!-- <img src="{{asset 'images/me.jpg'}}" /> --}}
 
             {{!-- <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M48 24c0 13.2548-10.7452 24-24 24S0 37.2548 0 24 10.7452 0 24 0c10.4498 0 19.3396 6.67846 22.6344 16H24c-4.4183 0-8 3.5817-8 8 0 4.4182 3.5817 8 8 8 4.4182 0 8-3.5818 8-8 0-1.4572-.3896-2.8234-1.0702-4h16.7384c.2182 1.3008.3318 2.6372.3318 4Z" fill="#000"/></svg> --}}
-        </a>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="none"><g clip-path="url(#a)"><rect class="turntable" width="72" height="72" fill="#000" rx="5"/><circle class="power" cx="63" cy="63" r="3" fill="#000"/><g class="record"><circle class="vinyl" cx="36" cy="36" r="28" fill="#fff"/><path class="label" fill="#000" fill-rule="evenodd" d="M46 36c0 5.5228-4.4772 10-10 10s-10-4.4772-10-10 4.4772-10 10-10c4.3541 0 8.0582 2.7827 9.431 6.6667H36c-1.8409 0-3.3333 1.4924-3.3333 3.3333S34.1591 39.3333 36 39.3333 39.3333 37.8409 39.3333 36c0-.1125-.0055-.2237-.0164-.3333h6.6776c.0037.1106.0055.2218.0055.3333Z" clip-rule="evenodd"/></g></g><defs><clipPath id="a"><path fill="#000" d="M0 0h72v72H0z"/></clipPath></defs></svg>
+
+        </div>
 
         <div class="header__site-copy">
-            <a class="header__site-title" href="/">Ben Gammon</a>
+            <p class="header__site-title">Ben Gammon</p>
 
-            <p class="header__site-strapline">Designing and building cool stuff for the games industry.</p>
+            <p class="header__site-strapline">Creative Developer</p>
         </div>
-    </div>
+    </a>
 
-    {{!-- <div class="header__social">
+    <div class="header__social">
         {{> social}}
-    </div> --}}
+    </div>
 </header>

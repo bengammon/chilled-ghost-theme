@@ -4,12 +4,21 @@
 
 .gh {
     &-viewport {
+        align-items: center;
         display: flex;
         flex-direction: column;
         min-height: 100%;
     }
 
     &-main {
+        display: flex;
         flex: 1;
+        flex-direction: column;
+        max-width: var(--contentWidth);
+        padding: $spacing-5 0;
+
+        & > main {
+            flex: 1;
+        }
     }
 }

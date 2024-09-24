@@ -4,7 +4,7 @@
 
 :root {   
    --imageAlertBg: var(--imageBackground);
-   --imageBackground: none;
+   --imageBackground: url('/assets/images/bg-noise-tile.png');
    --imageBookmarkBg: var(--imageBackground);
    --imageSectionFeatureBg: var(--imageBackground);
 }
