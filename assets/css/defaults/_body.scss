@@ -17,13 +17,13 @@ body {
     height: 100%;
     margin: 0;
 
-    background-attachment: fixed;
     background-color: var(--colorBackground);
     background-image: var(--imageBackground);
     background-repeat: repeat;
     color: var(--colorText);
     font-family: $font-family;
-    font-size: var(--fontSizeBase); /* 1. */
+    font-feature-settings: "ss03";
+    font-size: var(--fontSizeBaseEm); /* 1. */
     font-weight: var(--fontWeightDefault);
     letter-spacing: var(--letterSpacingDefault);
     line-height: var(--lineHeightDefault);

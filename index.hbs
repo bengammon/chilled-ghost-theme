@@ -2,7 +2,14 @@
 
 <main role="main">
 
-    <section class="section section--narrow">
+    {{#is "home"}}
+    {{!-- <section class="section">
+        <h1><span class="text--gradient">Hi, I’m Ben.</span><br><span class="color--text-subtle">Welcome to my website.</span></h1>
+        <p>I'€m the founder &amp; design lead at <a href="#">Etch</a>, a design &amp; engineering agency that works with partners such as Miro, Plain and Morning Brew to transform their creative ideas into bulletproof digital experiences.</p>
+    </section> --}}
+    {{/is}}
+
+    <section class="section">
         
         {{#get "posts" include="tags" limit="10"}}
             {{#foreach posts}}

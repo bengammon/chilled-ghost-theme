@@ -14,21 +14,20 @@
 
 </head>
 <body class="{{body_class}}">
+
 <div class="gh-viewport">
+    <main class="gh-main">
 
-{{> header}}
+        {{> header}}
 
-{{> navigation-static}}
+        {{> navigation-static}}
 
-<main class="gh-main">
+        {{{body}}}
+        {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
 
-    {{{body}}}
-    {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{> footer}}
 
-</main>
-
-{{> footer}}
-
+    </main>
 </div>
 
 {{!-- <foot> --}}

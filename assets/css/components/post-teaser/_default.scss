@@ -17,7 +17,7 @@
 
     &__title {
         color: var(--colorTextProminent);
-        font-weight: var(--fontWeightBold);
+        font-weight: var(--fontWeightSemiBold);
         font-size: var(--fontSizeH2);
         line-height: var(--lineHeightH3);
     }
@@ -29,7 +29,7 @@
     &__date {
         flex-shrink: 0;
 
-        color: var(--colorPrimary);
+        color: var(--colorTextSubtle);
         font-size: var(--fontSizeSmall);
         text-decoration: none;
     }

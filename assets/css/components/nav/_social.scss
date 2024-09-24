@@ -4,25 +4,19 @@
 
 .nav--social {
     display: flex;
-
-    @media (min-width: $bp-tablet) {
-        gap: $spacing-1;
-    }
+    gap: $spacing-2;
 
     li {
-        margin-right: $spacing-4;
-
-        @media (min-width: $bp-tablet) {
-            margin-right: $spacing-2;
-        }
+        padding: 0;
     }
 
     a {
+        padding: $spacing-1;
         width: auto;
 
         svg {
             path {
-                stroke: var(--colorText);
+                stroke: var(--colorTextSubtle);
             }
         }
     }
