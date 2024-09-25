@@ -1,19 +1,7 @@
-<article class="{{#has tag="note"}}format-note{{else}}format-standard{{/has}} post-teaser {{post_class}}">
+<article class="post-teaser {{post_class}}">
+
+    <h3 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a></h3>
 
     <a class="post-teaser__date" href="{{url}}">{{date format="dddd, D MMMM YYYY"}}</a>
-
-    {{#has tag="note"}}
-
-    <div class="post-teaser__content">
-        {{content}}
-    </div>
-
-    {{else}}
-
-    <h2 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a></h2>
-
-    {{#match custom_excerpt}}<p class="post-teaser__excerpt">{{custom_excerpt}}</p>{{/match}}
-    
-    {{/has}}    
 
 </article>

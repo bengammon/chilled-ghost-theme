@@ -10,8 +10,22 @@
     {{/is}}
 
     <section class="section">
+
+        <h2 class="mb-2">Technical posts</h2>
+        <p class="mb-5 text--size-small text--color-subtle">Work-related posts around design and development.</p>
         
-        {{#get "posts" include="tags" limit="10"}}
+        {{#get "posts" include="tags" filter="tags:-note" limit="5"}}
+            {{#foreach posts}}
+                {{> post-teaser}}
+            {{/foreach}}
+        {{/get}}
+
+        <hr class="mb-6 mt-6">
+
+        <h2 class="mb-2">Recent notes</h2>
+        <p class="mb-5 text--size-small text--color-subtle">Random thoughts and personal stuff.</p>
+
+        {{#get "posts" include="tags" filter="tags:note" limit="5"}}
             {{#foreach posts}}
                 {{> post-teaser}}
             {{/foreach}}

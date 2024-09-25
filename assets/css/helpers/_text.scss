@@ -71,8 +71,13 @@
         }
     }
 
-    &--prominent {
-        color: var(--colorTextProminent);
+    &--color {
+        &-prominent {
+            color: var(--colorTextProminent);
+        }
+        &-subtle {
+            color: var(--colorTextSubtle);
+        }
     }
 
     &--weight {

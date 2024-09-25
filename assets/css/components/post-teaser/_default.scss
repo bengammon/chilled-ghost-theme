@@ -8,7 +8,7 @@
     flex-direction: column;
     gap: $spacing-1;
     justify-content: space-between;
-    margin: 0 auto $spacing-6;
+    margin: 0 auto $spacing-5;
     width: 100%;
 
     &__heading {
@@ -18,7 +18,7 @@
     &__title {
         color: var(--colorTextProminent);
         font-weight: var(--fontWeightSemiBold);
-        font-size: var(--fontSizeH2);
+        font-size: var(--fontSizeH3);
         line-height: var(--lineHeightH3);
     }
 
@@ -32,11 +32,5 @@
         color: var(--colorTextSubtle);
         font-size: var(--fontSizeSmall);
         text-decoration: none;
-    }
-
-    &.format-note {
-        .post-teaser__heading {
-            display: none;
-        }
     }
 }
