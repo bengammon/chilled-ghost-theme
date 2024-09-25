@@ -97,6 +97,8 @@
         display: flex;
         flex-direction: column;
         gap: $spacing-2;
+
+        font-size: var(--fontSizeSmall);
     }
 
     &__site-title {
