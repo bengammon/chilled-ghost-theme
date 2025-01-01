@@ -1,0 +1,31 @@
+/* ==========================================================================
+   #BLUR/DEFAULT
+   ========================================================================== */
+
+.blur {
+    bottom: 0;
+    height: 200px;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+    &:before {
+        content: "";
+        inset: 0;
+        display: block;
+        backdrop-filter: blur(4px) saturate(1.2);
+        mask-image: linear-gradient(rgba(#000, 0), rgba(#000, .9) 80%, #000);
+        position: absolute;
+        pointer-events: none;
+    }
+
+    &:after {
+        content: "";
+        inset: 0;
+        pointer-events: none;
+        position: absolute;
+
+        background: linear-gradient(0deg, rgba(22,22,22,1) 0%, rgba(22,22,22,0) 80%);
+    }
+}
