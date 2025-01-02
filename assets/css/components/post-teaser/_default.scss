@@ -32,4 +32,8 @@
         font-size: var(--fontSizeSmall);
         text-decoration: none;
     }
+
+    & + & {
+        margin-top: $spacing-6;
+    }
 }
