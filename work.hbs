@@ -2,46 +2,22 @@
 
 <main role="main">
 
-    <section class="section section--narrow">
-
-        {{#get "posts" include="tags" filter="tags:-note" limit="all"}}
+    {{#get "posts" include="tags" filter="tags:[design,dev]" limit="all"}}
         
-        <h1 class="heading mb-3">Design &amp; Dev</h1>
+    <h1 class="heading mb-3">Work</h1>
 
-        <p>{{t "All {total} work-related posts around design and development.." total=pagination.total}}</p>
+    <p>{{t "All {total} design & dev posts I've written." total=pagination.total}}</p>
 
-        {{/get}}
+    {{/get}}
 
-    </section>
+    <h2 class="subheading mb-5 mt-6">Archive</h2>
 
-    <section class="section section--narrow">
+    {{#get "posts" include="tags" filter="tags:[design,dev]" limit="all" order="published_at desc"}}
 
-        <h2 class="subheading mb-5">Tags</h2>
+        {{#foreach posts}}
+            {{> post-teaser}}
+        {{/foreach}}
 
-        {{#get "tags" limit="all"}}
-        <ul class="list list--divided">
-            {{#foreach tags}}
-            <li>
-                <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
-            </li>
-            {{/foreach}}
-        </ul>
-        {{/get}}
-
-    </section>
-
-    <section class="section section--narrow">
-
-        <h2 class="subheading mb-5">Archive</h2>
-
-        {{#get "posts" include="tags" limit="all" order="published_at desc"}}
-
-            {{#foreach posts}}
-                {{> post-teaser}}
-            {{/foreach}}
-
-        {{/get}}
-
-    </section>
+    {{/get}}
 
 </main>
