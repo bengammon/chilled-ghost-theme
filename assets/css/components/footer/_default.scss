@@ -3,8 +3,11 @@
    ========================================================================== */
 
 .footer {
-    padding: 0 $spacing-3;
+    padding: $spacing-3 $spacing-3 0;
     width: 100%;
+    z-index: $z-index-front;
+    
+    border-top: 1px solid var(--colorGrey8);
 
     a {
         color: var(--colorTextSubtle);

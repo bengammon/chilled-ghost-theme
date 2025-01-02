@@ -5,16 +5,18 @@
 .header {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 $spacing-3;
     width: 100%;
     z-index: $z-index-front;
 
+    border-bottom: 1px solid var(--colorGrey8);
+
     &__site-info {
         align-items: center;
         display: flex;
         gap: $spacing-3;
-        width: 100%;
         
         text-decoration: none;
 
@@ -119,6 +121,10 @@
         color: var(--colorTextSubtle);
         font-size: inherit;
         line-height: 1;
+    }
+
+    &__nav {
+        width: 100%;
     }
 }
 

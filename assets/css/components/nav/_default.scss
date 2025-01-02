@@ -21,14 +21,6 @@
         position: relative;
     }
 
-    .header__nav & {
-        li {
-            &:first-child {
-                display: none;
-            }
-        }
-    }
-
     a {
         align-items: center;
         display: flex;
