@@ -7,18 +7,16 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+        margin: 0 auto;
         min-height: 100%;
+        max-width: var(--contentWidth);
+        padding: $spacing-5 0;
     }
 
     &-main {
-        display: flex;
         flex: 1;
-        flex-direction: column;
-        max-width: var(--contentWidth);
-        padding: $spacing-5 0;
-
-        & > main {
-            flex: 1;
-        }
+        margin-bottom: $spacing-7;
+        margin-top: $spacing-7;
+        padding: 0 $spacing-3;
     }
 }

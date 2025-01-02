@@ -1,28 +1,20 @@
 {{!< default}}
 
-<main>
+<article class="{{post_class}}">
 
-    <article class="{{post_class}}">
+    {{#post}}
 
-        <section class="section section--narrow">
+    <header>
 
-            {{#post}}
+        <h1>{{title}}</h1>
 
-            <header>
+        {{>date-published}}
+        {{>tags}}
 
-                <h1>{{title}}</h1>
+    </header>
 
-                {{>date-published}}
-                {{>tags}}
+    {{content}}
 
-            </header>
+    {{/post}}
 
-            {{content}}
-
-            {{/post}}
-
-        </section>
-
-    </article>
-
-</main>
+</article>

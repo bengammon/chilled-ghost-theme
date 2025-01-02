@@ -15,18 +15,20 @@
 <body class="{{body_class}}">
 
 <div class="gh-viewport">
-    <main class="gh-main">
 
-        {{> header}}
+    {{> header}}
+
+    <main class="gh-main">
 
         {{{body}}}
         {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
-
-        {{> footer}}
-
-        <div class="blur"></div>
-
+    
     </main>
+
+    {{> footer}}
+
+    <div class="blur"></div>
+
 </div>
 
 {{!-- <foot> --}}

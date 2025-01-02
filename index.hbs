@@ -1,24 +1,16 @@
 {{!< default}}
 
-<main role="main">
+{{#is "home"}}
+{{!-- <section class="section">
+    <h1><span class="text--gradient">Hi, I’m Ben.</span><br><span class="color--text-subtle">Welcome to my website.</span></h1>
+    <p>I'€m the founder &amp; design lead at <a href="#">Etch</a>, a design &amp; engineering agency that works with partners such as Miro, Plain and Morning Brew to transform their creative ideas into bulletproof digital experiences.</p>
+</section> --}}
+{{/is}}
 
-    {{#is "home"}}
-    {{!-- <section class="section">
-        <h1><span class="text--gradient">Hi, I’m Ben.</span><br><span class="color--text-subtle">Welcome to my website.</span></h1>
-        <p>I'€m the founder &amp; design lead at <a href="#">Etch</a>, a design &amp; engineering agency that works with partners such as Miro, Plain and Morning Brew to transform their creative ideas into bulletproof digital experiences.</p>
-    </section> --}}
-    {{/is}}
-
-    <section class="section">
-
-        <h1 class="heading mb-3">Life feed</h1>
-        
-        {{#get "posts" include="tags" filter="tags:life" limit="10"}}
-            {{#foreach posts}}
-                {{> post-social}}
-            {{/foreach}}
-        {{/get}}
-
-    </section>
-
-</main>
+<h1 class="heading mb-3">Life feed</h1>
+    
+{{#get "posts" include="tags" filter="tags:life" limit="10"}}
+    {{#foreach posts}}
+        {{> post-social}}
+    {{/foreach}}
+{{/get}}
