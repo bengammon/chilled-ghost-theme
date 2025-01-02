@@ -2,46 +2,34 @@
 
 <main role="main">
 
-    <section class="section section--narrow">
-
-        {{#get "posts" include="tags" limit="all"}}
+    {{#get "posts" include="tags" limit="all"}}
         
-        <h1 class="heading mb-3">Archive</h1>
+    <h1 class="heading mb-3">Archive</h1>
 
-        <p>{{t "All {total} posts I've written on this site since 2012." total=pagination.total}}</p>
+    <p>{{t "All {total} posts I've written on this site since 2012." total=pagination.total}}</p>
 
-        {{/get}}
+    {{/get}}
 
-    </section>
+    <h2 class="subheading mb-5 mt-6">Tags</h2>
 
-    <section class="section section--narrow">
+    {{#get "tags" limit="all"}}
+    <ul class="list list--divided">
+        {{#foreach tags}}
+        <li>
+            <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
+        </li>
+        {{/foreach}}
+    </ul>
+    {{/get}}
 
-        <h2 class="subheading mb-5">Tags</h2>
+    <h2 class="subheading mb-5 mt-6">Archive</h2>
 
-        {{#get "tags" limit="all"}}
-        <ul class="list list--divided">
-            {{#foreach tags}}
-            <li>
-                <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
-            </li>
-            {{/foreach}}
-        </ul>
-        {{/get}}
+    {{#get "posts" include="tags" limit="all" order="published_at desc"}}
 
-    </section>
+        {{#foreach posts}}
+            {{> post-teaser}}
+        {{/foreach}}
 
-    <section class="section section--narrow">
-
-        <h2 class="subheading mb-5">Archive</h2>
-
-        {{#get "posts" include="tags" limit="all" order="published_at desc"}}
-
-            {{#foreach posts}}
-                {{> post-teaser}}
-            {{/foreach}}
-
-        {{/get}}
-
-    </section>
+    {{/get}}
 
 </main>
