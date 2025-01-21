@@ -1,0 +1,17 @@
+{{!< default}}
+
+<main role="main">
+
+    {{#get "posts" include="tags" filter="tags:micro" limit="all"}}
+        
+    <h1 class="heading mb-3">Microblog</h1>
+
+    {{/get}}
+
+    {{#get "posts" include="tags" filter="tags:micro" limit="10"}}
+        {{#foreach posts}}
+            {{> post-social}}
+        {{/foreach}}
+    {{/get}}
+
+</main>

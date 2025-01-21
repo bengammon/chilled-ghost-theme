@@ -78,4 +78,24 @@
             @include text-heading(H1);
         }
     }
+
+    .post-year-2026 ~ .post-year-2026,
+    .post-year-2025 ~ .post-year-2025,
+    .post-year-2024 ~ .post-year-2024,
+    .post-year-2023 ~ .post-year-2023,
+    .post-year-2022 ~ .post-year-2022,
+    .post-year-2021 ~ .post-year-2021,
+    .post-year-2020 ~ .post-year-2020,
+    .post-year-2019 ~ .post-year-2019,
+    .post-year-2018 ~ .post-year-2018,
+    .post-year-2017 ~ .post-year-2017,
+    .post-year-2016 ~ .post-year-2016,
+    .post-year-2015 ~ .post-year-2015,
+    .post-year-2014 ~ .post-year-2014,
+    .post-year-2013 ~ .post-year-2013,
+    .post-year-2012 ~ .post-year-2012 {
+        .post-teaser__year {    
+            display: none;
+        }
+    }
 }

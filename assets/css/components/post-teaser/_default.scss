@@ -11,7 +11,7 @@
     width: 100%;
 
     &__heading {
-        margin: 0 0 $spacing-1;
+        margin-bottom: 0;
     }
 
     &__title {
@@ -19,6 +19,7 @@
         font-weight: var(--fontWeightSemiBold);
         font-size: var(--fontSizeH3);
         line-height: var(--lineHeightH3);
+        text-decoration: none;
     }
 
     &__content,
@@ -33,7 +34,27 @@
         text-decoration: none;
     }
 
+    &__year {
+        align-items: center;
+        display: flex;
+        gap: $spacing-2;
+        margin: $spacing-3 0;
+        position: relative;
+        width: 100%;
+
+        color: var(--colorTextSubtle);
+
+        &:after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            position: relative;
+
+            background: var(--colorGrey9);
+        }
+    }
+
     & + & {
-        margin-top: $spacing-6;
+        // margin-top: $spacing-6;
     }
 }
