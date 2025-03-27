@@ -4,7 +4,7 @@
 
 .badge {
     border-radius: 2rem;
-    padding: $spacing-1 $spacing-3 .5rem;
+    padding: var(--spacing1) var(--spacing3) .5rem;
     display: inline-block;
 
     background-color: var(--colorBadge);

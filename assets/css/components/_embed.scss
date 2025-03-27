@@ -9,12 +9,12 @@
 
 .embed {
     display: block;
-    margin-bottom: $spacing-3;
+    margin-bottom: var(--spacing3);
 }
 
     .embed__source {
         height: 0;
-        margin-bottom: $spacing-3;
+        margin-bottom: var(--spacing3);
         overflow: hidden;
         padding-bottom: 56.25%;
         position: relative;

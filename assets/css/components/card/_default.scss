@@ -3,13 +3,14 @@
    ========================================================================== */
 
 .card {
+    margin-bottom: var(--spacing4);
     position: relative;
 
     color: var(--colorText);
 
     &:after {
         content: "";
-        inset: -#{$spacing-2} -#{$spacing-3};
+        inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
         position: absolute;
         z-index: $z-index-under;
 
@@ -21,12 +22,12 @@
         @media (min-width: $bp-tablet) {
             border-color: var(--colorBorder);
             border-radius: $border-radius;
-            inset: -1.2rem -#{$spacing-3} -1.2rem;
+            inset: -1.2rem calc(var(--spacing3) * -1) -1.2rem;
         }
     }
 
     &__title {
-        margin-bottom: $spacing-1;
+        margin-bottom: var(--spacing1);
     }
 
     &--inverted {
@@ -40,7 +41,7 @@
 
     .post-teaser {
         flex-wrap: wrap;
-        gap: $spacing-1;
+        gap: var(--spacing1);
         margin-bottom: 0;
     }
 }

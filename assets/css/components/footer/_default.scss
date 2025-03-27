@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .footer {
-    padding: $spacing-3 $spacing-3 0;
+    padding: var(--spacing3) var(--spacing3) 0;
     width: 100%;
     z-index: $z-index-front;
     

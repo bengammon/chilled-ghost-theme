@@ -20,7 +20,7 @@ article {
             margin-bottom: $content-vertical-spacing;
     
             h1 {
-                margin: $spacing-2 0 $spacing-3;
+                margin: var(--spacing2) 0 var(--spacing3);
                 
                 color: var(--colorTextProminent);
                 text-wrap: balance;
@@ -35,11 +35,11 @@ article {
             }
     
             & + h2 {
-                padding-top: $spacing-5;
+                padding-top: var(--spacing5);
             }
     
             & + h3 {
-                margin-bottom: $spacing-2;
+                margin-bottom: var(--spacing2);
             }
         }
 

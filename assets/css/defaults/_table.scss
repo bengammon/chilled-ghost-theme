@@ -23,8 +23,8 @@ table {
 
     tr {
         display: block;
-        margin-bottom: $spacing-3;
-        padding-bottom: $spacing-3;
+        margin-bottom: var(--spacing3);
+        padding-bottom: var(--spacing3);
 
         @include themify($themes) {
             border-bottom: $table-border-width solid themed('color.border');

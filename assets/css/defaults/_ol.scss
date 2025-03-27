@@ -8,15 +8,15 @@
 
 ol {
     margin: 0;
-    margin-bottom: $spacing-3;
-    margin-left: $spacing-4;
+    margin-bottom: var(--spacing3);
+    margin-left: var(--spacing4);
     padding-left: 0;
 
     font-size: inherit;
 
     li {
-        padding-bottom: calc(#{$spacing-1} / 2);
-        padding-top: calc(#{$spacing-1} / 2);
+        padding-bottom: calc(var(--spacing1) / 2);
+        padding-top: calc(var(--spacing1) / 2);
 
         &::marker {
             color: var(--colorTextSubtle);

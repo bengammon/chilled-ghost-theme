@@ -28,17 +28,19 @@
 }
 
 .kg-bookmark-card {
+    margin-bottom: var(--spacing3);
     width: 100%;
 
     @include text-default;
 
     .kg-card + & {
-        margin-top: 0;
+        margin-bottom: var(--spacing3);
     }
 }
 
 .kg-embed-card {
     aspect-ratio: 16/9;
+    margin-bottom: var(--spacing3);
     width: 100%;
 
     > iframe {

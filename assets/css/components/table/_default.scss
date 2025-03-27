@@ -4,6 +4,6 @@
 
 .table {
     &__caption {
-        margin-bottom: $spacing-3;
+        margin-bottom: var(--spacing3);
     }
 }

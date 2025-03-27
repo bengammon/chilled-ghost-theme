@@ -5,11 +5,11 @@
 .nav {
     @include list-reset;
     display: flex;
-    gap: $spacing-3;
+    gap: var(--spacing3);
     height: 100%;
 
     @media (min-width: $bp-tablet) {
-        gap: $spacing-5;
+        gap: var(--spacing5);
     }
 
     li {
@@ -17,14 +17,14 @@
         display: flex;
         flex: 1;
         margin: 0;
-        padding: $spacing-1 0;
+        padding: var(--spacing1) 0;
         position: relative;
     }
 
     a {
         align-items: center;
         display: flex;
-        gap: $spacing-1;
+        gap: var(--spacing1);
         justify-content: center;
         width: 100%;
 

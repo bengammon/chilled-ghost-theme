@@ -10,14 +10,14 @@
         margin: 0 auto;
         min-height: 100%;
         max-width: var(--contentWidth);
-        padding: $spacing-5 0;
+        padding: var(--spacing5) 0;
     }
 
     &-main {
         flex: 1;
-        margin-bottom: $spacing-7;
-        margin-top: $spacing-7;
-        padding: 0 $spacing-3;
+        margin-bottom: var(--spacing7);
+        margin-top: var(--spacing7);
+        padding: 0 var(--spacing3);
         width: 100%;
     }
 }

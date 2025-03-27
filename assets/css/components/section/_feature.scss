@@ -3,12 +3,12 @@
    ========================================================================== */
 
 .section--feature {
-    margin-bottom: $spacing-7;
+    margin-bottom: var(--spacing7);
 
     .section__content {
         border-radius: $border-radius;
-        padding-bottom: $spacing-6;
-        padding-top: $spacing-6;
+        padding-bottom: var(--spacing6);
+        padding-top: var(--spacing6);
 
         background-color: var(--colorSectionFeatureBg);
         background-image: var(--imageSectionFeatureBg);

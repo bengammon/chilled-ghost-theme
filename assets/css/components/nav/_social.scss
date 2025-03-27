@@ -4,14 +4,14 @@
 
 .nav--social {
     display: flex;
-    gap: $spacing-2;
+    gap: var(--spacing2);
 
     li {
         padding: 0;
     }
 
     a {
-        padding: $spacing-1;
+        padding: var(--spacing1);
         width: auto;
 
         svg {

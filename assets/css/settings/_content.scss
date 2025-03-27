@@ -6,8 +6,8 @@
  * Content spacing
  */
 
-$content-gutter-small: $spacing-3;
-$content-gutter: $spacing-5;
+$content-gutter-small: var(--spacing3);
+$content-gutter: var(--spacing5);
 
 /**
  * Content Width

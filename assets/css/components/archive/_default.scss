@@ -4,7 +4,7 @@
 
 .archive {
     border-bottom: $border-width solid var(--colorBorder);
-    padding: $spacing-5 0;
+    padding: var(--spacing5) 0;
     position: relative;
 
     &:first-child {
@@ -21,7 +21,7 @@
     }
 
     &__year {
-        inset: $spacing-5 auto 0 0;
+        inset: var(--spacing5) auto 0 0;
 
         @media (min-width: $bp-tablet) {
             position: absolute;
@@ -30,7 +30,7 @@
         &-label {
             margin-bottom: 2.4rem;
             position: sticky;
-            top: $spacing-4;
+            top: var(--spacing4);
 
             @include text-heading(H2);
             color: var(--colorTextSubtle);
@@ -42,7 +42,7 @@
     }
 
     &__post-wrapper {
-        margin-bottom: $spacing-4;
+        margin-bottom: var(--spacing4);
 
         &:last-child {
             margin-bottom: 0;

@@ -17,7 +17,7 @@
 
     @media (min-width: $bp-tablet) {
         height: 90rem;
-        right: $spacing-6;
+        right: var(--spacing6);
         top: 100%;
         width: 90rem;
     

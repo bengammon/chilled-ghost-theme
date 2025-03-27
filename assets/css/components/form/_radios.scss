@@ -7,7 +7,7 @@
 
     &__item {
         display: inline-block;
-        margin-right: $spacing-3;
+        margin-right: var(--spacing3);
         position: relative;
     }
 

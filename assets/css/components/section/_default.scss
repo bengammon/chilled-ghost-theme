@@ -3,8 +3,8 @@
    ========================================================================== */
 
 .section {
-    margin: $spacing-7 auto;
-    padding: 0 $spacing-3;
+    margin: var(--spacing7) auto;
+    padding: 0 var(--spacing3);
     position: relative;
 
     &--narrow {

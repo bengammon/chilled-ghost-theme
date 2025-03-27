@@ -6,7 +6,7 @@
 
 .hint {
     display: block;
-    margin-bottom: $spacing-3;
+    margin-bottom: var(--spacing3);
 
     @include themify($themes) {
         color: themed('color.hint');

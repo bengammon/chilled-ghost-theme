@@ -5,7 +5,7 @@
 .nav-container {
     align-items: center;
     display: flex;
-    padding: $spacing-3 0;
+    padding: var(--spacing3) 0;
     position: relative;
     top: 0;
     width: 100%;
@@ -24,7 +24,7 @@
 
     &__backdrop {
         display: none;
-        inset: $spacing-1;
+        inset: var(--spacing1);
         position: absolute;
         z-index: var(--zIndexUnder);
 

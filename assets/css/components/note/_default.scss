@@ -16,6 +16,6 @@
     }
 
     > * {
-        margin-bottom: $spacing-4;
+        margin-bottom: var(--spacing4);
     }
 }

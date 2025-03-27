@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .alert {
+    margin-bottom: var(--spacing4);
     position: relative;
 
     color: var(--colorAlertText);
@@ -13,7 +14,7 @@
 
     &:after {
         content: "";
-        inset: -#{$spacing-2} -#{$spacing-3};
+        inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
         position: absolute;
         z-index: $z-index-under;
 
@@ -22,7 +23,7 @@
 
         @media (min-width: $bp-tablet) {
             border-radius: $border-radius;
-            inset: -#{$spacing-2} -#{$spacing-3};
+            inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
         }
     }
 

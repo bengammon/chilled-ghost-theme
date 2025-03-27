@@ -12,7 +12,7 @@ hr {
     display: block;
     grid-column: main-content;
     height: var(--borderWidth);
-    margin-top: 0;
+    margin: var(--spacing4) 0;
     width: 100%;
     
     background-color: var(--colorHR);

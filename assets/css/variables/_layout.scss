@@ -4,7 +4,7 @@
 
 :root {
    --gridGutter: 0;
-   --gridOffset: #{$spacing-3};
+   --gridOffset: var(--spacing3);
    --gridPrimary: [full-start]
                   var(--gridOffset)
                   [main-content-start]
@@ -14,11 +14,11 @@
                   [full-end];
 
    @media (min-width: $bp-tablet) {
-      --gridOffset: #{$spacing-5};
+      --gridOffset: var(--spacing5);
    }
 
    @media (min-width: var(--bpDesktopSmall)) {
-      --gridOffset: #{$spacing-5};
+      --gridOffset: var(--spacing5);
       --gridPrimary: 
             [full-start]
             var(--gridOffset)

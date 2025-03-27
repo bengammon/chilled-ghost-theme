@@ -18,7 +18,7 @@ figure {
     }
 
     figcaption {
-        padding-top: $spacing-2;
+        padding-top: var(--spacing2);
 
         color: var(--colorTextSubtle);
         font-size: var(--fontSizeSmall);
@@ -28,8 +28,8 @@ figure {
     &.kg-width-wide,
     &.kg-width-full {
         figcaption {
-            padding-left: $spacing-3;
-            padding-right: $spacing-3;
+            padding-left: var(--spacing3);
+            padding-right: var(--spacing3);
         }
     }
 }

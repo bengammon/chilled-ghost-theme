@@ -2,15 +2,6 @@
    #VARIABLES/SPACING
    ========================================================================== */
 
-$spacing-1: .4rem;
-$spacing-2: .8rem;
-$spacing-3: 1.6rem;
-$spacing-4: 2.4rem;
-$spacing-5: 3.2rem;
-$spacing-6: 6.4rem;
-$spacing-7: 9.6rem;
-$spacing-8: 19.2rem;
-
 // Used for creating spacing helper classes. Should always match variables above.
 $spacers: (
     0: 0,
@@ -23,3 +14,13 @@ $spacers: (
     7: 9.6rem,
     8: 19.2rem
 );
+
+:root {
+    --spacing1: .4rem;
+    --spacing2: .8rem;
+    --spacing3: 1.6rem;
+    --spacing4: 2.4rem;
+    --spacing5: 3.2rem;
+    --spacing6: 6.4rem;
+    --spacing7: 9.6rem;
+}

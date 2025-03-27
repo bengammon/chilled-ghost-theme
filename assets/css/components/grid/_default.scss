@@ -9,6 +9,6 @@
 .grid {
     display: grid;
 
-    gap: $spacing-5;
+    gap: var(--spacing5);
     grid-template-columns: repeat(4, 1fr);
 }

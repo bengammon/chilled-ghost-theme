@@ -3,6 +3,6 @@
    ========================================================================== */
 
 .form-group {
-    margin-bottom: $spacing-5;
+    margin-bottom: var(--spacing5);
     width: 100%;
 }

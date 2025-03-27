@@ -2,8 +2,8 @@
    #SECTION/SETTINGS
    ========================================================================== */
 
-$section-vertical-padding-mobile: $spacing-5;
-$section-vertical-padding: $spacing-6;
+$section-vertical-padding-mobile: var(--spacing5);
+$section-vertical-padding: var(--spacing6);
 
 $section-hero-brand-size: 16rem;
 $section-hero-brand-size-tablet: 20rem;

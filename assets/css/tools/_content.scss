@@ -12,13 +12,13 @@
 }
 
 @mixin content-default-margin {
-    margin-left: $spacing-3;
-    margin-right: $spacing-3;
+    margin-left: var(--spacing3);
+    margin-right: var(--spacing3);
 
     @media (min-width: $bp-tablet) {
-        max-width: calc(#{$content-width} - (#{$spacing-6} * 2));
-        margin-left: $spacing-6;
-        margin-right: $spacing-6;
+        max-width: calc(#{$content-width} - (var(--spacing6) * 2));
+        margin-left: var(--spacing6);
+        margin-right: var(--spacing6);
     }
 }
 
@@ -30,11 +30,11 @@
 }
 
 @mixin content-wide-margin {
-    margin-left: $spacing-3;
-    margin-right: $spacing-3;
+    margin-left: var(--spacing3);
+    margin-right: var(--spacing3);
 
     @media (min-width: $bp-tablet) {
-        margin-left: $spacing-6;
-        margin-right: $spacing-6;
+        margin-left: var(--spacing6);
+        margin-right: var(--spacing6);
     }
 }

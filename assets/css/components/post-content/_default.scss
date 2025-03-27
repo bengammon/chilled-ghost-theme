@@ -5,25 +5,25 @@
 .post-content {
     margin: 0 auto;
     max-width: $content-width-wide;
-    margin-bottom: $spacing-7;
+    margin-bottom: var(--spacing7);
 
     > * {
-        margin-bottom: $spacing-5;
+        margin-bottom: var(--spacing5);
 
         &:last-child {
             margin-bottom: 0;
         }
 
         & + h2 {
-            padding-top: $spacing-5;
+            padding-top: var(--spacing5);
         }
 
         & + h3 {
-            padding-top: $spacing-5;
+            padding-top: var(--spacing5);
         }
 
         & + h4 {
-            padding-top: $spacing-5;
+            padding-top: var(--spacing5);
         }
     
         &:not(.section):not(.kg-embed-card):not(.kg-width-wide):not(.kg-width-full):not(hr):not(.read-next):not(pre):not(.width-wide):not(.width-full):not(blockquote) {
@@ -66,7 +66,7 @@
         margin-top: 8rem;
 
         @media (min-width: var(--bpDesktopSmall)) {
-            width: calc(100% - calc(#{$spacing-6} * 2));
+            width: calc(100% - calc(var(--spacing6) * 2));
         }
 
         & + h2 {

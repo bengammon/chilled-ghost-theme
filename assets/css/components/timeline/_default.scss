@@ -25,7 +25,7 @@
 
     &__item {
         padding-left: 7.2rem;
-        margin-top: $spacing-5;
+        margin-top: var(--spacing5);
         position: relative;
 
         a {
