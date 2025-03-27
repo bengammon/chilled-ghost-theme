@@ -24,12 +24,12 @@
 
     <h2 class="subheading mb-5 mt-6">Archive</h2>
 
-    {{#get "posts" include="tags" limit="all" order="published_at desc"}}
-
-        {{#foreach posts}}
-            {{> post-teaser}}
-        {{/foreach}}
-
-    {{/get}}
+    <div class="archive">
+        {{#get "posts" include="tags" limit="all"}}
+            {{#foreach posts}}
+                {{> post-teaser}}
+            {{/foreach}}
+        {{/get}}
+    </div>
 
 </main>
