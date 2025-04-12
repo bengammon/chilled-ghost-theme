@@ -3,8 +3,8 @@
 <article class="{{post_class}}">
 
     {{#post}}
-
-    <header>
+    
+    <header class="width">
 
         <h1>{{title}}</h1>
 
@@ -13,7 +13,19 @@
 
     </header>
 
-    {{content}}
+    <div class="layout layout--article">
+
+        <aside class="article__sidebar gh-sidebar">
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <div class="gh-toc">
+                </div>
+            </div>
+        </aside>
+        
+        <div class="article__content gh-content">
+            {{content}}
+        </div>
 
     {{/post}}
 

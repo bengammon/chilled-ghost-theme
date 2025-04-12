@@ -7,3 +7,11 @@ $z-index-nav: 100;
 $z-index-default: 1;
 $z-index-under: -1;
 $z-index-back: -100;
+
+:root {
+    --zIndexFront: 1000;
+    --zIndexNav: 100;
+    --zIndexDefault: 1;
+    --zIndexUnder: -1;
+    --zIndexBack: -100;
+}

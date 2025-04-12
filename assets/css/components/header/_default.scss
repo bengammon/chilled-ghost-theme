@@ -7,11 +7,21 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 var(--spacing3);
-    width: 100%;
-    z-index: $z-index-front;
+    height: var(--headerHeight);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: var(--zIndexFront);
 
-    border-bottom: 2px solid var(--colorGrey9);
+    &:after {
+        content: "";
+        inset: 0 -50vw;
+        position: absolute;
+        z-index: var(--zIndexUnder);
+
+        background-color: var(--colorBackground);
+    }
 
     &__site-info {
         align-items: center;
@@ -124,7 +134,8 @@
     }
 
     &__nav {
-        width: 100%;
+        margin-inline-start: var(--spacing5);
+        margin-inline-end: auto;
     }
 }
 

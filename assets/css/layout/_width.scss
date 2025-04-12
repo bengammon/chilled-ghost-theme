@@ -3,6 +3,11 @@
    ========================================================================== */
 
 .width {
+    margin-inline: auto;
+    max-width: var(--maxWidth);
+    padding-inline: var(--viewportPadding);
+    width: 100%;
+    
     &-full {
         position: relative;
         width: 100vw;

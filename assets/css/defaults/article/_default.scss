@@ -2,7 +2,37 @@
    #ARTICLE
    ========================================================================== */
 
-article {
+article,
+.article {
+    header {
+        padding-block-start: var(--spacing6);
+        padding-block-end: var(--spacing7);
+    }
+
+    &__content {
+        grid-column: 1;
+        grid-row-start: 1;
+
+        @media (min-width: $bp-desktop-small) {
+            grid-column: 2;
+        }
+    }
+
+    &__sidebar {
+        align-self: flex-start;
+        display: none;
+        grid-column: 3;
+        margin-inline-start: auto;
+        max-width: var(--articleAsideMaxWidth);
+        position: sticky;
+        top: calc(var(--headerHeight) + var(--spacing7));
+        z-index: var(--zIndexFront);
+
+        @media (min-width: $bp-desktop-small) {
+            display: block;
+        }
+    }
+
     a {
         color: var(--colorText);
 

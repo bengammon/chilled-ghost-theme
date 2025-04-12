@@ -1,10 +1,10 @@
 /* ==========================================================================
-   #LAYOUT
+   #MAIN
    ========================================================================== */
 
-@import "variables";
-@import "default";
-
-@import "columns/all";
-@import "ghost";
-@import "width";
+main {
+    flex: 1;
+    margin-bottom: var(--spacing7);
+    margin-top: var(--headerHeight);
+    width: 100%;
+}

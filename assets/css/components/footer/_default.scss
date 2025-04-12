@@ -3,11 +3,9 @@
    ========================================================================== */
 
 .footer {
-    padding: var(--spacing3) var(--spacing3) 0;
-    width: 100%;
+    padding-block-start: var(--spacing3);
+    padding-block-end: var(--spacing5);
     z-index: $z-index-front;
-    
-    border-top: 2px solid var(--colorGrey9);
 
     a {
         color: var(--colorTextSubtle);

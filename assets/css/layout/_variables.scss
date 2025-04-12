@@ -1,0 +1,13 @@
+/* ==========================================================================
+   #LAYOUT/VARIABLES
+   ========================================================================== */
+
+:root {
+    --layoutArticleGrid: 1fr;
+    --layoutArticleMain: calc(72rem - var(--viewportPadding));
+    --layoutArticleSidebar: calc(34rem - var(--viewportPadding));
+
+    @media (min-width: $bp-desktop-small) {
+        --layoutArticleGrid: 1fr var(--layoutArticleMain) var(--layoutArticleSidebar) 1fr;
+    }
+}

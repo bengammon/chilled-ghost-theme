@@ -4,10 +4,8 @@
 import "../css/index.scss";
 
 // Import JS
-import menuOpen from "./menuOpen";
-import infiniteScroll from "./infiniteScroll";
+import tocBot from "./tocbot.min";
 
 
 // Call the menu and infinite scroll functions
-menuOpen();
-infiniteScroll();
+tocBot();
