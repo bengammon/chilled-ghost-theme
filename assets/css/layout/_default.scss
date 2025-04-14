@@ -4,11 +4,8 @@
 
 .layout {
     display: grid;
+    grid-template-columns: var(--layoutGridTemplateColumns);
+    padding-inline: var(--viewportPadding);
     position: relative;
     width: 100%;
-
-    &--article {
-        grid-template-columns: var(--layoutArticleGrid);
-        padding-inline: var(--viewportPadding);
-    }
 }

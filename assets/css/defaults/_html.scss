@@ -10,9 +10,7 @@
 /**
  * 1. Makes REM units easier to work with because 1rem = 10px.
  */
-html {
-    height: 100%;
-    
+html {    
     font-size: 62.5%; /* 1. */
     font-kerning: normal;
     font-synthesis: none;

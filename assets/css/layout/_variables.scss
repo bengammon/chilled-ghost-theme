@@ -3,11 +3,11 @@
    ========================================================================== */
 
 :root {
-    --layoutArticleGrid: 1fr;
-    --layoutArticleMain: calc(72rem - var(--viewportPadding));
-    --layoutArticleSidebar: calc(34rem - var(--viewportPadding));
+    --layoutGridTemplateColumns: 1fr;
+    --layoutMain: calc(72rem - var(--viewportPadding));
+    --layoutSidebar: calc(34rem - var(--viewportPadding));
 
     @media (min-width: $bp-desktop-small) {
-        --layoutArticleGrid: 1fr var(--layoutArticleMain) var(--layoutArticleSidebar) 1fr;
+        --layoutGridTemplateColumns: 1fr var(--layoutMain) var(--layoutSidebar) 1fr;
     }
 }

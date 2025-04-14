@@ -1,19 +1,27 @@
 {{!< default}}
 
 {{#is "home"}}
-<h1>Hi, I’m Ben.<br><span class="color--text-subtle">Welcome to my website.</span></h1>
-{{!-- <p>I'€m the founder &amp; design lead at <a href="#">Etch</a>, a design &amp; engineering agency that works with partners such as Miro, Plain and Morning Brew to transform their creative ideas into bulletproof digital experiences.</p> --}}
+<div class="page-header width">
+
+    <h1>Hi, I’m Ben.<br><span class="color--text-subtle">Welcome to my website.</span></h1>
+    {{!-- <p>I'€m the founder &amp; design lead at <a href="#">Etch</a>, a design &amp; engineering agency that works with partners such as Miro, Plain and Morning Brew to transform their creative ideas into bulletproof digital experiences.</p> --}}
+
+</div>
 {{/is}}
 
-{{!-- <h2 class="subheading">Content</h2>
-<h2>Things I've published</h2> --}}
+<div class="layout">
 
-{{!-- <h1 class="heading mb-3">Things I've published</h1> --}}
+    <aside class="sidebar gh-sidebar">
+    </aside>
+    
+    <div class="content gh-content">
 
-<div class="archive">
-    {{#get "posts" include="tags" filter="tags:-micro" limit="all"}}
-        {{#foreach posts}}
-            {{> post-teaser}}
-        {{/foreach}}
-    {{/get}}
+        {{#get "posts" include="tags" filter="tags:-micro" limit="all"}}
+            {{#foreach posts}}
+                {{> post-teaser}}
+            {{/foreach}}
+        {{/get}}
+
+    </div>
+
 </div>

@@ -4,7 +4,7 @@
 
     {{#post}}
     
-    <header class="width">
+    <header class="page-header width">
 
         <h1>{{title}}</h1>
 
@@ -15,17 +15,19 @@
 
     <div class="layout layout--article">
 
-        <aside class="article__sidebar gh-sidebar">
+        <aside class="sidebar gh-sidebar">
             <div class="toc">
-                <h3>Table of Contents</h3>
+                <h3 class="subheading">Table of Contents</h3>
                 <div class="gh-toc">
                 </div>
             </div>
         </aside>
         
-        <div class="article__content gh-content">
+        <div class="content gh-content">
             {{content}}
         </div>
+
+    </div>
 
     {{/post}}
 

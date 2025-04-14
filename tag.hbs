@@ -1,10 +1,8 @@
 {{!< default}}
 
-<main role="main">
+<div class="page-header width">
 
     {{#tag}}
-
-    <section class="section section--narrow">
 
         <h1 class="mb-3">
             <span class="color--text-subtle">Tag:</span> {{name}}
@@ -12,18 +10,36 @@
         
         <p class="color--text-subtle">{{plural ../pagination.total empty='0 posts' singular='% post' plural='% posts'}}{{#if description}}{{description}}{{/if}}.</p>
 
-    </section>
-
     {{/tag}}
 
-    <section class="section section--narrow">
-        
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <h2 class="subheading">Tags</h2>
+
+        {{#get "tags" limit="all"}}
+        <ul class="list list--divided">
+            {{#foreach tags}}
+            <li>
+                <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
+            </li>
+            {{/foreach}}
+        </ul>
+        {{/get}}
+
+    </aside>
+    
+    <div class="content">
+
         {{#foreach posts}}
             {{> post-teaser}}
         {{/foreach}}
 
         {{pagination}}
 
-    </section>
+    </div>
 
-</main>
+</div>

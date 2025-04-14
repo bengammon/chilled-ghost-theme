@@ -1,17 +1,23 @@
 {{!< default}}
 
-<article class="{{post_class}}">
+{{#post}}
 
-    {{#post}}
+    <div class="page-header width">
 
-    <header>
-        
         <h1>{{title}}</h1>
 
-    </header>
+    </div>
 
-    {{content}}
+    <div class="layout">
 
-    {{/post}}
+        <aside class="sidebar"></aside>
+        
+        <div class="content">
 
-</article>
+            {{content}}
+
+        </div>
+
+    </div>
+
+{{/post}}

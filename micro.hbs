@@ -1,17 +1,25 @@
 {{!< default}}
 
-<main role="main">
+<div class="page-header width">
 
-    {{#get "posts" include="tags" filter="tags:micro" limit="all"}}
+    <h1>Microblog</h1>
+
+</div>
+
+<div class="layout">
+
+    <aside class="sidebar gh-sidebar">
         
-    <h1 class="heading mb-3">Microblog</h1>
+    </aside>
+    
+    <div class="content gh-content">
+        
+        {{#get "posts" include="tags" filter="tags:micro" limit="10"}}
+            {{#foreach posts}}
+                {{> post-social}}
+            {{/foreach}}
+        {{/get}}
 
-    {{/get}}
+    </div>
 
-    {{#get "posts" include="tags" filter="tags:micro" limit="10"}}
-        {{#foreach posts}}
-            {{> post-social}}
-        {{/foreach}}
-    {{/get}}
-
-</main>
+</div>

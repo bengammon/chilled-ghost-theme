@@ -1,35 +1,45 @@
 {{!< default}}
 
-<main role="main">
+{{#get "posts" include="tags" limit="all"}}
 
-    {{#get "posts" include="tags" limit="all"}}
-        
-    <h1 class="heading mb-3">Archive</h1>
+    <div class="page-header width">
 
-    <p>{{t "All {total} posts I've written on this site since 2012." total=pagination.total}}</p>
+        <h1>Archive</h1>
 
-    {{/get}}
+        <p>{{t "All {total} posts I've written on this site since 2012." total=pagination.total}}</p>
 
-    <h2 class="subheading mb-5 mt-6">Tags</h2>
-
-    {{#get "tags" limit="all"}}
-    <ul class="list list--divided">
-        {{#foreach tags}}
-        <li>
-            <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
-        </li>
-        {{/foreach}}
-    </ul>
-    {{/get}}
-
-    <h2 class="subheading mb-5 mt-6">Archive</h2>
-
-    <div class="archive">
-        {{#get "posts" include="tags" limit="all"}}
-            {{#foreach posts}}
-                {{> post-teaser}}
-            {{/foreach}}
-        {{/get}}
     </div>
 
-</main>
+{{/get}}
+
+<div class="layout">
+
+    <aside class="sidebar gh-sidebar">
+        
+        <h2 class="subheading">Tags</h2>
+
+        {{#get "tags" limit="all"}}
+        <ul class="list list--divided">
+            {{#foreach tags}}
+            <li>
+                <a href="{{url}}" title="{{name}}" class="tag tag-{{slug}}">{{name}}</a>
+            </li>
+            {{/foreach}}
+        </ul>
+        {{/get}}
+
+    </aside>
+    
+    <div class="content gh-content">
+
+        <div class="archive">
+            {{#get "posts" include="tags" limit="all"}}
+                {{#foreach posts}}
+                    {{> post-teaser}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+    </div>
+
+</div>

@@ -1,8 +1,9 @@
 /**
  * -----------------------------------------------------------------------------
- * $ARTICLE/VARIABLES
+ * $SIDEBAR/VARIABLES
  * -----------------------------------------------------------------------------
  */
 
-$article-content-width: 69rem;
-$article-width: 116rem;
+:root {
+    --sidebarMaxWidth: 22rem;
+}

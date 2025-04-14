@@ -30,22 +30,6 @@
 {{!-- <foot> --}}
 <script src="{{asset "built/index.js"}}"></script>
 
-{{! Initialize Tocbot after you load the script }}
-<script>
-    tocbot.init({
-        // Where to render the table of contents.
-        tocSelector: '.gh-toc',
-        // Where to grab the headings to build the table of contents.
-        contentSelector: '.gh-content',
-        // Which headings to grab inside of the contentSelector element.
-        headingSelector: 'h1, h2, h3, h4',
-        headingsOffset: 176,
-        scrollSmoothOffset: -176,
-        // Ensure correct positioning
-        hasInnerContainers: true
-    });
-</script>
-
 {{ghost_foot}}
 {{!-- Outputs important scripts - should always be included before closing body tag --}}
 
