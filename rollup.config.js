@@ -35,6 +35,7 @@ export default defineConfig({
         babel({ babelHelpers: 'bundled' }),
         postcss({
             extract: true,
+            colormin: false,
             sourceMap: true,
             plugins: [
                 atImport(),
