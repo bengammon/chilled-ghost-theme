@@ -3,5 +3,9 @@
    ========================================================================== */
 
 :root {   
-   --viewportPadding: var(--spacing5);
+   --viewportPadding: var(--spacing3);
+
+   @media (min-width: $bp-tablet) {
+        --viewportPadding: var(--spacing5);
+   }
 }

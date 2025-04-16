@@ -16,15 +16,17 @@
     <div class="layout layout--article">
 
         <aside class="sidebar gh-sidebar">
-            <div class="toc">
-                <h3 class="subheading">Table of Contents</h3>
-                <div class="gh-toc">
-                </div>
-            </div>
+            
+            {{#has tag="#article"}}
+                {{> "table-of-contents"}}
+            {{/has}}
+
         </aside>
         
         <div class="content gh-content">
+
             {{content}}
+            
         </div>
 
     </div>

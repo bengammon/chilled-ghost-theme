@@ -4,7 +4,10 @@
 import "../css/index.scss";
 
 // Import JS
+import menuOpen from "./menuOpen";
 import tocBot from "./tocbot.min";
+
+menuOpen();
 
 tocbot.init({
     // Where to render the table of contents.

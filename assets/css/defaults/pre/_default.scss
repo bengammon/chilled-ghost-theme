@@ -7,8 +7,9 @@
  */
 
 pre {
-    margin-bottom: var(--spacing4);
-    padding: var(--spacing3);
+    margin-block-end: var(--spacing4);
+    margin-inline: calc(var(--viewportPadding) * -1);
+    padding: var(--viewportPadding);
 
     background: var(--colorPreBg);
     border: 0;
@@ -69,27 +70,12 @@ pre[class*=language-]::selection {
 }
 
 pre[class*=language-] {
-    padding: 0;
     position: relative;
-
-    &:after {
-        content: "";
-        inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
-        position: absolute;
-        z-index: $z-index-under;
-
-        background-color: var(--colorPreBg);
-
-        @media (min-width: $bp-tablet) {
-            border-radius: $border-radius;
-            inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
-        }
-    }
 }
 
 :not(pre)>code[class*=language-],
 pre[class*=language-] {
-    background: transparent;
+    background: var(--colorPreBg);
 }
 
 :not(pre)>code[class*=language-] {

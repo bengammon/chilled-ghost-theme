@@ -3,40 +3,22 @@
    ========================================================================== */
 
 .card {
-    margin-bottom: var(--spacing4);
+    border-radius: var(--borderRadius);
+    margin-block-end: var(--spacing4);
+    margin-inline: calc(var(--viewportPadding) * -1);
+    padding: var(--spacing4) var(--viewportPadding);
     position: relative;
 
+    background-color: var(--colorCardBg);
     color: var(--colorText);
-
-    &:after {
-        content: "";
-        inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
-        position: absolute;
-        z-index: $z-index-under;
-
-        border: $border-width solid var(--colorBorder);
-        border-left-color: transparent;
-        border-right-color: transparent;
-        background-color: var(--colorBorder);
-
-        @media (min-width: $bp-tablet) {
-            border-color: var(--colorBorder);
-            border-radius: $border-radius;
-            inset: -1.2rem calc(var(--spacing3) * -1) -1.2rem;
-        }
-    }
 
     &__title {
         margin-bottom: var(--spacing1);
     }
 
     &--inverted {
+        background-color: var(--colorCardInvertedBg);
         color: var(--colorTextInverted);
-
-        &:after {
-            background-color: var(--colorBlack);
-            border: 0;
-        }
     }
 
     .post-teaser {

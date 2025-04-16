@@ -4,61 +4,77 @@
 
 .nav {
     @include list-reset;
+    align-items: flex-start;
     display: flex;
+    flex-direction: column;
     gap: var(--spacing3);
     height: 100%;
 
-    @media (min-width: $bp-tablet) {
+    @media (min-width: $bp-desktop-small) {
+        align-items: center;
+        flex-direction: row;
         gap: var(--spacing5);
     }
 
-    li {
+    &__item {
         align-items: center;
         display: flex;
         flex: 1 0 auto;
         margin: 0;
         padding: var(--spacing1) 0;
         position: relative;
-    }
 
-    a {
-        align-items: center;
-        display: flex;
-        gap: var(--spacing1);
-        justify-content: center;
-        width: 100%;
-
-        background: transparent;
-        color: var(--colorTextSubtle);
-        text-decoration-color: var(--colorTextSubtle);
-        text-decoration-thickness: 1px;
-
-        svg {
-            flex-shrink: 0;
-
-            path {
-                stroke: var(--colorTextSubtle);
+        a {
+            align-items: center;
+            display: flex;
+            gap: var(--spacing2);
+            justify-content: center;
+            width: 100%;
+    
+            background: transparent;
+            color: var(--colorTextSubtle);
+            text-decoration-color: var(--colorTextSubtle);
+            text-decoration-thickness: 1px;
+    
+            @media (min-width: $bp-desktop-small) {
+                gap: var(--spacing1);
             }
-        }
-
-        &:hover {
-            color: var(--colorText);
-            text-decoration: none;
-            
+    
             svg {
+                flex-shrink: 0;
+    
                 path {
-                    stroke: var(--colorText);
+                    stroke: var(--colorTextSubtle);
+                }
+            }
+    
+            &:hover {
+                color: var(--colorText);
+                text-decoration: none;
+                
+                svg {
+                    path {
+                        stroke: var(--colorText);
+                    }
+                }
+            }
+    
+            &.nav-current {
+                color: var(--colorText);
+                text-decoration: none;
+    
+                svg {
+                    path {
+                        stroke: var(--colorText);
+                    }
                 }
             }
         }
 
-        &.nav-current {
-            color: var(--colorText);
-            text-decoration: none;
-
-            svg {
-                path {
-                    stroke: var(--colorText);
+        &-label {
+            .header__social & {
+                @media (min-width: $bp-desktop-small) {
+                    display: none;
                 }
             }
         }

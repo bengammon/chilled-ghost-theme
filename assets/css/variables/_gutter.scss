@@ -1,8 +1,7 @@
 /* ==========================================================================
-   #NAV
+   #VARIABLES/MAX-WIDTH
    ========================================================================== */
 
-@import "variables";
-@import "default";
-@import "menu-toggle";
-@import "social";
+:root {   
+   --maxWidth: 106rem;
+}

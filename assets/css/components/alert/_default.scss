@@ -3,43 +3,27 @@
    ========================================================================== */
 
 .alert {
-    margin-bottom: var(--spacing4);
+    border: 0;
+    margin-block-end: var(--spacing4);
+    margin-inline: calc(var(--viewportPadding) * -1);
+    padding: var(--spacing3) var(--viewportPadding);
     position: relative;
 
+    background: var(--colorAlertBg);
+    border-radius: var(--borderRadius);
     color: var(--colorAlertText);
 
     a {
         color: inherit;
     }
 
-    &:after {
-        content: "";
-        inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
-        position: absolute;
-        z-index: $z-index-under;
-
-        background-color: var(--colorAlertBg);
-        background-image: var(--imageAlertBg);
-
-        @media (min-width: $bp-tablet) {
-            border-radius: $border-radius;
-            inset: calc(var(--spacing2) * -1) calc(var(--spacing3) * -1);
-        }
-    }
-
     &--danger {
+        background-color: var(--colorAlertDangerBg);
         color: var(--colorAlertDangerText);
-        
-        &:after {    
-            background-color: var(--colorAlertDangerBg);
-        }
     }
 
     &--warning {
+        background-color: var(--colorAlertWarningBg);
         color: var(--colorAlertWarningText);
-
-        &:after {    
-            background-color: var(--colorAlertWarningBg);
-        }
     }
 }

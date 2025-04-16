@@ -4,15 +4,20 @@
 
 .nav--social {
     display: flex;
-    gap: var(--spacing2);
+
+    @media (min-width: $bp-desktop-small) {
+        gap: var(--spacing2);
+    }
 
     li {
         padding: 0;
     }
 
     a {
-        padding: var(--spacing1);
-        width: auto;
+        @media (min-width: $bp-desktop-small) {
+            padding: var(--spacing1);
+            width: auto;
+        }
 
         svg {
             path {
