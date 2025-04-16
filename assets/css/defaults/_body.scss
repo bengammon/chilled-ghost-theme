@@ -30,7 +30,7 @@ body {
     letter-spacing: var(--letterSpacingDefault);
     line-height: var(--lineHeightDefault);
 
-    &.is-nav-visible {
+    &.gh-head-open {
         overflow: hidden;
     }
 }
