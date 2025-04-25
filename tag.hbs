@@ -16,7 +16,7 @@
 
 <div class="layout">
 
-    <aside class="sidebar">
+    <aside class="sidebar gh-sidebar">
 
         <h2 class="subheading">Tags</h2>
 
@@ -32,11 +32,13 @@
 
     </aside>
     
-    <div class="content">
+    <div class="content gh-content">
 
-        {{#foreach posts}}
-            {{> post-teaser}}
-        {{/foreach}}
+        <div class="archive">
+            {{#foreach posts}}
+                {{> post-teaser}}
+            {{/foreach}}
+        </div>
 
         {{pagination}}
 
