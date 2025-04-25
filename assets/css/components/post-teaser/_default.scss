@@ -5,7 +5,6 @@
 .post-teaser {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing1);
     justify-content: space-between;
     margin: 0 auto var(--spacing5);
     width: 100%;
@@ -28,10 +27,13 @@
 
     &__date {
         flex-shrink: 0;
+        margin-bottom: var(--spacing3);
 
-        color: var(--colorTextSubtle);
-        font-size: var(--fontSizeSmall);
-        text-decoration: none;
+        a {
+            color: var(--colorTextSubtle);
+            font-size: var(--fontSizeSmall);
+            text-decoration: none;
+        }
     }
 
     &__year {

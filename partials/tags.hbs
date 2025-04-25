@@ -1,9 +1,7 @@
-{{#if tags}}
-	<ul class="d--inline-flex list list--divided ml-0 font--alt text--size-small color--text-subtle">
+<div class="tags">
+	{{#get "tags" limit="all"}}
 		{{#foreach tags}}
-		<li>
-			<a class="tag" href="{{url}}" title="{{name}}">{{name}}</a>
-		</li>
+		<a class="tags__item" href="{{url}}" title="{{name}}">{{name}}</a>
 		{{/foreach}}
-	</ul>
-{{/if}}
+	{{/get}}
+</div>

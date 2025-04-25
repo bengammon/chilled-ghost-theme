@@ -14,9 +14,9 @@
     
     <div class="content gh-content">
         
-        {{#get "posts" include="tags" filter="tags:micro" limit="10"}}
+        {{#get "posts" include="tags" filter="tags:microblog" limit="all" }}
             {{#foreach posts}}
-                {{> post-social}}
+                {{> post-microblog}}
             {{/foreach}}
         {{/get}}
 
