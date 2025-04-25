@@ -12,17 +12,22 @@
 <div class="layout">
 
     <aside class="sidebar gh-sidebar">
+
+        <h2 class="subheading">Tags</h2>
+
+        {{> tags}}
+
     </aside>
     
     <div class="content gh-content">
 
-        <div class="archive">
-            {{#get "posts" include="tags" filter="tags:-microblog" limit="all"}}
-                {{#foreach posts}}
-                    {{> post-teaser}}
-                {{/foreach}}
-            {{/get}}
-        </div>
+        <h2 class="subheading margin-bottom--none">Latest posts</h2>
+        
+        {{#get "posts" include="tags" filter="tags:-microblog" limit="10"}}
+            {{#foreach posts}}
+                {{> post-titles}}
+            {{/foreach}}
+        {{/get}}
 
     </div>
 
