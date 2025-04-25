@@ -2,9 +2,17 @@
    #MAIN
    ========================================================================== */
 
+/**
+  * 1. Required for skip-link
+  */
+
 main {
     flex: 1;
     margin-bottom: var(--spacing7);
     margin-top: var(--headerHeight);
     width: 100%;
+
+    &:focus {
+        outline: none; /* 1. */
+    }
 }
