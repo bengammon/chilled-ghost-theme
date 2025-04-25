@@ -4,8 +4,16 @@
 
 .archive {
     border-bottom: $border-width solid var(--colorBorder);
-    padding: var(--spacing5) 0;
+    padding: 0 0 var(--spacing5);
     position: relative;
+
+    .post-teaser {
+        &:first-of-type {
+            .post-teaser__year {
+                margin-top: 0;
+            }
+        }
+    }
 
     .post-year-2026 ~ .post-year-2026,
     .post-year-2025 ~ .post-year-2025,

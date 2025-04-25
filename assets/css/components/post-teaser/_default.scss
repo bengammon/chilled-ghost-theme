@@ -31,7 +31,6 @@
 
         a {
             color: var(--colorTextSubtle);
-            font-size: var(--fontSizeSmall);
             text-decoration: none;
         }
     }
@@ -40,23 +39,18 @@
         align-items: center;
         display: flex;
         gap: var(--spacing2);
-        margin: var(--spacing3) 0;
+        margin: var(--spacing3) 0 var(--spacing3);
         position: relative;
         width: 100%;
 
-        color: var(--colorTextSubtle);
-
         &:after {
             content: "";
+            display: none;
             flex: 1;
             height: 2px;
             position: relative;
 
             background: var(--colorGrey9);
         }
-    }
-
-    & + & {
-        // margin-top: var(--spacing6);
     }
 }
