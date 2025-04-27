@@ -2,38 +2,38 @@
    #BUTTON/DEFAULT
    ========================================================================== */
 
-   .btn,
-   .btn:link,
-   .btn:visited {
-       border: 0;
-       border-radius: 4rem;
-       display: inline-block;
-       overflow: hidden;
-       padding: .8rem 1.6rem;
-       position: relative;
-       vertical-align: middle;
-   
-       background-color: var(--colorPrimary);
-       outline: none;
-   
-       color: var(--colorTextProminent);
-       font-size: var(--fontSizeSmall);
-       font-weight: var(--fontWeightSemiBold);
-       line-height: var(--buttonLineHeight);
-       text-decoration: none;
-       text-transform: uppercase;
-   
-       cursor: pointer;
-   
-       &:hover {
-           background-color: var(--colorPrimaryActive);
-           border-color: var(--colorPrimaryActive);
-       }
-   }
-   
-   .btn:disabled {
-       background-color: var(--colorbuttonDisabled);
-       border-color: var(--colorbuttonDisabled);
-   
-       color: var(--colorTextDefault);
-   }
+.btn,
+.btn:link,
+.btn:visited {
+    border: 0;
+    border-radius: 4rem;
+    display: inline-block;
+    overflow: hidden;
+    padding: .8rem 1.6rem;
+    position: relative;
+    vertical-align: middle;
+
+    background-color: var(--colorPrimary);
+    outline: none;
+
+    color: var(--colorTextProminent);
+    font-size: var(--fontSizeSmall);
+    font-weight: var(--fontWeightSemiBold);
+    line-height: var(--buttonLineHeight);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--colorPrimaryActive);
+        border-color: var(--colorPrimaryActive);
+    }
+}
+
+.btn:disabled {
+    background-color: var(--colorbuttonDisabled);
+    border-color: var(--colorbuttonDisabled);
+
+    color: var(--colorTextDefault);
+}

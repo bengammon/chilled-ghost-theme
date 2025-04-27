@@ -13,7 +13,8 @@
         padding: 0;
     }
 
-    a {
+    a,
+    button {
         @media (min-width: $bp-desktop-small) {
             padding: var(--spacing1);
             width: auto;

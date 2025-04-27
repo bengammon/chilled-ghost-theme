@@ -23,7 +23,7 @@
 
         <h2 class="subheading margin-bottom--none">Latest posts</h2>
         
-        {{#get "posts" include="tags" filter="tags:-microblog" limit="10"}}
+        {{#get "posts" include="tags" filter="tags:-micro" limit="5"}}
             {{#foreach posts}}
                 {{> post-titles}}
             {{/foreach}}

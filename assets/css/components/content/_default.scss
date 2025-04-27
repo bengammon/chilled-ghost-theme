@@ -3,6 +3,7 @@
    ========================================================================== */
 
 .content {
+    align-content: start;
     display: grid;
     gap: var(--spacing4);
     grid-column: 1;
