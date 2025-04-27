@@ -8,12 +8,15 @@
  */
 
 /**
- * 1. Makes REM units easier to work with because 1rem = 10px.
+ * 1. Stop layout shift when scrollbar appears when switching between pages.
+ * 2. Makes REM units easier to work with because 1rem = 10px.
  */
 html {
     height: 100%;
     
-    font-size: 62.5%; /* 1. */
+    overflow-y: scroll; /* 1. */
+
+    font-size: 62.5%; /* 2. */
     font-kerning: normal;
     font-synthesis: none;
     -webkit-font-smoothing: antialiased;
