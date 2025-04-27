@@ -2,7 +2,7 @@
 
 <div class="page-header width">
 
-    <h1>Microblog</h1>
+    <h1>Micro</h1>
 
 </div>
 
@@ -18,9 +18,9 @@
     
     <div class="content gh-content">
         
-        {{#get "posts" include="tags" filter="tags:microblog" limit="all" }}
+        {{#get "posts" include="tags" limit="all" }}
             {{#foreach posts}}
-                {{> post-microblog}}
+                {{> post-micro}}
             {{/foreach}}
         {{/get}}
 
