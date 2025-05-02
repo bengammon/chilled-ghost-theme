@@ -5,12 +5,12 @@
 $font-family: 'Inter', sans-serif;
 
 :root {
-	--fontSizeBase: 1.6rem;
-	--fontSizeBaseEm: 1.6em;
+	--fontSizeBase: 1.8rem;
+	--fontSizeBaseEm: 1.8em;
 
 	--fontSizeBlockquote: var(--fontSizeLarge);
 	--fontSizeCode: .94em;
-	--fontSizeH1: 2.8rem;
+	--fontSizeH1: 3.6rem;
 	--fontSizeH2: 2.2rem;
 	--fontSizeH3: var(--fontSizeBase);
 	--fontSizeLarge: 1.8rem;
@@ -30,7 +30,7 @@ $font-family: 'Inter', sans-serif;
 	--letterSpacingH3: var(--letterSpacingDefault);
 	--letterSpacingSubheading: .2rem;
 
-	--lineHeightDefault: 1.375;
+	--lineHeightDefault: 1.5;
 	--lineHeightH1: 1.3;
 	--lineHeightH2: 1.2;
 	--lineHeightH3: var(--lineHeightDefault);
@@ -38,8 +38,9 @@ $font-family: 'Inter', sans-serif;
 	@media (min-width: $bp-tablet) {
 		--fontSizeBase: 1.8rem;
 		--fontSizeBaseEm: 1.8em;
-		--fontSizeH1: 3.6rem;
-		--fontSizeH2: 2.8rem;
+		--fontSizeH1: 4.2rem;
+		--fontSizeH2: 3.2rem;
+		--fontSizeH3: 2.2rem;
 		--fontSizeLarge: 2rem;
 		--fontSizeSmall: 1.6rem;
 		--fontSizeTiny: 1.4rem;
