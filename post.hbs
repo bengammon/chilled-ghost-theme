@@ -17,7 +17,7 @@
 
         <aside class="sidebar gh-sidebar">
             
-            {{#has tag="#article"}}
+            {{#has tag="#toc"}}
                 {{> "table-of-contents"}}
             {{/has}}
 
@@ -26,6 +26,8 @@
         <div class="content gh-content">
 
             {{content}}
+
+            {{!-- {{> author-info}} --}}
             
         </div>
 
