@@ -16,9 +16,8 @@ $content-gutter: var(--spacing5);
 $content-width: 76rem;
 $content-width-wide: 116rem;
 
-$content-vertical-spacing: 2.4rem;
-
 :root {
+    --contentGutterVertical: var(--spacing4);
     --contentWidth: 64rem;
     --contentWidthNarrow: 70rem;
     --contentWidthWide: 116rem;

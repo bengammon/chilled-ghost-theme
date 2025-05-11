@@ -13,7 +13,7 @@
         top: 0;
         width: $list-timeline-before-width;
 
-        background-color: var(--colorButtonBg);
+        background-color: var(--colorGrey9);
     }
 
     &:last-of-type {
@@ -38,7 +38,7 @@
             top: $list-timeline-li-before-top;
             width: $list-timeline-li-before-width;
 
-            border: $list-timeline-li-before-border-width solid var(--colorButtonBg);
+            border: $list-timeline-li-before-border-width solid var(--colorGrey9);
             border-radius: 50%;
 
             background-color: var(--colorBackground);
@@ -51,8 +51,9 @@
             padding-left: $list-timeline-li-first-child-padding-horizontal;
             padding-right: $list-timeline-li-first-child-padding-horizontal;
             position: relative;
+            vertical-align: top;
 
-            background-color: var(--colorButtonBg);
+            background-color: var(--colorGrey9);
             color: var(--colorText);
             font-weight: var(--fontWeightSemiBold);
             border-radius: $list-timeline-li-first-child-border-radius;
