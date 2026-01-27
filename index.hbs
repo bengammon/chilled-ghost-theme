@@ -3,39 +3,47 @@
 {{#is "home"}}
 <div class="page-header width">
 
-    <h1>Hi, I’m Ben.<br><span class="color--text-subtle">Welcome to my website.</span></h1>
+    {{!-- <h1>Creative developer. Occasional DJ. Long-time web tinkerer.<br><span class="color--text-subtle">For almost 20 years, I’ve been building for the web, working on some massive titles like No Man’s Sky and Fable Legends (RIP). This is my personal space and microblog: a stream of what I’m learning, playing, thinking, and doing.</span></h1> --}}
 
     {{!-- <div class="intro">
         <img class="intro__image" src="{{asset 'images/me.jpg'}}" />
         <div class="intro__content">
-            <h1>Hi, I’m Ben.<br><span class="color--text-subtle">Welcome to my website.</span></h1>
-            <p>I'€m the founder &amp; design lead at <a href="#">Etch</a>, a design &amp; engineering agency that works with partners such as Miro, Plain and Morning Brew to transform their creative ideas into bulletproof digital experiences.</p>
-            <a href="/about">More about me</a>
+            <h1>Hi, I’m Ben. <span class="color--text-subtle">Creative developer. Long-time web tinkerer.</span></h1>
+            <p>For almost 20 years, I’ve been building for the web, working on sites for massive titles like <em>No Man’s Sky</em> and <em>Fable Legends (RIP)</em>. Welcome to my personal space and microblog: a stream of what I’m learning, playing, thinking, and doing.</p>
+            <a class="btn2" href="/about">More about me</a>
         </div>
     </div> --}}
 
 </div>
 {{/is}}
 
-<div class="layout">
+<div class="layout layout--home width">
+    
+    <div class="content gh-content">
 
-    <aside class="sidebar gh-sidebar">
+        <h2 class="subheading2">Microblog</h2>
+
+        {{#get "posts" include="tags" filter="tags:micro" limit="3" }}
+            {{#foreach posts}}
+                {{> post-micro}}
+            {{/foreach}}
+        {{/get}}
+
+    </div>
+
+    <div class="content gh-sidebar">
+
+        <h2 class="subheading2">Writing</h2>
+        
+        {{#get "posts" include="tags" filter="tags:-micro" limit="10"}}
+            {{#foreach posts}}
+                {{> post-teaser}}
+            {{/foreach}}
+        {{/get}}
 
         <h2 class="subheading">Tags</h2>
 
         {{> tags}}
-
-    </aside>
-    
-    <div class="content gh-content">
-
-        <h2 class="subheading">Latest posts</h2>
-        
-        {{#get "posts" include="tags" filter="tags:-micro" limit="5"}}
-            {{#foreach posts}}
-                {{> post-titles}}
-            {{/foreach}}
-        {{/get}}
 
     </div>
 

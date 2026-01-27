@@ -4,8 +4,9 @@
 
 .subheading {    
     color: var(--colorTextSubtle);
+    font-family: var(--fontFamilyAlternative);
     font-size: var(--fontSizeTiny);
-    font-weight: var(--fontWeightSemiBold);
+    // font-weight: var(--fontWeightSemiBold);
     letter-spacing: var(--letterSpacingSubheading);
     text-transform: uppercase;
 }

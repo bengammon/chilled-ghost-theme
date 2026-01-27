@@ -8,4 +8,13 @@
     padding-inline: var(--viewportPadding);
     position: relative;
     width: 100%;
+
+    &--home {
+        display: flex;
+        gap: var(--spacing6);
+        
+        .content {
+            flex: 1;
+        }
+    }
 }

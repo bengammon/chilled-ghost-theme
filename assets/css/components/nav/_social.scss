@@ -22,7 +22,15 @@
 
         svg {
             path {
-                stroke: var(--colorTextSubtle);
+                stroke: var(--colorText);
+            }
+        }
+
+        &:hover {
+            svg {
+                path {
+                    stroke: var(--colorPrimary);
+                }
             }
         }
     }

@@ -35,8 +35,8 @@
             width: 100%;
     
             background: transparent;
-            color: var(--colorTextSubtle);
-            text-decoration-color: var(--colorTextSubtle);
+            color: var(--colorText);
+            text-decoration-color: var(--colorText);
             text-decoration-thickness: 1px;
             text-decoration: none;
 
@@ -50,7 +50,7 @@
                 flex-shrink: 0;
     
                 path {
-                    stroke: var(--colorTextSubtle);
+                    stroke: var(--colorText);
                 }
             }
     

@@ -6,10 +6,12 @@
     
     <header class="page-header width">
 
-        <h1>{{title}}</h1>
+        <h1 class="page-header__title">{{title}}</h1>
 
-        {{>date-published}}
-        {{>post-tags}}
+        <div class="page-header__meta">
+            {{>date-published}}
+            {{>post-tags}}
+        </div>
 
     </header>
 

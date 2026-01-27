@@ -7,6 +7,8 @@
     padding-block-end: var(--spacing5);
     z-index: $z-index-front;
 
+    font-family: var(--fontFamilyAlternative);
+
     a {
         color: var(--colorTextSubtle);
         text-decoration-color: var(--colorTextSubtle);

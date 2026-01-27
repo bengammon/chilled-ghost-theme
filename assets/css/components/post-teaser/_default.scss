@@ -15,8 +15,8 @@
 
     &__title {
         color: var(--colorTextProminent);
+        font-family: var(--fontFamilyAlternative);
         font-weight: var(--fontWeightSemiBold);
-        font-size: var(--fontSizeH3);
         line-height: var(--lineHeightH3);
         text-decoration: none;
     }
@@ -27,7 +27,7 @@
 
     &__date {
         flex-shrink: 0;
-        margin-bottom: var(--spacing3);
+        // margin-bottom: var(--spacing1);
 
         a {
             color: var(--colorTextSubtle);
@@ -42,6 +42,8 @@
         margin: var(--spacing3) 0 var(--spacing3);
         position: relative;
         width: 100%;
+
+        font-family: var(--fontFamilyAlternative);
 
         &:after {
             content: "";

@@ -14,27 +14,27 @@
 	--colorGrey8: #424242;
 	--colorGrey9: #212121;
 
-	--colorPrimary: #fc5621;
+	--colorPrimary: #621799;
 	--colorPrimaryDark: #bd451d;
 	--colorSecondary: #26120c;
 
-	--colorAlertBg: #d1ffa6;
+	--colorAlertBg: #e9f9da;
 	--colorAlertText: #3d4b2f;
-	--colorAlertDangerBg: #ffaba6;
+	--colorAlertDangerBg: #ffc7c4;
 	--colorAlertDangerText: #352424;
-	--colorAlertWarningBg: #fff9a6;
-	--colorAlertWarningText: #363425;
+	--colorAlertWarningBg: #fdfad3;
+	--colorAlertWarningText: #35342d;
 	--colorAnchorUnderline: #185731;
-	--colorBackground: #161616;
+	--colorBackground: #dbd6d2;
 	--colorBadge: #222;
 	--colorBlack: #040407;
 	--colorButtonBg: rgb(15, 15, 15);
 	--colorBookmarkBg: var(--colorCodeBg);
-	--colorBorder: var(--colorGrey9);
-	--colorCardBg: var(--colorGrey9);
+	--colorBorder: #c9c4c0;
+	--colorCardBg: var(--colorCodeBg);
 	--colorCardInvertedBg: var(--colorBlack);
-	--colorCodeBg: var(--colorGrey9);
-	--colorCodeText: #9691cc;
+	--colorCodeBg: #f9f6f3;
+	--colorCodeText: #514e78;
 	--colorHeaderNavBg: rgba(250, 250, 250, 0.8);
 	--colorHR: var(--colorBorder);
 	--colorPreBg: var(--colorCodeBg);
@@ -50,8 +50,8 @@
 	--colorRelatedContentBg: transparent;
 	--colorSectionFeatureBg: var(--colorBlack);
 	--colorSectionHeroBg: transparent;
-	--colorText: var(--colorGrey4);
-	--colorTextProminent: var(--colorGrey3);
+	--colorText: #3d3b3a;
+	--colorTextProminent: var(--colorText);
 	--colorTextDark: #444444;
 	--colorTextSubtle: var(--colorGrey6);
 	--colorTextInverted: var(--colorWhite);

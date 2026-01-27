@@ -8,6 +8,10 @@ h1, h2, h3 {
     color: var(--colorTextProminent);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fontFamilyHeading);
+}
+
 h1 {
     @include text-heading('H1');
 }

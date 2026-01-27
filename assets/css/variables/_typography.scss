@@ -2,9 +2,11 @@
    #VARIABLES/TYPOGRAPHY
    ========================================================================== */
 
-$font-family: 'Inter', sans-serif;
-
 :root {
+	--fontFamilyDefault: 'Source Serif 4', serif;
+	--fontFamilyHeading: 'Inter', sans-serif;
+	--fontFamilyAlternative: var(--fontFamilyHeading);
+
 	--fontSizeBase: 1.8rem;
 	--fontSizeBaseEm: 1.8em;
 
@@ -19,6 +21,7 @@ $font-family: 'Inter', sans-serif;
 
 	--fontWeightDefault: 400;
 	--fontWeightSemiBold: 600;
+	--fontWeightBold: 700;
 	--fontWeightH1: var(--fontWeightSemiBold);
 	--fontWeightH2: var(--fontWeightSemiBold);
 	--fontWeightH3: var(--fontWeightSemiBold);
@@ -36,8 +39,8 @@ $font-family: 'Inter', sans-serif;
 	--lineHeightH3: var(--lineHeightDefault);
 
 	@media (min-width: $bp-tablet) {
-		--fontSizeBase: 1.8rem;
-		--fontSizeBaseEm: 1.8em;
+		--fontSizeBase: 1.9rem;
+		--fontSizeBaseEm: 1.9em;
 		--fontSizeH1: 4.2rem;
 		--fontSizeH2: 3.2rem;
 		--fontSizeH3: 2.2rem;

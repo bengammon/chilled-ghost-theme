@@ -33,3 +33,27 @@
     font-display: swap;
     src: url("/assets/fonts/Inter-SemiBoldItalic.woff2") format("woff2");
 }
+
+@font-face {
+    font-family: 'Source Serif 4';
+    font-style:  normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/fonts/SourceSerif4-Regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    font-style:  italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/assets/fonts/SourceSerif4-Italic.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    font-style:  normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("/assets/fonts/SourceSerif4-Bold.woff2") format("woff2");
+}

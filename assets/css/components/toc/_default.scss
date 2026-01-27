@@ -5,6 +5,8 @@
 .toc {
     overflow-y: auto;
 
+    font-family: var(--fontFamilyAlternative);
+
     &-list {
         overflow: hidden;
         list-style: none;

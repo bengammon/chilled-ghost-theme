@@ -10,6 +10,8 @@ blockquote {
     padding-left: var(--spacing4);
     position: relative;
 
+    font-style: italic;
+
     &:before {
         bottom: 0;
         content: "";
@@ -18,7 +20,7 @@ blockquote {
         top: 0;
         width: .2rem;
 
-        background: var(--colorBorder);
+        background: var(--colorPrimary);
     }
 
     a {
@@ -31,5 +33,32 @@ blockquote {
 
     footer {
         margin-top: 0;
+    }
+
+    &.kg-blockquote-alt {
+        padding: var(--spacing4) 0;
+
+        font-size: var(--fontSizeLarge);
+        text-align: center;
+
+        &:before,
+        &:after {
+            bottom: auto;
+            content: "";
+            height: .2rem;
+            left: 50%;
+            position: absolute;
+            top: 0;
+            width: 10rem;
+
+            transform: translateX(-50%);
+
+            background: var(--colorPrimary);
+        }
+
+        &:after {
+            bottom: 0;
+            top: auto;
+        }
     }
 }
