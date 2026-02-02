@@ -1,7 +1,9 @@
-<article class="post-teaser post-micro {{post_class}}">
+<article class="post-teaser post-teaser--micro {{post_class}}">
 
-    <div class="post-teaser__date">
-        <a class="subheading" href="{{url}}">{{date format="D MMMM YYYY [@] H[:]mm"}}</a>
+    <img class="post-teaser__avatar" src="{{asset 'images/me.jpg'}}" />
+
+    <div class="post-teaser__meta">
+        <strong class="text--color-prominent">Ben</strong> - <a class="post-teaser__date" href="{{url}}">{{date timeago="true"}}</a>
     </div>
     
     {{content}}

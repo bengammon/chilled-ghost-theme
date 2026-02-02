@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #POST-TEASER/MICRO
+   ========================================================================== */
+
+.post-teaser--micro {
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: var(--spacing6);
+
+    line-height: 1.4;
+
+    .post-teaser {
+        &__meta {
+            margin-bottom: var(--spacing1);
+
+            color: var(--colorTextSubtle);
+            font-size: var(--fontSizeSmall);
+        }
+
+        &__date {
+            color: inherit;
+            font-size: inherit;
+            text-decoration: none;
+        }
+    }
+}

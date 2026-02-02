@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #TAG/DEFAULT
+   ========================================================================== */
+
+// 2 added to name because these styles conflict with styles used in code outputs
+
+.tag2 {
+    border-radius: 3rem;
+    padding: var(--spacing1) var(--spacing3);
+
+    background-color: var(--colorTagBg);
+    color: var(--colorTagText);
+    font-family: var(--fontFamilyAlternative);
+    font-size: var(--fontSizeTiny);
+    text-decoration: none;
+    text-transform: uppercase;
+
+    .content & {
+        color: var(--colorTagText);
+    }
+}

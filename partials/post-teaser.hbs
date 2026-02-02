@@ -1,9 +1,14 @@
 <article class="post-teaser {{post_class}} post-year-{{date format='Y'}}">
 
-    <p class="post-teaser__year">{{date format='YYYY'}}</p>
+    <div class="post-teaser__meta">
+         <div class="post-teaser__date" href="{{url}}">{{date format="DD/MM/YY"}}</div>
+         {{#if tags}}
+             {{#primary_tag}}
+                  - <a class="post-teaser__tag" href="{{url}}">{{name}}</a>
+             {{/primary_tag}}
+         {{/if}}
+    </div>
 
     <p class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a></p>
-
-    {{>post-tags}}
 
 </article>

@@ -44,8 +44,8 @@
 	--colorPreSelector: #690;
 	--colorPreToken: #07a;
 	--colorPreUrl: #9a6e3a;
-	--colorTagBg: var(--colorGrey9);
-	--colorTagText: var(--colorGrey5);
+	--colorTagBg: var(--colorBorder);
+	--colorTagText: var(--colorText);
 	
 	--colorRelatedContentBg: transparent;
 	--colorSectionFeatureBg: var(--colorBlack);
@@ -53,7 +53,7 @@
 	--colorText: #3d3b3a;
 	--colorTextProminent: var(--colorText);
 	--colorTextDark: #444444;
-	--colorTextSubtle: var(--colorGrey6);
+	--colorTextSubtle: #5a5755;
 	--colorTextInverted: var(--colorWhite);
 	--colorWhite: #e5e5e5;
 }
