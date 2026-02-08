@@ -18,13 +18,5 @@
                 stroke: var(--colorText);
             }
         }
-
-        &:hover {
-            svg {
-                path {
-                    stroke: var(--colorPrimary);
-                }
-            }
-        }
     }
 }

@@ -1,6 +1,6 @@
 {{!< default}}
 
-<div class="page-header width">
+<div class="layout__content gh-content">
 
     {{#tag}}
 
@@ -8,30 +8,22 @@
             <span class="color--text-subtle">Tag/</span>{{name}}
         </h1>
 
+        <div class="spacer--medium"></div>
+
     {{/tag}}
+
+    <div class="archive">
+        {{#foreach posts}}
+            {{> post-teaser}}
+        {{/foreach}}
+    </div>
+
+    {{pagination}}
 
 </div>
 
-<div class="layout">
+<div class="layout__sidebar-right">
 
-    <aside class="sidebar gh-sidebar">
-
-        {{!-- <h2 class="subheading">Tags</h2>
-
-        {{> tags}} --}}
-
-    </aside>
-    
-    <div class="content gh-content">
-
-        <div class="archive">
-            {{#foreach posts}}
-                {{> post-teaser}}
-            {{/foreach}}
-        </div>
-
-        {{pagination}}
-
-    </div>
+    <aside class="sidebar gh-sidebar"></aside>
 
 </div>

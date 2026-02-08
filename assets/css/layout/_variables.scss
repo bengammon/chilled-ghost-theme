@@ -4,7 +4,10 @@
 
 :root {
     --layoutGridGap: var(--spacing6);
-    --layoutGridTemplateAreas: "sidebarLeft content sidebarRight";
+    --layoutGridTemplateAreas: 
+        "sidebarLeft"
+        "content"
+        "sidebarRight";
     --layoutGridTemplateColumns: 1fr;
     --layoutContent: 1fr;
     --layoutMaxWidth: var(--maxWidth);

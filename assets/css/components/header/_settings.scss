@@ -8,15 +8,18 @@
     --headerBeforeZIndex: -1;
     --headerBeforeHeight: .1rem;
     --headerHeight: 8rem;
+    --headerMenuPadding: 0 var(--viewportPadding);
     --headerNavButtonAfterOffset: -1rem;
     --headerNavButtonCloseIconHeight: 2rem;
     --headerNavButtonIconHeight: 1.4rem;
     --headerNavButtonIconWidth: 2.4rem;
     --headerNavButtonPadding: 0 0 0 3.2rem;
+    --headerPadding: var(--viewportPadding);
+    --headerSiteLogoDimensions: 4rem;
 
-    --headerSiteLogoDimensions: 4.8rem;
-
-    @media (min-width: $bp-tablet) {
-        --headerSiteLogoDimensions: 3.2rem;
+    @media (min-width: $bp-desktop-small) {
+        --headerMenuPadding: 0 0 0 var(--spacing2);
+        --headerPadding: 0;
+        --headerSiteLogoDimensions: 4rem;
     }
 }

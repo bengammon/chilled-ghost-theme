@@ -16,6 +16,10 @@
     &__sidebar-left {
         grid-area: sidebarLeft;
         padding-top: var(--spacing1);
+
+        @media (min-width: $bp-desktop-small) {
+            grid-area: sidebarLeft;
+        }
     }
 
     &__content {
@@ -24,5 +28,9 @@
 
     &__sidebar-right {
         grid-area: sidebarRight;
+
+        @media (min-width: $bp-desktop-small) {
+            grid-area: sidebarRight;
+        }
     }
 }

@@ -6,8 +6,10 @@
 
     <h1>Blog</h1>
 
+    <div class="spacer--medium"></div>
+
     <div class="archive">
-        {{#get "posts" include="tags" filter="tags:-micro" limit="all"}}
+        {{#get "posts" include="tags" limit="all"}}
             {{#foreach posts}}
                 {{> post-teaser}}
             {{/foreach}}
