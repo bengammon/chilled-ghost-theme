@@ -16,21 +16,30 @@
 
     font-family: var(--fontFamilyHeading);
 
-    &__backdrop {
-        border-radius: var(--borderRadius);
-        inset: 0;
-        position: absolute;
-        z-index: var(--zIndexUnder);
-
-        background: rgba(199, 195, 191, 0.7);
-        // background: var(--colorBackground);
-
-        backdrop-filter: blur(4px);
-
-        .gh-head-open & {
-            height: 100vh;
-        }
+    @media (min-width: $bp-desktop-small) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: var(--spacing4);
+        height: auto;
+        position: sticky;
+        top: var(--spacing6);
     }
+
+    // &__backdrop {
+    //     border-radius: var(--borderRadius);
+    //     inset: 0;
+    //     position: absolute;
+    //     z-index: var(--zIndexUnder);
+
+    //     background: rgba(199, 195, 191, 0.7);
+    //     // background: var(--colorBackground);
+
+    //     backdrop-filter: blur(4px);
+
+    //     .gh-head-open & {
+    //         height: 100vh;
+    //     }
+    // }
 
     &__menu-toggle {
         @media (min-width: $bp-desktop-small) {
@@ -65,7 +74,7 @@
         @media (min-width: $bp-desktop-small) {
             display: flex;
             flex: 1;
-            flex-direction: row;
+            flex-direction: column;
             height: auto;
             inset: auto;
             padding: 0;
@@ -81,10 +90,6 @@
     }
 
     &__nav {
-        @media (min-width: $bp-desktop-small) {
-            margin-inline-start: var(--spacing5);
-            margin-inline-end: auto;
-        }
     }
 
     &__social {
@@ -105,7 +110,7 @@
         }
     }
 
-    &__site-logo {
+    &__logo {
         display: block;
         flex-shrink: 0;
         height: var(--headerSiteLogoDimensions);

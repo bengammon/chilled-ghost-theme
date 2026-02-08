@@ -3,7 +3,7 @@
    ========================================================================== */
 
 :root {
-	--fontFamilyDefault: 'Source Serif 4', serif;
+	--fontFamilyDefault: 'Inter', sans-serif;
 	--fontFamilyHeading: 'Inter', sans-serif;
 	--fontFamilyAlternative: var(--fontFamilyHeading);
 
@@ -22,7 +22,7 @@
 	--fontWeightDefault: 400;
 	--fontWeightSemiBold: 600;
 	--fontWeightBold: 700;
-	--fontWeightH1: var(--fontWeightSemiBold);
+	--fontWeightH1: var(--fontWeightBold);
 	--fontWeightH2: var(--fontWeightSemiBold);
 	--fontWeightH3: var(--fontWeightSemiBold);
 
@@ -32,9 +32,10 @@
 	--letterSpacingH2: var(--letterSpacingHeading);
 	--letterSpacingH3: var(--letterSpacingDefault);
 	--letterSpacingSubheading: .2rem;
+	--letterSpacingLargeText: -0.02rem;
 
 	--lineHeightDefault: 1.5;
-	--lineHeightH1: 1.3;
+	--lineHeightH1: 1.1;
 	--lineHeightH2: 1.2;
 	--lineHeightH3: var(--lineHeightDefault);
 
@@ -48,6 +49,6 @@
 		--fontSizeSmall: 1.6rem;
 		--fontSizeTiny: 1.4rem;
 
-		--lineHeightDefault: 1.6;
+		--lineHeightDefault: 1.5;
 	}
 }

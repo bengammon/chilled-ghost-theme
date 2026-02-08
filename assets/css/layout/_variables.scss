@@ -3,11 +3,19 @@
    ========================================================================== */
 
 :root {
+    --layoutGridGap: var(--spacing6);
+    --layoutGridTemplateAreas: "sidebarLeft content sidebarRight";
     --layoutGridTemplateColumns: 1fr;
-    --layoutMain: calc(72rem - var(--viewportPadding));
-    --layoutSidebar: calc(34rem - var(--viewportPadding));
+    --layoutContent: 1fr;
+    --layoutMaxWidth: var(--maxWidth);
+    --layoutSidebarLeft: 1fr;
+    --layoutSidebarRight: 1fr;
 
     @media (min-width: $bp-desktop-small) {
-        --layoutGridTemplateColumns: 1fr var(--layoutMain) var(--layoutSidebar) 1fr;
+        --layoutGridTemplateAreas: "sidebarLeft content sidebarRight";
+        --layoutGridTemplateColumns: var(--layoutSidebarLeft) var(--layoutContent) var(--layoutSidebarRight);
+        --layoutContent: 3fr;
+        --layoutSidebarLeft: 1fr;
+        --layoutSidebarRight: 1fr;
     }
 }

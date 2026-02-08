@@ -4,22 +4,25 @@
 
 .layout {
     display: grid;
+    gap: var(--layoutGridGap);
+    grid-template-areas: var(--layoutGridTemplateAreas);
     grid-template-columns: var(--layoutGridTemplateColumns);
+    margin-inline: auto;
+    max-width: var(--layoutMaxWidth);
     padding-inline: var(--viewportPadding);
     position: relative;
     width: 100%;
 
-    &--home {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing6);
+    &__sidebar-left {
+        grid-area: sidebarLeft;
+        padding-top: var(--spacing1);
+    }
 
-        @media (min-width: $bp-desktop-small) {
-            flex-direction: row;
-        }
-        
-        .content {
-            flex: 1;
-        }
+    &__content {
+        grid-area: content;
+    }
+
+    &__sidebar-right {
+        grid-area: sidebarRight;
     }
 }

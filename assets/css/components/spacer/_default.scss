@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #SPACER/DEFAULT
+   ========================================================================== */
+
+.spacer {
+    display: block;
+    height: 0;
+    margin-bottom: var(--spacing4);
+
+    &--medium {
+        margin-bottom: var(--spacing5);
+    }
+
+    &--large {
+        margin-bottom: var(--spacing6);
+    }
+}

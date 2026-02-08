@@ -1,23 +1,19 @@
 {{!< default}}
 
+<div class="layout__content">
+
 {{#post}}
 
-    <div class="page-header width">
+    <h1 class="page-header__title">{{title}}</h1>
 
-        <h1 class="page-header__title">{{title}}</h1>
-
-    </div>
-
-    <div class="layout">
-
-        <aside class="sidebar"></aside>
-        
-        <div class="content">
-
-            {{content}}
-
-        </div>
-
-    </div>
+    {{content}}
 
 {{/post}}
+
+</div>
+
+<div class="layout__sidebar-right">
+
+    <aside class="sidebar"></aside>
+
+</div>

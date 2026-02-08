@@ -14,9 +14,9 @@
     --headerNavButtonIconWidth: 2.4rem;
     --headerNavButtonPadding: 0 0 0 3.2rem;
 
-    --headerSiteLogoDimensions: 6.4rem;
+    --headerSiteLogoDimensions: 4.8rem;
 
     @media (min-width: $bp-tablet) {
-        --headerSiteLogoDimensions: 7.2rem;
+        --headerSiteLogoDimensions: 3.2rem;
     }
 }

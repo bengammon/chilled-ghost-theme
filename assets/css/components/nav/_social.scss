@@ -5,19 +5,12 @@
 .nav--social {
     display: flex;
 
-    @media (min-width: $bp-desktop-small) {
-        gap: var(--spacing2);
-    }
-
-    li {
-        padding: 0;
-    }
-
     a,
     button {
         @media (min-width: $bp-desktop-small) {
-            padding: var(--spacing1);
             width: auto;
+
+            font-size: var(--fontSizeSmall);
         }
 
         svg {

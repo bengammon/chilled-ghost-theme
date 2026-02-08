@@ -6,6 +6,7 @@ import "../css/index.scss";
 // Import JS
 import menuOpen from "./menuOpen";
 import tocBot from "./tocbot.min";
+import "./bskyFeed";
 
 menuOpen();
 

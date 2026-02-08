@@ -1,40 +1,40 @@
 {{!< default}}
 
-<article class="{{post_class}}">
 
-    {{#post}}
-    
-    <header class="page-header width">
 
-        <h1 class="page-header__title">{{title}}</h1>
+{{#post}}
 
-        <div class="page-header__meta">
+<div class="layout__content">
+
+    <article class="{{post_class}} gh-content">
+
+        <h1 class="post__title">{{title}}</h1>
+
+        <div class="post__meta">
             {{>date-published}}
             {{>post-tags}}
         </div>
 
-    </header>
+        <hr>
 
-    <div class="layout layout--article">
+        {{content}}
 
-        <aside class="sidebar gh-sidebar">
-            
-            {{#has tag="#toc"}}
-                {{> "table-of-contents"}}
-            {{/has}}
+        {{!-- {{> author-info}} --}}
 
-        </aside>
+    </article>
+
+</div>
+
+<div class="layout__sidebar-right">
+
+    <aside class="sidebar gh-sidebar">
         
-        <div class="content gh-content">
+        {{#has tag="#toc"}}
+            {{> "table-of-contents"}}
+        {{/has}}
 
-            {{content}}
+    </aside>
 
-            {{!-- {{> author-info}} --}}
-            
-        </div>
+</div>
 
-    </div>
-
-    {{/post}}
-
-</article>
+{{/post}}

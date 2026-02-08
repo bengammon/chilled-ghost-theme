@@ -8,8 +8,7 @@
 
 main {
     flex: 1;
-    margin-bottom: var(--spacing7);
-    margin-top: var(--headerHeight);
+    padding: var(--spacing8) 0 var(--spacing7);
     width: 100%;
 
     &:focus {

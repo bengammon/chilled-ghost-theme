@@ -12,7 +12,9 @@ $spacers: (
     5: 3.2rem,
     6: 6.4rem,
     7: 9.6rem,
-    8: 19.2rem
+    8: 12.8rem,
+    9: 16rem,
+    10: 18.2rem
 );
 
 :root {
@@ -23,4 +25,7 @@ $spacers: (
     --spacing5: 3.2rem;
     --spacing6: 6.4rem;
     --spacing7: 9.6rem;
+    --spacing8: 12.8rem;
+    --spacing9: 16rem;
+    --spacing10: 18.2rem;
 }

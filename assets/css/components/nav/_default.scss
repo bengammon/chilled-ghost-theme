@@ -11,9 +11,7 @@
     height: 100%;
 
     @media (min-width: $bp-desktop-small) {
-        align-items: center;
-        flex-direction: row;
-        gap: var(--spacing5);
+        gap: var(--spacing2);
     }
 
     &__item {
@@ -36,6 +34,7 @@
     
             background: transparent;
             color: var(--colorText);
+            font-size: var(--fontSizeSmall);
             text-decoration-color: var(--colorText);
             text-decoration-thickness: 1px;
             text-decoration: none;
@@ -43,7 +42,7 @@
             cursor: pointer;
     
             @media (min-width: $bp-desktop-small) {
-                gap: var(--spacing1);
+                gap: var(--spacing2);
             }
     
             svg {
@@ -79,8 +78,10 @@
 
         &-label {
             .header__social & {
+                display: none;
+                
                 @media (min-width: $bp-desktop-small) {
-                    display: none;
+                    display: block;
                 }
             }
         }

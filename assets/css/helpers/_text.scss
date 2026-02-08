@@ -66,6 +66,7 @@
         }
         &-large {
             font-size: var(--fontSizeLarge);
+            letter-spacing: var(--letterSpacingLargeText);
         }
         &-small {
             font-size: var(--fontSizeSmall);
@@ -91,6 +92,16 @@
 
         &-normal {
             font-weight: var(--fontWeightRegular);
+        }
+    }
+
+    &--wrap {
+        &-balance {
+            text-wrap: balance;
+        }
+
+        &-pretty {
+            text-wrap: pretty;
         }
     }
 }  

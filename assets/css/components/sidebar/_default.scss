@@ -9,7 +9,7 @@
     margin-inline-start: auto;
     max-width: var(--sidebarMaxWidth);
     position: sticky;
-    top: calc(var(--headerHeight) + var(--spacing7));
+    top: var(--spacing6);
     z-index: var(--zIndexFront);
 
     @media (min-width: $bp-desktop-small) {

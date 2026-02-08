@@ -1,0 +1,21 @@
+/* ==========================================================================
+   #BLUESKY/VARIABLES
+   ========================================================================== */
+
+:root {
+   --blueskyAvatarSize: 4.8rem;
+   --blueskyBodyMargin: 0 0 var(--spacing2);
+   --blueskyBodyPadding: 0;
+   --blueskyFooterMargin: var(--spacing2) 0 0;
+   --blueskyFooterPadding: 0;
+   --blueskyGridMargin: var(--spacing3) 0 0;
+   --blueskyHeaderGap: var(--spacing2);
+   --blueskyHeaderMargin: 0 0 var(--spacing1);
+   --blueskyMargin: 0 0 var(--spacing4);
+   --blueskyMetaGap: var(--spacing2);
+   --blueskyPadding: 0 0 var(--spacing4) calc(var(--blueskyAvatarSize) + var(--spacing3));
+   --blueskyProfileLinkGap: var(--spacing1);
+   --blueskyQuotePadding: var(--spacing3);
+   --blueskyQuoteHeaderGap: var(--spacing1) var(--spacing2);
+   --blueskyQuoteHeaderMargin: 0 0 var(--spacing2);
+}

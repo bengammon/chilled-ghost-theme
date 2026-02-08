@@ -14,9 +14,11 @@
 </head>
 <body class="{{body_class}}">
 
-{{> header}}
+<main class="main layout" id="main" tabindex="-1">
 
-<main id="main" tabindex="-1">
+    <div class="layout__sidebar-left">
+        {{> header}}
+    </div>
 
     {{{body}}}
     {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
