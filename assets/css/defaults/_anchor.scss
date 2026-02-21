@@ -11,14 +11,15 @@ a {
     position: relative;
 
     color: inherit;
+    font-weight: var(--fontWeightAnchor);
     text-decoration: underline;
-    text-decoration-color: inherit;
-    text-decoration-thickness: 1px;
-    text-underline-offset: .15em;
+    text-decoration-color: var(--colorAnchorDecoration);
+    text-decoration-thickness: 3px;
+    // text-underline-offset: .15em;
     word-break: break-word;
 
     &:hover {
-        text-decoration: none;
+        text-decoration-color: var(--colorAnchorDecorationHover);
     }
 
     /* Only external links */

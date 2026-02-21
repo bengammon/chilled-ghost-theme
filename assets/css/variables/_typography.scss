@@ -3,25 +3,29 @@
    ========================================================================== */
 
 :root {
-	--fontFamilyDefault: 'Inter', sans-serif;
-	--fontFamilyHeading: 'Inter', sans-serif;
-	--fontFamilyAlternative: var(--fontFamilyHeading);
+	--fontFamilyDefault: 'Crimson Pro', serif;
+	--fontFamilyHeading: var(--fontFamilyDefault);
+	--fontFamilyAlternative: 'Inter', sans-serif;
 
-	--fontSizeBase: 1.8rem;
-	--fontSizeBaseEm: 1.8em;
+	--fontSizeBase: 2rem;
+	--fontSizeBaseEm: 2em;
 
 	--fontSizeBlockquote: var(--fontSizeLarge);
-	--fontSizeCode: .94em;
+	--fontSizeCode: .75em;
+	--fontSizePre: .9em;
 	--fontSizeH1: 3.6rem;
 	--fontSizeH2: 2.2rem;
 	--fontSizeH3: var(--fontSizeBase);
-	--fontSizeLarge: 1.8rem;
+	--fontSizeLarge: 2.2rem;
 	--fontSizeSmall: 1.4rem;
 	--fontSizeTiny: 1.2rem;
+
+	--fontStyleDefault: normal;
 
 	--fontWeightDefault: 400;
 	--fontWeightSemiBold: 600;
 	--fontWeightBold: 700;
+	--fontWeightAnchor: var(--fontWeightSemiBold);
 	--fontWeightH1: var(--fontWeightBold);
 	--fontWeightH2: var(--fontWeightSemiBold);
 	--fontWeightH3: var(--fontWeightSemiBold);
@@ -40,12 +44,25 @@
 	--lineHeightH3: var(--lineHeightDefault);
 
 	@media (min-width: $bp-tablet) {
-		--fontSizeBase: 1.8rem;
-		--fontSizeBaseEm: 1.8em;
+		--fontSizeBase: 2.2rem;
+		--fontSizeBaseEm: 2.2em;
 		--fontSizeH1: 4.2rem;
 		--fontSizeH2: 3.2rem;
 		--fontSizeH3: 2.2rem;
-		--fontSizeLarge: 2rem;
+		--fontSizeLarge: 2.4rem;
+		--fontSizeSmall: 1.6rem;
+		--fontSizeTiny: 1.4rem;
+
+		--lineHeightDefault: 1.5;
+	}
+
+	@media (min-width: $bp-desktopSmall) {
+		--fontSizeBase: 2.2rem;
+		--fontSizeBaseEm: 2.2em;
+		--fontSizeH1: 4.2rem;
+		--fontSizeH2: 3.2rem;
+		--fontSizeH3: 2.2rem;
+		--fontSizeLarge: 2.4rem;
 		--fontSizeSmall: 1.6rem;
 		--fontSizeTiny: 1.4rem;
 

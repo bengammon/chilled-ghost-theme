@@ -14,8 +14,8 @@
 	--colorGrey8: #424242;
 	--colorGrey9: #212121;
 
-	--colorPrimary: #621799;
-	--colorPrimaryDark: #bd451d;
+	--colorPrimary: #c7ad78;
+	--colorPrimaryDark: #997225;
 	--colorSecondary: #26120c;
 
 	--colorAlertBg: #e9f9da;
@@ -24,7 +24,8 @@
 	--colorAlertDangerText: #352424;
 	--colorAlertWarningBg: #fdfad3;
 	--colorAlertWarningText: #35342d;
-	--colorAnchorUnderline: #185731;
+	--colorAnchorDecoration: #c9c4c0;
+	--colorAnchorDecorationHover: var(--colorPrimary);
 	--colorBackground: #dbd6d2;
 	--colorBadge: #222;
 	--colorBlack: #040407;
@@ -51,7 +52,7 @@
 	--colorSectionFeatureBg: var(--colorBlack);
 	--colorSectionHeroBg: transparent;
 	--colorText: #3d3b3a;
-	--colorTextProminent: var(--colorText);
+	--colorTextProminent: #2f2c2b;
 	--colorTextDark: #444444;
 	--colorTextSubtle: #5a5755;
 	--colorTextInverted: var(--colorWhite);

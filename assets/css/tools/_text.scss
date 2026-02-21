@@ -9,7 +9,7 @@
 @mixin text-default() {
     font-size: var(--fontSizeBase);
     font-style: var(--fontStyleDefault);
-    font-weight: var(--fontWeightRegular);
+    font-weight: var(--fontWeightDefault);
     letter-spacing: var(--letterSpacingDefault);
 }
 
