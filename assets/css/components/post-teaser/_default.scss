@@ -4,7 +4,6 @@
 
 .post-teaser {
     align-items: flex-start;
-    border-bottom: var(--borderWidth) solid var(--colorBorder);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -12,8 +11,6 @@
     padding-bottom: var(--contentGutterVertical);
     position: relative;
     width: 100%;
-
-    font-family: var(--fontFamilyAlternative);
 
     > .post-teaser__heading {
         margin-bottom: 0;
@@ -28,9 +25,12 @@
         width: 5rem;
     }
 
+    &__heading {
+        font-size: var(--fontSizeH3);
+    }
+
     &__title {
         color: var(--colorTextProminent);
-        font-family: var(--fontFamilyAlternative);
         line-height: var(--lineHeightH3);
         text-decoration: none;
 
@@ -50,6 +50,7 @@
         margin-bottom: var(--spacing1);
 
         color: var(--colorTextSubtle);
+        font-family: var(--fontFamilyAlternative);
         font-size: var(--fontSizeSmall);
     }
 

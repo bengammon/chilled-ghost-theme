@@ -4,6 +4,8 @@
 
 .nav--social {
     display: flex;
+    flex-direction: row;
+    gap: var(--spacing3);
 
     a,
     button {
@@ -14,9 +16,15 @@
         }
 
         svg {
+            display: block;
+
             path {
                 stroke: var(--colorText);
             }
         }
+    }
+
+    .nav__item-label {
+        display: none;
     }
 }

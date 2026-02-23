@@ -1,29 +1,19 @@
 {{!< default}}
 
-<div class="layout__content gh-content">
+{{#tag}}
 
-    {{#tag}}
+    <h1 class="mb-3">
+        <span class="color--text-subtle">Tag/</span>{{name}}
+    </h1>
 
-        <h1 class="mb-3">
-            <span class="color--text-subtle">Tag/</span>{{name}}
-        </h1>
+    <div class="spacer--medium"></div>
 
-        <div class="spacer--medium"></div>
+{{/tag}}
 
-    {{/tag}}
-
-    <div class="archive">
-        {{#foreach posts}}
-            {{> post-teaser}}
-        {{/foreach}}
-    </div>
-
-    {{pagination}}
-
+<div class="archive">
+    {{#foreach posts}}
+        {{> post-teaser}}
+    {{/foreach}}
 </div>
 
-<div class="layout__sidebar-right">
-
-    <aside class="sidebar gh-sidebar"></aside>
-
-</div>
+{{pagination}}

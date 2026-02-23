@@ -1,42 +1,24 @@
 {{!< default}}
 
-<div class="layout__content">
+{{#is "home"}}
+<h1>Hi, I’m Ben.<br> Creative developer.<br> Long-time web tinkerer.</h1>
+<div class="spacer"></div>
+<p class="text--size-large">For almost 20 years, I’ve been building for the web, working on massive game titles such as <em>No Man’s Sky</em> and <em>Fable Legends (RIP)</em>. Welcome to my personal space and microblog: a stream of what I’m learning, playing, thinking, and doing.</p>
+<a class="btn2" href="/about">More about me</a>
+{{/is}}
 
-    {{#is "home"}}
-    <h1>Hi, I’m Ben.<br> Creative developer.<br> Long-time web tinkerer.</h1>
-    <div class="spacer"></div>
-    <p class="text--size-large">For almost 20 years, I’ve been building for the web, working on massive game titles such as <em>No Man’s Sky</em> and <em>Fable Legends (RIP)</em>. Welcome to my personal space and microblog: a stream of what I’m learning, playing, thinking, and doing.</p>
-    <a class="btn2" href="/about">More about me</a>
-    {{/is}}
+<div class="spacer spacer--large"></div>
 
-    <div class="spacer spacer--large"></div>
+<hr>
 
-    <hr>
+<div class="spacer spacer--large"></div>
 
-    <div class="spacer spacer--large"></div>
+<div class="spacer--medium"></div>
     
-    <h2 class="subheading2">Bluesky posts</h2>
+{{#get "posts" include="tags" filter="tags:-micro" limit="6"}}
+    {{#foreach posts}}
+        {{> post-teaser}}
+    {{/foreach}}
+{{/get}}
 
-    <div class="spacer--medium"></div>
-
-    <section id="bsky-feed" class="my-custom-feed-style">
-        <p>Loading the latest updates...</p>
-    </section>
-
-    <a class="btn2" href="https://bsky.app/profile/bengammon.co.uk" target="_blank">Let's chat on Bluesky</a>
-
-    <div class="spacer spacer--large"></div>
-
-    <h2 class="subheading2">Writing</h2>
-
-    <div class="spacer--medium"></div>
-        
-    {{#get "posts" include="tags" filter="tags:-micro" limit="6"}}
-        {{#foreach posts}}
-            {{> post-teaser}}
-        {{/foreach}}
-    {{/get}}
-
-    <a class="btn2" href="/blog">See more of my writing</a>
-
-</div>
+<a class="btn2" href="/blog">See more of my writing</a>

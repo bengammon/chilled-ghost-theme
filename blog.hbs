@@ -1,10 +1,10 @@
 {{!< default}}
 
-<div class="layout__content gh-content">
-
 {{#get "posts" include="tags" filter="tags:-microblog" limit="all"}}
 
     <h1>Blog</h1>
+
+    {{> tags}}
 
     <div class="spacer--medium"></div>
 
@@ -17,17 +17,3 @@
     </div>
 
 {{/get}}
-
-</div>
-
-<div class="layout__sidebar-right">
-
-    <aside class="sidebar gh-sidebar">
-        
-        <h2 class="subheading">Tags</h2>
-
-        {{> tags}}
-
-    </aside>
-
-</div>

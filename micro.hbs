@@ -1,29 +1,17 @@
 {{!< default}}
 
-<div class="page-header width">
+<div class="page-header">
 
     <h1>Micro</h1>
 
 </div>
 
-<div class="layout">
-
-    <aside class="sidebar gh-sidebar">
+<div class="content gh-content">
         
-        {{!-- <h2 class="subheading">Tags</h2>
-
-        {{> tags}} --}}
-        
-    </aside>
-    
-    <div class="content gh-content">
-        
-        {{#get "posts" include="tags" filter="tags:micro" limit="all" }}
-            {{#foreach posts}}
-                {{> post-micro}}
-            {{/foreach}}
-        {{/get}}
-
-    </div>
+    {{#get "posts" include="tags" filter="tags:micro" limit="all" }}
+        {{#foreach posts}}
+            {{> post-micro}}
+        {{/foreach}}
+    {{/get}}
 
 </div>

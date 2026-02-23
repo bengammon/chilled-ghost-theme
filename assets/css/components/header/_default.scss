@@ -8,53 +8,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
     height: var(--headerHeight);
-    left: 0;
-    padding: var(--headerPadding);
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: var(--zIndexFront);
 
     font-family: var(--fontFamilyHeading);
 
     @media (min-width: $bp-desktop-small) {
-        align-items: flex-start;
-        flex-direction: column;
         gap: var(--spacing4);
-        height: auto;
-        position: sticky;
-        top: var(--spacing6);
-    }
-
-    &__backdrop {
-        border-radius: var(--borderRadius);
-        inset: 0;
-        position: absolute;
-        z-index: var(--zIndexUnder);
-
-        .gh-head-open & {
-            height: 100vh;
-        }
-
-        &:before {
-            content: "";
-            inset: 0;
-            display: block;
-            backdrop-filter: blur(6px) saturate(1.2);
-            mask-image: linear-gradient(rgba(#000, 1) 0%, rgba(#000, 0) 100%);
-            position: absolute;
-            pointer-events: none;
-        }
-
-        &:after {
-            content: "";
-            // display: none;
-            inset: 0;
-            pointer-events: none;
-            position: absolute;
-
-            background: linear-gradient(0deg, rgba(219, 214, 210, 0) 0%, rgba(219, 214, 210, 1) 80%);
-        }
     }
 
     &__menu-toggle {
@@ -80,7 +38,7 @@
     &__menu {
         display: none;
         flex-direction: column;
-        gap: var(--spacing3);
+        gap: var(--spacing5);
         inset: var(--headerHeight) 0 0;
         height: calc(100vh - var(--headerHeight));
         padding: var(--headerMenuPadding);
@@ -90,9 +48,10 @@
         @media (min-width: $bp-desktop-small) {
             display: flex;
             flex: 1;
-            flex-direction: column;
+            flex-direction: row;
             height: auto;
             inset: auto;
+            justify-content: space-between;
             position: relative;
             width: auto;
 
