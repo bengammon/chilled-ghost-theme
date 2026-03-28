@@ -59,7 +59,10 @@
         .gh-head-open & {
             display: flex;
 
-            background: var(--colorBackground);
+            background-color: var(--colorBackground);
+            background-image: var(--imageBackground);
+            background-repeat: repeat;
+            background-size: 70px;
         }
     }
 
