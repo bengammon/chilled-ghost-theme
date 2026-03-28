@@ -2,16 +2,22 @@
 
 {{#post}}
 
-<article class="{{post_class}} gh-content">
+<article class="{{post_class}} gh-content" data-post-date="{{published_at}}" data-post-id="{{id}}">
 
-    <h1 class="post__title">{{title}}</h1>
+    <h1 class="post__title">{{title}} <span class="post__number js-post-number" style="opacity: 0;"></span></h1>
 
     <div class="post__meta">
-        {{>date-published}}
-        {{>post-tags}}
+        {{date format="DD/MM/YY"}}
+        {{#if tags}}
+            <ul class="post__tags list">
+                {{#foreach tags}}
+                <li>
+                    <a class="post__tag" href="{{url}}" title="{{name}}">#{{name}}</a>
+                </li>
+                {{/foreach}}
+            </ul>
+        {{/if}}
     </div>
-
-    <hr>
 
     {{content}}
 

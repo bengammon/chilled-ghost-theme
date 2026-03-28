@@ -2,17 +2,6 @@
    #BODY
    ========================================================================== */
 
-/**
- * `body` element which will control default font variables.
- */
-
-/**
- * 1. Sets the default font size back to 16px (unless $font-size-default has
- *    changed value). This is the only time `em` should be used to define the
- *    font-size. This has to be `em` because of a bug in Chrome described in
- *    a link below.
- *    https://code.google.com/p/chromium/issues/detail?id=320754
- */
 body {
     height: 100%;
     display: flex;
@@ -22,11 +11,12 @@ body {
 
     background-color: var(--colorBackground);
     background-image: var(--imageBackground);
+    background-size: 70px;
     background-repeat: repeat;
     color: var(--colorText);
     font-family: var(--fontFamilyDefault);
     font-feature-settings: "ss03";
-    font-size: var(--fontSizeBaseEm); /* 1. */
+    font-size: var(--fontSizeBase);
     font-weight: var(--fontWeightDefault);
     letter-spacing: var(--letterSpacingDefault);
     line-height: var(--lineHeightDefault);

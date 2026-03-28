@@ -1,0 +1,38 @@
+/* ==========================================================================
+   #POST/DEFAULT
+   ========================================================================== */
+
+.post {
+    &__title {
+        margin-bottom: var(--spacing4);
+    }
+    
+    &__number {
+        color: var(--colorTextExtraSubtle);
+        font-variant-numeric: tabular-nums;
+    }
+
+    &__meta {
+        display: flex;
+        gap: var(--spacing3);
+        margin-bottom: var(--spacing6);
+
+        color: var(--colorTextSubtle);
+        font-family: var(--fontFamilyAlternative);
+    }
+
+    &__tags {
+        display: flex;
+        gap: var(--spacing3);
+    }
+
+    &__tag {
+        color: var(--colorPrimary);
+        text-decoration: none;
+        text-transform: lowercase;
+
+        .content & {
+            color: inherit;
+        }
+    }
+}

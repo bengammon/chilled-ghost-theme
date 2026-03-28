@@ -10,16 +10,13 @@ a {
     @include active-states();
     position: relative;
 
-    color: inherit;
+    color: var(--colorPrimary);
     font-weight: var(--fontWeightAnchor);
     text-decoration: underline;
-    text-decoration-color: var(--colorAnchorDecoration);
-    text-decoration-thickness: 3px;
-    // text-underline-offset: .15em;
     word-break: break-word;
 
     &:hover {
-        text-decoration-color: var(--colorAnchorDecorationHover);
+        text-decoration: none;
     }
 
     /* Only external links */

@@ -39,7 +39,11 @@ export default defineConfig({
             sourceMap: true,
             plugins: [
                 atImport(),
-                postcssPresetEnv({})
+                postcssPresetEnv({
+                    features: {
+                        'custom-properties': false // Disable fallbacks for CSS variables
+                    }
+                })
             ], 
             minimize: true,
         }),

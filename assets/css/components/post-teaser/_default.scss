@@ -6,6 +6,7 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
+    gap: var(--spacing2);
     justify-content: space-between;
     margin: 0 auto var(--contentGutterVertical);
     padding-bottom: var(--contentGutterVertical);
@@ -51,7 +52,6 @@
 
         color: var(--colorTextSubtle);
         font-family: var(--fontFamilyAlternative);
-        font-size: var(--fontSizeSmall);
     }
 
     &__date {
@@ -70,12 +70,22 @@
     }
 
     &__tag {
-        color: inherit;
+        color: var(--colorPrimary);
         text-decoration: none;
+        text-transform: lowercase;
 
         .content & {
             color: inherit;
         }
+    }
+
+    &__number {
+        color: var(--colorTextSubtle);
+        font-variant-numeric: tabular-nums;
+    }
+
+    &__excerpt {
+        margin-bottom: 0;
     }
 
     &__year {

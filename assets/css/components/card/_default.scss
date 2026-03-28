@@ -4,9 +4,9 @@
 
 .card {
     border-radius: var(--borderRadius);
-    margin-block-end: var(--spacing4);
+    margin-block-end: var(--contentSpacing);
     margin-inline: calc(var(--viewportPadding) * -1);
-    padding: var(--spacing4) var(--viewportPadding);
+    padding: var(--viewportPadding);
     position: relative;
 
     background-color: var(--colorCardBg);

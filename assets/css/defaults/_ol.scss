@@ -11,16 +11,13 @@ ol {
     flex-direction: column;
     gap: var(--spacing1);
     margin: 0;
-    margin-block-end: var(--spacing3);
+    margin-block-end: var(--contentSpacing);
     margin-inline-start: var(--spacing4);
     padding-inline-start: 0;
 
     font-size: inherit;
 
     li {
-        padding-block-end: calc(var(--spacing1) / 2);
-        padding-block-start: calc(var(--spacing1) / 2);
-
         &::marker {
             color: var(--colorPrimaryDark);
         }

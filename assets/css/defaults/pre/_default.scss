@@ -7,9 +7,9 @@
  */
 
 pre {
-    margin-block-end: var(--spacing4);
-    margin-inline: calc(var(--spacing3) * -1);
-    padding: var(--spacing3);
+    margin-block-end: var(--contentSpacing);
+    margin-inline: calc(var(--viewportPadding) * -1);
+    padding: var(--viewportPadding);
 
     background: var(--colorPreBg);
     border: 0;

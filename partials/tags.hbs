@@ -1,7 +1,7 @@
 <div class="tags">
 	{{#get "tags" limit="all" filter="slug:-micro"}}
 		{{#foreach tags}}
-		<a class="tags__item" href="{{url}}" title="{{name}}">{{name}}</a>
+		<a class="tags__item" href="{{url}}" title="{{name}}">#{{name}}</a>
 		{{/foreach}}
 	{{/get}}
 </div>

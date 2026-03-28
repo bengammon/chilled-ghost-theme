@@ -3,11 +3,23 @@
    ========================================================================== */
 
 .footer {
-    padding-block-start: var(--spacing3);
-    padding-block-end: var(--spacing5);
+    border-top: var(--borderWidth) solid var(--colorBorder);
+    padding-block-start: var(--contentSpacing);
+    padding-block-end: var(--contentSpacing);
     z-index: $z-index-front;
 
+    a {
+        color: inherit;
+    }
+
+    &__links {
+        display: flex;
+        gap: var(--spacing3);
+    }
+
     &__legal {
+        margin-top: var(--contentSpacing);
+
         font-family: var(--fontFamilyAlternative);
     }
 }

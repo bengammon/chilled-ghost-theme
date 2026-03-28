@@ -7,8 +7,10 @@ import "../css/index.scss";
 import menuOpen from "./menuOpen";
 import tocBot from "./tocbot.min";
 import "./bskyFeed";
+import initPostNumbers from "./postNumber";
 
 menuOpen();
+initPostNumbers();
 
 tocbot.init({
     // Where to render the table of contents.

@@ -42,18 +42,11 @@
     
             background: transparent;
             color: var(--colorText);
-            font-family: var(--fontFamilyAlternative);
-            font-weight: var(--fontWeightDefault);
-            text-decoration-color: var(--colorText);
-            text-decoration-thickness: 1px;
-            text-decoration: none;
 
             cursor: pointer;
     
             @media (min-width: $bp-desktop-small) {
                 gap: var(--spacing1);
-                
-                font-size: var(--fontSizeSmall);
             }
     
             svg {

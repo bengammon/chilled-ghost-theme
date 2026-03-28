@@ -3,16 +3,15 @@
    ========================================================================== */
 
 :root {
-	--fontFamilyDefault: 'Crimson Pro', serif;
-	--fontFamilyHeading: var(--fontFamilyDefault);
+	--fontFamilyDefault: 'Inter', sans-serif;
+	--fontFamilyHeading: 'DINish Expanded', sans-serif;
 	--fontFamilyAlternative: 'Inter', sans-serif;
 
 	--fontSizeBase: 2rem;
-	--fontSizeBaseEm: 2em;
 
-	--fontSizeBlockquote: var(--fontSizeLarge);
-	--fontSizeCode: .75em;
-	--fontSizePre: .9em;
+	--fontSizeBlockquote: inherit;
+	--fontSizeCode: 1em;
+	--fontSizePre: 1em;
 	--fontSizeH1: 3.6rem;
 	--fontSizeH2: 2.2rem;
 	--fontSizeH3: var(--fontSizeBase);
@@ -25,15 +24,15 @@
 	--fontWeightDefault: 400;
 	--fontWeightSemiBold: 600;
 	--fontWeightBold: 700;
-	--fontWeightAnchor: var(--fontWeightSemiBold);
-	--fontWeightH1: var(--fontWeightBold);
+	--fontWeightAnchor: var(--fontWeightDefault);
+	--fontWeightH1: 800;
 	--fontWeightH2: var(--fontWeightSemiBold);
 	--fontWeightH3: var(--fontWeightSemiBold);
 
 	--letterSpacingDefault: 0;
 	--letterSpacingHeading: -.08rem;
-	--letterSpacingH1: var(--letterSpacingHeading);
-	--letterSpacingH2: var(--letterSpacingHeading);
+	--letterSpacingH1: 0;
+	--letterSpacingH2: 0.1rem;
 	--letterSpacingH3: var(--letterSpacingDefault);
 	--letterSpacingSubheading: .2rem;
 	--letterSpacingLargeText: -0.02rem;
@@ -41,27 +40,13 @@
 	--lineHeightDefault: 1.5;
 	--lineHeightH1: 1.1;
 	--lineHeightH2: 1.2;
-	--lineHeightH3: var(--lineHeightDefault);
-
-	@media (min-width: $bp-tablet) {
-		--fontSizeBase: 2.2rem;
-		--fontSizeBaseEm: 2.2em;
-		--fontSizeH1: 4.2rem;
-		--fontSizeH2: 3.2rem;
-		--fontSizeH3: 2.2rem;
-		--fontSizeLarge: 2.4rem;
-		--fontSizeSmall: 1.6rem;
-		--fontSizeTiny: 1.4rem;
-
-		--lineHeightDefault: 1.5;
-	}
+	--lineHeightH3: 1.3;
 
 	@media (min-width: $bp-desktopSmall) {
-		--fontSizeBase: 2.2rem;
-		--fontSizeBaseEm: 2.2em;
-		--fontSizeH1: 4.2rem;
-		--fontSizeH2: 3.2rem;
-		--fontSizeH3: 2.6rem;
+		--fontSizeBase: 2rem;
+		--fontSizeH1: 4.8rem;
+		--fontSizeH2: 3.6rem;
+		--fontSizeH3: 2.4rem;
 		--fontSizeLarge: 2.4rem;
 		--fontSizeSmall: 1.8rem;
 		--fontSizeTiny: 1.6rem;

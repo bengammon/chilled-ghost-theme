@@ -5,12 +5,15 @@
  */
 
 blockquote {
+    margin-block-end: var(--contentSpacing);
     margin-left: auto;
     margin-right: auto;
     padding-left: var(--spacing4);
     position: relative;
 
+    font-size: var(--fontSizeBlockquote);
     font-style: italic;
+    text-wrap: balance;
 
     &:before {
         bottom: 0;
@@ -23,10 +26,6 @@ blockquote {
         background: var(--colorPrimary);
     }
 
-    a {
-        color: inherit;
-    }
-
     p {
         font-style: italic;
     }
@@ -36,10 +35,12 @@ blockquote {
     }
 
     &.kg-blockquote-alt {
+        margin-block-start: var(--contentSpacing);
         padding: var(--spacing4) 0;
 
-        font-size: var(--fontSizeLarge);
+        font-size: var(--fontSizeBlockquote);
         text-align: center;
+        text-wrap: balance;
 
         &:before,
         &:after {

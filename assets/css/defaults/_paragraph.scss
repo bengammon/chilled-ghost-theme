@@ -7,7 +7,7 @@
  */
 
 p {
-    margin-bottom: var(--spacing3);
+    margin-bottom: var(--contentSpacing);
 
     @include text-default;
 
