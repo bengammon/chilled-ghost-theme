@@ -1,8 +1,9 @@
 /* ==========================================================================
-   #VARIABLES/CONTENT-SPACING
+   #LINK/DEFAULT
    ========================================================================== */
-
-:root {   
-   --contentSpacing: var(--spacing3);
-   --contentSpacingLarge: var(--spacing6);
+   
+.link {
+    &--subtle {
+        color: var(--colorTextSubtle);
+    }
 }

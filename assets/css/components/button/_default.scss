@@ -9,16 +9,18 @@
     border-radius: 4rem;
     display: inline-block;
     overflow: hidden;
-    padding: .8rem 1.6rem;
+    padding: var(--spacing3) var(--spacing4);
     position: relative;
     vertical-align: middle;
 
-    background-color: var(--colorPrimary);
+    background-color: var(--colorCodeBg);
     outline: none;
 
-    color: var(--colorTextProminent);
+    color: var(--colorText);
+    font-family: var(--fontFamilyHeading);
     font-size: var(--fontSizeSmall);
     font-weight: var(--fontWeightSemiBold);
+    letter-spacing: 6px;
     line-height: var(--buttonLineHeight);
     text-decoration: none;
     text-transform: uppercase;

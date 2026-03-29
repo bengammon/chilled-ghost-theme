@@ -15,6 +15,7 @@
 	--fontSizeH1: 3.8rem;
 	--fontSizeH2: 3rem;
 	--fontSizeH3: 2.4rem;
+	--fontSizeSubheading: 1.8rem;
 	--fontSizeLarge: 2.4rem;
 	--fontSizeSmall: 1.6rem;
 	--fontSizeTiny: 1.2rem;
@@ -28,13 +29,14 @@
 	--fontWeightH1: 800;
 	--fontWeightH2: var(--fontWeightSemiBold);
 	--fontWeightH3: var(--fontWeightSemiBold);
+	--fontWeightSubheading: var(--fontWeightSemiBold);
 
 	--letterSpacingDefault: 0;
 	--letterSpacingHeading: -.08rem;
 	--letterSpacingH1: 0;
 	--letterSpacingH2: 0.1rem;
 	--letterSpacingH3: var(--letterSpacingDefault);
-	--letterSpacingSubheading: .2rem;
+	--letterSpacingSubheading: .6rem;
 	--letterSpacingLargeText: -0.02rem;
 
 	--lineHeightDefault: 1.5;

@@ -70,12 +70,12 @@
             }
     
             &.nav-current {
-                color: var(--colorPrimaryDark);
+                color: var(--colorTextSubtle);
                 text-decoration: none;
     
                 svg {
                     path {
-                        stroke: var(--colorPrimaryDark);
+                        stroke: var(--colorTextSubtle);
                     }
                 }
             }

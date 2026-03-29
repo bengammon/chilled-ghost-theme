@@ -1,24 +1,31 @@
 {{!< default}}
 
 {{#is "home"}}
-<h1>Hi, I’m Ben.<br> Creative developer.<br> Long-time web tinkerer.</h1>
-<div class="spacer"></div>
-<p>For almost 20 years, I’ve been building for the web, working on massive game titles such as <em>No Man’s Sky</em> and <em>Fable Legends (RIP)</em>. Welcome to my personal space and microblog: a stream of what I’m learning, playing, thinking, and doing.</p>
-<a class="btn2" href="/about">More about me</a>
+<div class="intro">
+    <h1 class="intro__heading">Hi, I’m Ben.<br> Creative developer.<br> Long-time web tinkerer.</h1>
+    <div class="spacer--medium"></div>
+    <p class="intro__text">For almost 20 years, I’ve been building for the web, working on massive game titles such as <em>No Man’s Sky</em> and <em>Fable Legends (RIP)</em>. Welcome to my personal space and microblog: a stream of what I’m learning, playing, thinking, and doing.</p>
+    <div class="spacer--medium"></div>
+    <a class="btn" href="/about">More about me</a>
+</div>
 {{/is}}
 
-<div class="spacer spacer--large"></div>
-
-<hr>
-
-<div class="spacer spacer--large"></div>
-
-<div class="spacer--medium"></div>
+<h2 class="subheading">Recent writing</h2>
     
-{{#get "posts" include="tags" filter="tags:-micro" limit="6"}}
+{{#get "posts" include="tags" filter="tags:-micro" limit="3"}}
     {{#foreach posts}}
         {{> post-teaser}}
     {{/foreach}}
 {{/get}}
 
-<a class="btn2" href="/blog">See more of my writing</a>
+<a class="link link--subtle" href="/blog">See more of my writing</a>
+
+<h2 class="subheading">Recent notes</h2>
+
+{{#get "posts" include="tags" filter="tags:note" limit="3"}}
+    {{#foreach posts}}
+        {{> post-teaser}}
+    {{/foreach}}
+{{/get}}
+
+<a class="link link--subtle" href="/notes">See more of my notes</a>

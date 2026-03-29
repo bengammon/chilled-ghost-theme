@@ -14,20 +14,20 @@
     }
 
     > * {
-        margin-bottom: var(--contentGutterVertical);
+        margin-bottom: var(--contentSpacingLarge);
 
         &:last-child {
             margin-bottom: 0;
         }
 
         & + h2 {
-            padding-top: var(--contentGutterVertical);
+            padding-top: var(--contentSpacingLarge);
         }
     }
 
     hr {
-        margin-bottom: calc(var(--contentGutterVertical) * 2);
-        margin-top: calc(var(--contentGutterVertical) * 2);
+        margin-bottom: calc(var(--contentSpacingLarge) * 2);
+        margin-top: calc(var(--contentSpacingLarge) * 2);
     }
 
     a {

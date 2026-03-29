@@ -2,11 +2,34 @@
    #SUBHEADING/DEFAULT
    ========================================================================== */
 
-.subheading {    
+.subheading {
+    border-top: var(--borderWidth) solid var(--colorSubheadingBorderColor);
+    border-radius: 0 var(--borderRadiusLarge);
+    display: block;
+    width: fit-content;
+    margin: calc(var(--contentSpacingLarge) + var(--contentSpacing)) 0 var(--contentSpacingLarge) 0;
+    margin-inline: calc(var(--viewportPadding) * -1);
+    padding: var(--spacing3) var(--viewportPadding) 0;
+    position: relative;
+
+    background: var(--colorSubheadingBg);
     color: var(--colorTextSubtle);
     font-family: var(--fontFamilyAlternative);
-    font-size: var(--fontSizeTiny);
-    // font-weight: var(--fontWeightSemiBold);
+    font-size: var(--fontSizeSubheading);
+    font-weight: var(--fontWeightSubheading);
     letter-spacing: var(--letterSpacingSubheading);
     text-transform: uppercase;
+
+    &::before {
+        content: "";
+        display: block;
+        height: var(--borderWidth);
+        left: 0;
+        position: absolute;
+        top: 0;
+        transform: translate(-100%, -100%);
+        width: 50vw;
+
+        background-color: var(--colorSubheadingBorderColor);
+    }
 }

@@ -3,10 +3,13 @@
    ========================================================================== */
 
 .footer {
+    border-radius: var(--borderRadiusLarge);
     border-top: var(--borderWidth) solid var(--colorBorder);
     padding-block-start: var(--contentSpacing);
     padding-block-end: var(--contentSpacing);
     z-index: $z-index-front;
+
+    color: var(--colorTextSubtle);
 
     a {
         color: inherit;

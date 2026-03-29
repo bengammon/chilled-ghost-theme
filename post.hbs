@@ -7,7 +7,9 @@
     <h1 class="post__title">{{title}} <span class="post__number js-post-number" style="opacity: 0;"></span></h1>
 
     <div class="post__meta">
-        {{date format="DD/MM/YY"}}
+        {{^has tag="note"}}
+            {{date format="DD/MM/YY"}}
+        {{/has}}
         {{#if tags}}
             <ul class="post__tags list">
                 {{#foreach tags}}

@@ -6,8 +6,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--spacing2);
+    margin: var(--contentSpacingLarge) 0;
     
     &__item {
+        border: var(--borderWidth) solid var(--colorBorder);
         border-radius: var(--borderRadius);
         padding: var(--spacing1) var(--spacing2);
 
@@ -15,6 +17,6 @@
         color: var(--colorTagText);
         font-size: var(--fontSizeTiny);
         text-decoration: none;
-        text-transform: uppercase;
+        text-transform: lowercase;
     }
 }

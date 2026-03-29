@@ -48,7 +48,9 @@
 	--colorPreSelector: #690;
 	--colorPreToken: #07a;
 	--colorPreUrl: #9a6e3a;
-	--colorTagBg: var(--colorBorder);
+	--colorSubheadingBg: transparent;
+	--colorSubheadingBorderColor: var(--colorBorder);
+	--colorTagBg: transparent;
 	--colorTagText: var(--colorText);
 	
 	--colorRelatedContentBg: transparent;

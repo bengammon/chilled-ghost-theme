@@ -5,13 +5,17 @@
 .spacer {
     display: block;
     height: 0;
-    margin-bottom: var(--spacing4);
+    margin-bottom: var(--spacing3);
 
     &--medium {
-        margin-bottom: var(--spacing5);
+        margin-bottom: var(--spacing4);
     }
 
     &--large {
+        margin-bottom: var(--spacing5);
+    }
+
+    &--extra-large {
         margin-bottom: var(--spacing6);
     }
 }

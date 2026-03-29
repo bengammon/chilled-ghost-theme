@@ -3,26 +3,15 @@
    ========================================================================== */
 
 .intro {
-    align-items: flex-start;
-    display: flex;
-    gap: var(--spacing5);
-
-    &__content {
-        flex: 1;
+    &__heading {
+        // margin-bottom: var(--contentSpacing);
 
         text-wrap: pretty;
-
-        h1 {
-            text-wrap: pretty;
-        }
     }
 
-    &__image {
-        aspect-ratio: 1 / 1;
-        border-radius: 4rem;
-        flex: 1;
-        height: auto;
-        max-width: 28rem;
-        width: 100%;
+    &__text {
+        // margin-bottom: var(--contentSpacing);
+
+        // text-wrap: balance;
     }
 }

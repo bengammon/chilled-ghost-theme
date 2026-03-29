@@ -6,16 +6,10 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing2);
     justify-content: space-between;
-    margin: 0 auto var(--contentGutterVertical);
-    padding-bottom: var(--contentGutterVertical);
+    margin: 0 auto var(--contentSpacingLarge);
     position: relative;
     width: 100%;
-
-    > .post-teaser__heading {
-        margin-bottom: 0;
-    }
 
     &__avatar {
         border-radius: 50%;
@@ -85,8 +79,6 @@
     }
 
     &__excerpt {
-        margin-bottom: 0;
-
         text-wrap: balance;
     }
 

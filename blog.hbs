@@ -1,12 +1,10 @@
 {{!< default}}
 
-{{#get "posts" include="tags" filter="tags:-microblog" limit="all"}}
+{{#get "posts" include="tags" filter="tags:-note" limit="all"}}
 
     <h1>Blog</h1>
 
     {{> tags}}
-
-    <div class="spacer--medium"></div>
 
     <div class="archive">
         {{#get "posts" include="tags" limit="all"}}

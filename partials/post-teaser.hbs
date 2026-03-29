@@ -6,13 +6,16 @@
         <p class="post-teaser__excerpt">{{excerpt}}</p>
     {{/if}}
 
-    <div class="post-teaser__meta">
-         <div class="post-teaser__date" href="{{url}}">{{date format="DD/MM/YY"}}</div>
-         {{#if tags}}
-             {{#primary_tag}}
-                  <a class="post-teaser__tag" href="{{url}}">#{{name}}</a>
-             {{/primary_tag}}
-         {{/if}}
-    </div>
+    
+    {{^has tag="note"}}
+        <div class="post-teaser__meta">
+            <div class="post-teaser__date" href="{{url}}">{{date format="DD/MM/YY"}}</div>
+            {{#if tags}}
+                {{#primary_tag}}
+                    <a class="post-teaser__tag" href="{{url}}">#{{name}}</a>
+                {{/primary_tag}}
+            {{/if}}
+        </div>
+    {{/has}}
 
 </article>

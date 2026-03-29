@@ -44,6 +44,7 @@
         width: 100%;
 
         @media (min-width: $bp-desktop-small) {
+            align-items: center;
             display: flex;
             flex: 1;
             flex-direction: row;

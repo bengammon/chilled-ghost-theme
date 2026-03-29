@@ -1,0 +1,13 @@
+{{!< default}}
+
+    <h1>Notes</h1>
+
+    {{> tags}}
+
+    <div class="archive">
+        {{#get "posts" include="tags" filter="tags:note" limit="all"}}
+            {{#foreach posts}}
+                {{> post-note}}
+            {{/foreach}}
+        {{/get}}
+    </div>
