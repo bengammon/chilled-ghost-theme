@@ -12,7 +12,7 @@
 
 <h2 class="subheading">Recent writing</h2>
     
-{{#get "posts" include="tags" filter="tags:-micro" limit="3"}}
+{{#get "posts" include="tags" filter="tags:-note" limit="3"}}
     {{#foreach posts}}
         {{> post-teaser}}
     {{/foreach}}

@@ -10,12 +10,13 @@ a {
     @include active-states();
     position: relative;
 
-    color: var(--colorPrimary);
+    color: var(--colorTextProminent);
     font-weight: var(--fontWeightAnchor);
     text-decoration: underline;
     word-break: break-word;
 
     &:hover {
+        color: var(--colorPrimary);
         text-decoration: none;
     }
 

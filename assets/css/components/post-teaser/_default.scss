@@ -64,8 +64,8 @@
     }
 
     &__tag {
-        color: var(--colorPrimary);
-        text-decoration: none;
+        color: inherit;
+        // text-decoration: none;
         text-transform: lowercase;
 
         .content & {
