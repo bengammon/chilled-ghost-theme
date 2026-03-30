@@ -7,7 +7,7 @@
     {{> tags}}
 
     <div class="archive">
-        {{#get "posts" include="tags" limit="all"}}
+        {{#get "posts" include="tags" filter="tags:-note" limit="all"}}
             {{#foreach posts}}
                 {{> post-teaser}}
             {{/foreach}}
