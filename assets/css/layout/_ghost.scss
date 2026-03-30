@@ -206,8 +206,9 @@
 
 .kg-embed-card {
     aspect-ratio: 16/9;
-    margin-bottom: var(--spacing3);
-    width: 100%;
+    margin-block-end: var(--contentSpacing);
+    margin-bottom: var(--contentSpacing);
+    margin-inline: calc(var(--viewportPadding) * -1);
 
     > iframe {
         height: 100%;

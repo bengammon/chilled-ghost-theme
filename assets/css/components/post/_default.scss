@@ -27,12 +27,30 @@
     }
 
     &__tag {
-        color: var(--colorPrimary);
-        text-decoration: none;
+        color: inherit;
         text-transform: lowercase;
 
         .content & {
             color: inherit;
         }
+    }
+
+    ol + h2,
+    ol + h3,
+    ul + h2,
+    ul + h3,
+    blockquote + h2,
+    blockquote + h3,
+    p + h2,
+    p + h3,
+    .kg-card + h2,
+    .kg-card + h3 {
+        margin-top: var(--contentSpacingLarge);
+    }
+
+    .kg-card,
+    pre {
+        margin-bottom: var(--spacing4);
+        margin-top: var(--spacing4);
     }
 }
