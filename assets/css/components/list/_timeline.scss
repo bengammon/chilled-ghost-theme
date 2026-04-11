@@ -3,17 +3,22 @@
    ========================================================================== */
 
 .list--timeline {
+    margin-top: var(--contentSpacingLarge);
     position: relative;
 
     &:before {
         content: "";
-        height: 100%;
-        left: $list-timeline-before-left;
+        height: var(--listTimelineBeforeHeight);
+        left: var(--listTimelineBeforeLeft);
         position: absolute;
-        top: 0;
-        width: $list-timeline-before-width;
+        top: var(--listTimelineBeforeTop);
+        width: var(--listTimelineBeforeWidth);
 
-        background-color: var(--colorGrey9);
+        background-color: var(--colorBorder);
+    }
+
+    & + & {
+        margin-top: var(--contentSpacing);
     }
 
     &:last-of-type {
@@ -21,56 +26,58 @@
 
         &:before {
             bottom: 3rem;
-            height: $list-timeline-last-of-type-height;
+            height: var(--listTimelineLastOfTypeHeight);
             top: auto;
         }
     }
 
     > li {
-        padding-left: $list-timeline-li-padding-left;
+        padding-left: var(--listTimelineLiPaddingLeft);
         position: relative;
 
         &:before {
             content: "";
-            height: $list-timeline-li-before-height;
-            left: $list-timeline-li-before-left;
+            height: var(--listTimelineLiBeforeSize);
+            left: var(--listTimelineLiBeforeLeft);
             position: absolute;
-            top: $list-timeline-li-before-top;
-            width: $list-timeline-li-before-width;
+            top: var(--listTimelineLiBeforeTop);
+            width: var(--listTimelineLiBeforeSize);
 
-            border: $list-timeline-li-before-border-width solid var(--colorGrey9);
+            border: var(--listTimelineLiBeforeBorderWidth) solid var(--colorBorder);
             border-radius: 50%;
 
             background-color: var(--colorBackground);
+
+            transform: none;
+
+            // &.subheading {
+            //     display: none;
+            // }
         }
 
         &:first-child {
-            display: inline-block;
-            margin-bottom: $list-timeline-li-first-child-margin-bottom;
-            min-width: $list-timeline-li-first-child-min-width;
-            padding-left: $list-timeline-li-first-child-padding-horizontal;
-            padding-right: $list-timeline-li-first-child-padding-horizontal;
-            position: relative;
-            vertical-align: top;
+            // display: inline-block;
+            // margin-bottom: var(--listTimelineLiFirstChildMarginBottom);
+            // min-width: var(--listTimelineLiFirstChildMinWidth);
+            // padding-left: var(--listTimelineLiFirstChildPaddingHorizontal);
+            // padding-right: var(--listTimelineLiFirstChildPaddingHorizontal);
+            // position: relative;
+            // vertical-align: top;
 
-            background-color: var(--colorGrey9);
-            color: var(--colorText);
-            font-weight: var(--fontWeightSemiBold);
-            border-radius: $list-timeline-li-first-child-border-radius;
-            text-align: center;
-            text-transform: uppercase;
-
-            &:before {
-                display: none;
-            }
+            // background-color: var(--colorBorder);
+            // color: var(--colorText);
+            // font-weight: var(--fontWeightSemiBold);
+            // border-radius: var(--listTimelineLiFirstChildBorderRadius);
+            // text-align: center;
+            // text-transform: uppercase;
         }
 
         &:not(:first-child) {
-            padding-bottom: $list-timeline-li-not-first-child-padding-bottom;
+            padding-bottom: var(--listTimelineLiNotFirstChildPaddingBottom);
         }
 
         span + ul {
-            padding-top: $list-timeline-li-span-ul-padding-top;
+            padding-top: var(--listTimelineLiSpanUlPaddingTop);
         }
 
         > ul {
@@ -82,11 +89,24 @@
             font-size: var(--fontSizeSmall);
 
             > li {
-                padding-bottom: $list-timeline-li-ul-li-padding-bottom;
+                padding-bottom: var(--listTimelineLiUlLiPaddingBottom);
 
                 &:last-child {
                     padding-bottom: 0;
                 }
+            }
+        }
+
+        &.subheading {
+            border: 0;
+            margin: 0;
+            padding: var(--spacing2) var(--spacing2) var(--listTimelineLiNotFirstChildPaddingBottom) var(--listTimelineLiPaddingLeft);
+
+            &:before {
+                top: var(--listTimelineLiSubheadingBeforeTop);
+
+                background-color: var(--colorTextSubtle);
+                border-color: var(--colorTextSubtle);
             }
         }
     }  

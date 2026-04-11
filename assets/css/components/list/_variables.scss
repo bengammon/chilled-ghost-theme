@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #LIST/VARIABLES
+   ========================================================================== */
+
+:root {
+   --listTimelineBeforeHeight: calc(100% + var(--contentSpacing));
+   --listTimelineBeforeLeft: calc(var(--spacing2) - calc(var(--listTimelineBeforeWidth) / 2));
+   --listTimelineBeforeTop: var(--spacing3);
+   --listTimelineBeforeWidth: var(--borderWidth);
+   --listTimelineLastOfTypeHeight: 100%;
+   --listTimelineLiBeforeBorderWidth: var(--borderWidth);
+   --listTimelineLiBeforeLeft: 0;
+   --listTimelineLiBeforeSize: var(--spacing3);
+   --listTimelineLiBeforeTop: var(--spacing2);
+   --listTimelineLiSubheadingBeforeTop: calc(var(--spacing2) + .6rem);
+   --listTimelineLiFirstChildBorderRadius: .4rem;
+   --listTimelineLiFirstChildMarginBottom: 2rem;
+   --listTimelineLiFirstChildMinWidth: 6rem;
+   --listTimelineLiFirstChildPaddingHorizontal: .6rem;
+   --listTimelineLiNotFirstChildPaddingBottom: var(--contentSpacing);
+   --listTimelineLiPaddingLeft: var(--spacing5);
+   --listTimelineLiSpanUlPaddingTop: 1rem;
+   --listTimelineLiUlLiPaddingBottom: 1rem;
+}
