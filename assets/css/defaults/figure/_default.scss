@@ -18,9 +18,8 @@ figure {
         width: 100%;
     }
 
-    figcaption {
-        padding-top: var(--spacing2);
-
+    figcaption,
+    figcaption p {
         color: var(--colorTextSubtle);
         font-family: var(--fontFamilyDefault);
         font-size: var(--fontSizeSmall);

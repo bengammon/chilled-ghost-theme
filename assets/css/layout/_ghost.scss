@@ -205,21 +205,16 @@
 }
 
 .kg-embed-card {
-    aspect-ratio: 16/9;
     margin-block-end: var(--contentSpacing);
     margin-bottom: var(--contentSpacing);
     margin-inline: calc(var(--viewportPadding) * -1);
 
-    > iframe {
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
+    &:has(iframe[src*="youtube.com"]) iframe,
+    &:has(iframe[src*="vimeo.com"]) iframe {
+        border-radius: var(--borderRadius);
         width: 100%;
-
-        @media (min-width: $bp-tablet) {
-            border-radius: var(--borderRadius);
-        }
+        aspect-ratio: 16 / 9;
+        height: auto;
     }
 }
 
