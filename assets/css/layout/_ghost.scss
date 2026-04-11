@@ -208,6 +208,11 @@
     margin-block-end: var(--contentSpacing);
     margin-bottom: var(--contentSpacing);
     margin-inline: calc(var(--viewportPadding) * -1);
+    width: stretch;
+
+    iframe {
+        display: block;
+    }
 
     &:has(iframe[src*="youtube.com"]) iframe,
     &:has(iframe[src*="vimeo.com"]) iframe {
