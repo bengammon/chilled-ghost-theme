@@ -1,17 +1,13 @@
 {{!< default}}
 
-{{#get "posts" include="tags" filter="tags:-note" limit="all"}}
+<h1>Blog</h1>
 
-    <h1>Blog</h1>
+{{> tags}}
 
-    {{> tags}}
+<div class="archive">
+    {{#foreach posts}}
+        {{> post-teaser}}
+    {{/foreach}}
+</div>
 
-    <div class="archive">
-        {{#get "posts" include="tags" filter="tags:-note" limit="all"}}
-            {{#foreach posts}}
-                {{> post-teaser}}
-            {{/foreach}}
-        {{/get}}
-    </div>
-
-{{/get}}
+{{> pagination}}

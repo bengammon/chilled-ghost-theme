@@ -1,13 +1,13 @@
 {{!< default}}
 
-    <h1>Notes</h1>
+<h1>Notes</h1>
 
-    {{> tags}}
+{{> tags}}
 
-    <div class="archive">
-        {{#get "posts" include="tags" filter="tags:note" limit="all"}}
-            {{#foreach posts}}
-                {{> post-note}}
-            {{/foreach}}
-        {{/get}}
-    </div>
+<div class="archive">
+    {{#foreach posts}}
+        {{> post-note}}
+    {{/foreach}}
+</div>
+
+{{> pagination}}
