@@ -2,11 +2,11 @@
 
 {{#tag}}
 
-    <h1 class="mb-3">
-        <span class="color--text-subtle">Tag/</span>{{name}}
+    <h1>
+        <span class="color--text-subtle">Tag/</span>{{name}} {{#if ../pagination.prev}}<span class="color--text-subtle">(Page {{../pagination.page}})</span>{{/if}}
     </h1>
 
-    <div class="spacer--medium"></div>
+    <div class="spacer--extra-large"></div>
 
 {{/tag}}
 
