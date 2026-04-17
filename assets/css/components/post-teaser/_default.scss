@@ -33,6 +33,10 @@
             color: var(--colorTextProminent);
             font-weight: var(--fontWeightBold);
         }
+
+        .tag-note & {
+            color: var(--colorTextSubtle);
+        }
     }
 
     &__content,
