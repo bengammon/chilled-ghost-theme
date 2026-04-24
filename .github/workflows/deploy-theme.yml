@@ -23,7 +23,7 @@ jobs:
 
       - name: Validate Ghost theme
         run: |
-          npx -y gscan@latest .
+          npx -y gscan@4 .
 
       - name: Deploy Ghost Theme
         uses: TryGhost/action-deploy-theme@v1.6.6
