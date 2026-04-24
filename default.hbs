@@ -4,12 +4,78 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="{{asset "built/index.css"}}" />
 
     <title>{{meta_title}}{{#is "post, page"}} — {{@site.title}}{{/is}}</title>
 
     {{ghost_head}}
     {{!-- Outputs important meta data and settings, should always be in <head> --}}
+
+    {{!-- JSON-LD Structured Data --}}
+    {{#is "home"}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "{{@site.url}}/#website",
+                "url": "{{@site.url}}",
+                "name": "{{@site.title}}",
+                "description": "{{@site.description}}",
+                "inLanguage": "en-GB"
+            },
+            {
+                "@type": "Person",
+                "@id": "{{@site.url}}/#person",
+                "name": "Ben Gammon",
+                "url": "{{@site.url}}",
+                "description": "Creative developer with nearly 20 years of experience building for the web, including game titles such as No Man's Sky, Dead Island, and Saints Row.",
+                "jobTitle": "Creative Developer",
+                "worksFor": {
+                    "@type": "Organization",
+                    "name": "Etch"
+                },
+                "sameAs": [
+                    "https://bsky.app/profile/bengammon.co.uk",
+                    "https://www.linkedin.com/in/bengammon/"
+                ]
+            }
+        ]
+    }
+    </script>
+    {{/is}}
+
+    {{#is "post"}}
+    {{#post}}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "{{title}}",
+        "url": "{{url absolute="true"}}",
+        "datePublished": "{{date format="YYYY-MM-DDTHH:mm:ssZ"}}",
+        "dateModified": "{{updated_at format="YYYY-MM-DDTHH:mm:ssZ"}}",
+        "author": {
+            "@type": "Person",
+            "name": "Ben Gammon",
+            "@id": "{{@site.url}}/#person"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Ben Gammon",
+            "url": "{{@site.url}}"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{url absolute="true"}}"
+        }{{#if feature_image}},
+        "image": "{{feature_image}}"{{/if}}
+    }
+    </script>
+    {{/post}}
+    {{/is}}
 
 </head>
 <body class="{{body_class}}">
