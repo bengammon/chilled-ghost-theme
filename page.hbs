@@ -2,9 +2,11 @@
 
 {{#post}}
 
+    {{#if @page.show_title_and_feature_image}}
     <h1 class="page-header__title">{{title}}</h1>
 
     <div class="spacer--extra-large"></div>
+    {{/if}}
 
     {{content}}
 
