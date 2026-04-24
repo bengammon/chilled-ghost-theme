@@ -8,7 +8,7 @@
 
     <div class="post__meta">
         {{^has tag="note"}}
-            {{date format="DD/MM/YY"}}
+            <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD/MM/YY"}}</time>
         {{/has}}
         {{#if tags}}
             <ul class="post__tags list">
@@ -23,6 +23,22 @@
 
     {{content}}
 
+    {{^has tag="note"}}
+    <div class="post__subscribe">
+        {{^if @member}}
+        <hr>
+        <div class="subscribe-cta">
+            <p>Enjoyed this? I write about CSS, web development, gaming, and whatever else catches my eye. Subscribe to get new posts by email — no spam, unsubscribe any time.</p>
+            <form data-members-form="subscribe" class="subscribe-cta__form">
+                <input class="subscribe-cta__input" data-members-email type="email" placeholder="your@email.com" required />
+                <button class="btn subscribe-cta__btn" type="submit">Subscribe</button>
+                <div class="subscribe-cta__success" style="display:none">✓ You're subscribed!</div>
+                <div class="subscribe-cta__error" style="display:none">Something went wrong. Please try again.</div>
+            </form>
+        </div>
+        {{/if}}
+    </div>
+    {{/has}}
 </article>
 
 {{/post}}
