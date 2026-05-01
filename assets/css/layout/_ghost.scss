@@ -2,6 +2,11 @@
    #LAYOUT/GHOST
    ========================================================================== */
 
+/* Hide Ghost's default floating portal button */
+div[data-ghost-portal-root] iframe {
+    display: none !important;
+}
+
 .kg {
     &-bookmark {
         &-card,
