@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* Hide Ghost's default floating portal button */
-div[data-ghost-portal-root] iframe {
+div#ghost-portal-root iframe {
     display: none !important;
 }
 
