@@ -5,6 +5,13 @@
 		<li><a href="mailto:hello@bengammon.co.uk">Email</a></li>
 		<li><a rel="me" href="https://bsky.app/profile/bengammon.co.uk" target="_blank">Bluesky</a></li>
 		<li><a href="https://www.linkedin.com/in/bengammon/" target="_blank">LinkedIn</a></li>
+		<li>
+		{{#if @member}}
+			<a href="#" data-portal="account">Manage subscription</a>
+		{{else}}
+			<a href="#" data-portal="signup">Subscribe</a>
+		{{/if}}
+		</li>
 	</ul>
 
 	<p class="footer__legal">&copy;2012-{{date format="YYYY"}} <a href="/about">Ben Gammon</a>. Published in Southampton, UK.</p>
