@@ -7,6 +7,7 @@ import "../css/index.scss";
 import menuOpen from "./menuOpen";
 import tocBot from "./tocbot.min";
 import initPostNumbers from "./postNumber";
+import "./subscribeCta";
 
 menuOpen();
 initPostNumbers();
