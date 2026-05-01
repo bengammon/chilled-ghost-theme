@@ -3,7 +3,7 @@
    ========================================================================== */
 
 /* Hide Ghost's default floating portal button */
-.gh-portal-triggerbtn-wrapper {
+#ghost-portal-root > iframe:first-child {
     display: none !important;
 }
 
