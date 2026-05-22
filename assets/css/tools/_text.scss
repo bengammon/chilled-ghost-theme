@@ -24,7 +24,7 @@
 @mixin text-subheading() {
     @include text-default();
     font-size: var(--fontSizeSubheading);
-    font-weight: var(--fontWeightLight);
+    font-weight: var(--fontWeightSubheading);
     letter-spacing: var(--letterSpacingSubheading);
     line-height: var(--lineHeightSubheading);
 }

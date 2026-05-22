@@ -13,14 +13,14 @@
         background-color: var(--colorPrimary);
         color: var(--colorTextInverted);
 
-        @media (min-width: var(--bpDesktop)) {
+        @media (min-width: $bp-desktop) {
             grid-column: 3 / 15;
         }
 
         > * {
             grid-column: main-content;
 
-            @media (min-width: var(--bpDesktopSmall)) {
+            @media (min-width: $bp-desktopSmall) {
                 grid-column: 4 / 12;
             }
         }

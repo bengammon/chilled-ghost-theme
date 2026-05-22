@@ -6,7 +6,7 @@
     > .grid__item {
         width: 100%;
 
-        @media (min-width: var(--bpTabletSmall)) {
+        @media (min-width: $bp-tabletSmall) {
             max-width: 50%;
         }
     }

@@ -8,7 +8,7 @@ $columns: 18;
 
 @for $column from 1 to $columns {
     .col-start--#{$column} {
-        @media (min-width: var(--bpDesktopSmall)) {
+        @media (min-width: $bp-desktopSmall) {
             grid-column-start: #{$column};
         }
     }
@@ -16,7 +16,7 @@ $columns: 18;
 
 @for $column from 1 to $columns {
     .col-end--#{$column} {
-        @media (min-width: var(--bpDesktopSmall)) {
+        @media (min-width: $bp-desktopSmall) {
             grid-column-end: #{$column};
         }
     }

@@ -9,11 +9,11 @@
     > div {
         grid-column: main-content;
 
-        @media (min-width: var(--bpDesktopSmall)) {
+        @media (min-width: $bp-desktopSmall) {
             grid-column: 3 / 7;
         }
 
-        @media (min-width: var(--bpDesktop)) {
+        @media (min-width: $bp-desktop) {
             grid-column: 4 / 11;
         }
 
@@ -21,12 +21,12 @@
             grid-column: main-content;
             margin: var(--sectionLoopsDivLastChildMargin);
 
-            @media (min-width: var(--bpDesktopSmall)) {
+            @media (min-width: $bp-desktopSmall) {
                 grid-column: 9 / 13;
                 margin: var(--sectionLoopsDivLastChildMarginDesktopSmall);
             }
 
-            @media (min-width: var(--bpDesktop)) {
+            @media (min-width: $bp-desktop) {
                 grid-column: 10 / 14;
             }
         }

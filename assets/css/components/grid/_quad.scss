@@ -6,11 +6,11 @@
     > .grid__item {
         width: 100%;
 
-        @media (min-width: var(--bpDesktopSmall)) {
+        @media (min-width: $bp-desktopSmall) {
             max-width: 33%;
         }
 
-        @media (min-width: var(--bpDesktop)) {
+        @media (min-width: $bp-desktop) {
             max-width: 25%;
         }
     }
