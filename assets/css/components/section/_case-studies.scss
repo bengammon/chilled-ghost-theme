@@ -20,7 +20,7 @@
         > * {
             grid-column: main-content;
 
-            @media (min-width: $bp-desktopSmall) {
+            @media (min-width: $bp-desktop-small) {
                 grid-column: 4 / 12;
             }
         }

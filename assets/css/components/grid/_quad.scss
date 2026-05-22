@@ -6,7 +6,7 @@
     > .grid__item {
         width: 100%;
 
-        @media (min-width: $bp-desktopSmall) {
+        @media (min-width: $bp-desktop-small) {
             max-width: 33%;
         }
 

@@ -9,7 +9,7 @@
     > div {
         grid-column: main-content;
 
-        @media (min-width: $bp-desktopSmall) {
+        @media (min-width: $bp-desktop-small) {
             grid-column: 3 / 7;
         }
 
@@ -21,7 +21,7 @@
             grid-column: main-content;
             margin: var(--sectionLoopsDivLastChildMargin);
 
-            @media (min-width: $bp-desktopSmall) {
+            @media (min-width: $bp-desktop-small) {
                 grid-column: 9 / 13;
                 margin: var(--sectionLoopsDivLastChildMarginDesktopSmall);
             }

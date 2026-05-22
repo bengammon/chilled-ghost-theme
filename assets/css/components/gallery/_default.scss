@@ -23,7 +23,7 @@
         padding-right: var(--galleryItemGap);
         width: 50%;
 
-        @media (min-width: $bp-tabletSmall) {
+        @media (min-width: $bp-tablet-small) {
             width: 33.3%;
         }
 
