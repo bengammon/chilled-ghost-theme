@@ -54,7 +54,7 @@
         @include content-wide;
         
         figcaption {
-            @media (min-width: var(--bpDesktopSmall)) {
+            @media (min-width: $bp-desktop-small) {
                 padding-left: 0;
                 padding-right: 0;
             }
@@ -65,7 +65,7 @@
         margin-bottom: 8rem;
         margin-top: 8rem;
 
-        @media (min-width: var(--bpDesktopSmall)) {
+        @media (min-width: $bp-desktop-small) {
             width: calc(100% - calc(var(--spacing6) * 2));
         }
 
