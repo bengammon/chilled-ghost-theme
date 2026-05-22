@@ -67,9 +67,6 @@
         }
     }
 
-    &__nav {
-    }
-
     &__social {
         display: flex;
     }
@@ -97,10 +94,6 @@
 
         svg {
             filter: drop-shadow(2px 4px 12px black);
-
-            path {
-                // fill: var(--colorTextProminent);
-            }
         }
 
         &:hover {

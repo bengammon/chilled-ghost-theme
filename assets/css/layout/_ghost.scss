@@ -43,7 +43,6 @@
             border-radius: var(--borderRadius);
             display: flex;
             margin-block-end: var(--contentSpacing);
-            margin-bottom: var(--contentSpacing);
             margin-inline: calc(var(--viewportPadding) * -1);
 
             overflow: hidden;
@@ -69,7 +68,7 @@
 
             .kg-bookmark-thumbnail {
                 img {
-                    border-radius: 0;;
+                    border-radius: 0;
                 }
             }
         }
@@ -100,7 +99,7 @@
             flex-grow: 1;
             flex-direction: column;
             justify-content: flex-start;
-            padding: 1.2rem 1.6rem 1.6rem;
+            padding: 1.2rem var(--spacing3) var(--spacing3);
 
             background-color: var(--colorBookmarkBg);
             background-image: var(--imageBookmarkBg);
@@ -160,7 +159,7 @@
             flex-wrap: wrap;
             align-items: center;
             margin-top: auto;
-            padding-right: 1.6rem;
+            padding-right: var(--spacing3);
             position: relative;
 
             font-size: var(--fontSizeSmall);
@@ -211,7 +210,6 @@
 
 .kg-embed-card {
     margin-block-end: var(--contentSpacing);
-    margin-bottom: var(--contentSpacing);
     margin-inline: calc(var(--viewportPadding) * -1);
     width: stretch;
 
