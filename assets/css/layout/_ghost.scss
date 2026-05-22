@@ -257,22 +257,22 @@
     }
 }
 
-// .kg-width-full {
-//     position: relative;
-//     width: 100vw;
-//     left: 50%;
-//     right: 50%;
-//     margin-left: -50vw;
-//     margin-right: -50vw;
-// }
+.kg-width-full {
+    position: relative;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
 
-// .kg-width-wide {
-//     @media (min-width: $bp-tablet) {
-//         position: relative;
-//         width: 70vw;
-//         left: 50%;
-//         right: 50%;
-//         margin-left: -35vw;
-//         margin-right: -35vw;
-//     }
-// }
+.kg-width-wide {
+    @media (min-width: $bp-tablet) {
+        position: relative;
+        width: 70vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -35vw;
+        margin-right: -35vw;
+    }
+}
