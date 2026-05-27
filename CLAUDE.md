@@ -32,7 +32,7 @@ The site distinguishes "posts" (long-form writing) from "notes" (short-form) via
 ### Partials (`partials/`)
 
 - `header.hbs` / `footer.hbs` — site chrome
-- `navigation-static.hbs` — hardcoded nav (not Ghost's dynamic nav)
+- `navigation.hbs` — nav driven by Ghost admin navigation settings
 - `post-teaser.hbs` — card used in blog archive and home page
 - `post-note.hbs` — compact card used in notes archive and home page
 - `tags.hbs`, `pagination.hbs`, `social.hbs` — utility partials

@@ -1,0 +1,9 @@
+<nav class="nav-container">
+    <ul class="nav" role="menu">
+        {{#each navigation}}
+        <li class="nav__item" role="menuitem">
+            <a class="{{link_class for=url}}" href="{{url}}">{{label}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</nav>
