@@ -3,16 +3,16 @@
 {{#tag}}
 
     <h1>
-        <span class="color--text-subtle">Tag/</span>{{name}} {{#if ../pagination.prev}}<span class="color--text-subtle">(Page {{../pagination.page}})</span>{{/if}}
+        Blog/<span class="color--text-subtle">{{name}}</span> {{#if ../pagination.prev}}<span class="color--text-subtle">(Page {{../pagination.page}})</span>{{/if}}
     </h1>
 
     {{#if description}}
     <p class="tag__description">{{description}}</p>
     {{/if}}
 
-    <div class="spacer--extra-large"></div>
-
 {{/tag}}
+
+{{> tags}}
 
 <div class="archive">
     {{#foreach posts}}
@@ -20,4 +20,4 @@
     {{/foreach}}
 </div>
 
-{{pagination}}
+{{> pagination}}
