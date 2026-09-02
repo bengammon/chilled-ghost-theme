@@ -18,5 +18,26 @@
         font-size: var(--fontSizeTiny);
         text-decoration: none;
         text-transform: lowercase;
+
+        /**
+         * The text colour comes from the anchor default; this brings the rest
+         * of the pill with it.
+         */
+        @include active-states() {
+            border-color: var(--colorPrimary);
+
+            background-color: rgba(var(--colorPrimaryRgb), .08);
+        }
+
+        /**
+         * The tag whose archive is currently being viewed. Declared after the
+         * active states so the current tag stays put when hovered.
+         */
+        &[aria-current="page"] {
+            border-color: var(--colorTextProminent);
+
+            background-color: var(--colorTextProminent);
+            color: var(--colorBackground);
+        }
     }
 }
