@@ -3,13 +3,17 @@
    ========================================================================== */
 
 .post-teaser {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 auto var(--contentSpacingLarge);
+    align-items: baseline;
+    column-gap: var(--spacing4);
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto var(--spacing4);
     position: relative;
     width: 100%;
+
+    @media (min-width: $bp-tablet-small) {
+        grid-template-columns: max-content 1fr;
+    }
 
     &__avatar {
         border-radius: 50%;
@@ -20,55 +24,33 @@
         width: 5rem;
     }
 
+    &__date {
+        grid-column: 1;
+        white-space: nowrap;
+
+        color: var(--colorTextSubtle);
+        font-family: var(--fontFamilyAlternative);
+        font-variant-numeric: tabular-nums;
+    }
+
     &__heading {
-        font-size: var(--fontSizeH3);
+        grid-column: 1;
+        margin-bottom: 0;
+
+        font-size: var(--fontSizeBase);
+
+        @media (min-width: $bp-tablet-small) {
+            grid-column: 2;
+        }
     }
 
     &__title {
         color: var(--colorTextProminent);
-        line-height: var(--lineHeightH3);
         text-decoration: none;
 
         .content & {
             color: var(--colorTextProminent);
             font-weight: var(--fontWeightBold);
-        }
-
-        .tag-note & {
-            color: var(--colorTextSubtle);
-        }
-    }
-
-    &__meta {
-        display: flex;
-        gap: var(--spacing2);
-        margin-bottom: var(--spacing1);
-
-        color: var(--colorTextSubtle);
-        font-family: var(--fontFamilyAlternative);
-    }
-
-    &__date {
-        flex-shrink: 0;
-
-        color: inherit;
-        font-family: var(--fontFamilyAlternative);
-        font-size: inherit;
-        font-variant-numeric: tabular-nums;
-        text-decoration: none;
-
-        a {
-            color: var(--colorTextSubtle);
-            text-decoration: none;
-        }
-    }
-
-    &__tag {
-        color: inherit;
-        text-transform: lowercase;
-
-        .content & {
-            color: inherit;
         }
     }
 
@@ -77,29 +59,20 @@
         font-variant-numeric: tabular-nums;
     }
 
-    &__excerpt {
-        text-wrap: balance;
-    }
-
-    &__year {
-        align-items: center;
+    /**
+     * Notes keep the original stacked layout: heading followed by the note
+     * content, with no date column.
+     */
+    &--stacked {
+        align-items: flex-start;
         display: flex;
-        gap: var(--spacing2);
-        margin: 0;
-        max-width: 10rem;
-        position: relative;
-        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: var(--contentSpacingLarge);
 
-        font-family: var(--fontFamilyAlternative);
-
-        &:after {
-            content: "";
-            display: none;
-            flex: 1;
-            height: 2px;
-            position: relative;
-
-            background: var(--colorGrey9);
+        .post-teaser__heading {
+            font-size: var(--fontSizeH3);
+            line-height: var(--lineHeightH3);
         }
     }
 
