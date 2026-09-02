@@ -16,20 +16,10 @@
 
 <h2 class="subheading">Recent writing</h2>
     
-{{#get "posts" include="tags" filter="tags:-note" limit="3"}}
+{{#get "posts" include="tags" limit="12"}}
     {{#foreach posts}}
         {{> post-teaser}}
     {{/foreach}}
 {{/get}}
 
 <a class="link link--subtle" href="/blog">See more of my writing</a>
-
-<h2 class="subheading">Recent notes</h2>
-
-{{#get "posts" include="tags" filter="tags:note" limit="3"}}
-    {{#foreach posts}}
-        {{> post-note}}
-    {{/foreach}}
-{{/get}}
-
-<a class="link link--subtle" href="/notes">See more of my notes</a>
