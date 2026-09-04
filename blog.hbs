@@ -1,4 +1,5 @@
 {{!< default}}
+{{#contentFor "title"}}Blog{{#if pagination.prev}} (Page {{pagination.page}}){{/if}} — {{@site.title}}{{/contentFor}}
 
 <h1>Blog {{#if pagination.prev}}<span class="color--text-subtle">(Page {{pagination.page}})</span>{{/if}}</h1>
 
