@@ -4,7 +4,7 @@
 
 .post {
     &__title {
-        margin-bottom: var(--spacing4);
+        margin-bottom: var(--spacing6);
     }
     
     &__number {
@@ -13,40 +13,49 @@
     }
 
     /**
-     * Only posts tagged #toc render a sidebar, so the two-column grid is
-     * keyed off its presence rather than a modifier class.
+     * Every post has a sidebar now that the meta lives there, so the grid is
+     * unconditional rather than keyed off the contents list.
      */
     &__layout {
         @media (min-width: $bp-desktop-small) {
-            &:has(.post__sidebar) {
-                align-items: start;
-                display: grid;
-                gap: var(--layoutGridGap);
-                grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
-            }
+            align-items: start;
+            display: grid;
+            gap: var(--layoutGridGap);
+            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
         }
     }
 
     /**
      * The sidebar stays first in the source so that it stacks above the post
-     * on narrow screens, where a contents list below the article would be no
-     * use. On desktop both are placed explicitly, which puts the contents on
-     * the right and starts the post at the container edge, in line with the
-     * site logo in the header.
+     * on narrow screens, keeping the meta directly under the title as it has
+     * always read. On desktop both are placed explicitly, which puts the
+     * sidebar on the right and starts the post at the container edge, in line
+     * with the site logo in the header.
      */
     &__sidebar {
         margin-bottom: var(--contentSpacingLarge);
 
         @media (min-width: $bp-desktop-small) {
+            /**
+             * Stretched to the full row height so that the contents list
+             * inside has somewhere to travel while sticky; the meta above it
+             * stays put at the top.
+             */
+            align-self: stretch;
             grid-column: 2;
             grid-row: 1;
             margin-bottom: 0;
-            position: sticky;
-            top: var(--spacing4);
         }
     }
 
+    /**
+     * Caps the measure whether or not a contents list is present: without one
+     * the post would otherwise run the full width of the container. ch rather
+     * than rem so the measure tracks the type scale.
+     */
     &__body {
+        max-width: 55ch;
+
         @media (min-width: $bp-desktop-small) {
             grid-column: 1;
             grid-row: 1;
@@ -55,24 +64,29 @@
 
     &__meta {
         display: flex;
+        flex-wrap: wrap;
         gap: var(--spacing3);
         margin-bottom: var(--spacing6);
 
         color: var(--colorTextSubtle);
         font-family: var(--fontFamilyAlternative);
-    }
 
-    &__tags {
-        display: flex;
-        gap: var(--spacing3);
-    }
+        /**
+         * The shared tag pills carry block margins for the archive pages;
+         * in the meta stack the spacing comes from the gap instead.
+         */
+        .tags {
+            margin: 0;
+        }
 
-    &__tag {
-        color: inherit;
-        text-transform: lowercase;
-
-        .content & {
-            color: inherit;
+        /**
+         * Stacked in the sidebar, where a single row of date plus tags would
+         * not fit the narrow column.
+         */
+        @media (min-width: $bp-desktop-small) {
+            flex-direction: column;
+            gap: var(--spacing2);
+            margin-bottom: var(--spacing4);
         }
     }
 

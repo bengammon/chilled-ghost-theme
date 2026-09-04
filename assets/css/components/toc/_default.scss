@@ -7,6 +7,16 @@
 
     font-family: var(--fontFamilyAlternative);
 
+    /**
+     * Sticky here rather than on the sidebar, so the contents follow the
+     * reader down the post while the meta above stays at the top.
+     */
+    @media (min-width: $bp-desktop-small) {
+        max-height: calc(100vh - var(--spacing4) * 2);
+        position: sticky;
+        top: var(--spacing4);
+    }
+
     &__summary {
         cursor: pointer;
         margin-bottom: var(--spacing3);
