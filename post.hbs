@@ -6,26 +6,29 @@
 
     <h1 class="post__title">{{title}} <span class="post__number js-post-number" style="opacity: 0;"></span></h1>
 
-    <div class="post__meta">
-        <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD/MM/YYYY"}}</time>
-        {{#if tags}}
-            <ul class="post__tags list">
-                {{#foreach tags}}
-                <li>
-                    <a class="post__tag" href="{{url}}" title="{{name}}">#{{name}}</a>
-                </li>
-                {{/foreach}}
-            </ul>
-        {{/if}}
-    </div>
-
     <div class="post__layout">
 
-        {{#has tag="#toc"}}
-            <aside class="post__sidebar">
+        {{!-- The sidebar carries the post meta on every post, so the column is
+              never empty; the contents list joins it only where it is asked
+              for. --}}
+        <aside class="post__sidebar">
+
+            <div class="post__meta">
+                <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD/MM/YYYY"}}</time>
+                {{#if tags}}
+                    <div class="tags">
+                        {{#foreach tags}}
+                        <a class="tags__item" href="{{url}}" title="{{name}}">#{{name}}</a>
+                        {{/foreach}}
+                    </div>
+                {{/if}}
+            </div>
+
+            {{#has tag="#toc"}}
                 {{> "table-of-contents"}}
-            </aside>
-        {{/has}}
+            {{/has}}
+
+        </aside>
 
         {{!-- js-toc-content scopes tocbot to the post body, so the title above
              it is never picked up as a heading. --}}
