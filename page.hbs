@@ -8,6 +8,10 @@
     <div class="spacer--extra-large"></div>
     {{/if}}
 
-    {{content}}
+    {{!-- Matches the post template: the heading spans the container, the
+          running text is capped at the reading measure. --}}
+    <div class="measure">
+        {{content}}
+    </div>
 
 {{/post}}

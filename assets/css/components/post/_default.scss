@@ -54,7 +54,7 @@
      * than rem so the measure tracks the type scale.
      */
     &__body {
-        max-width: 55ch;
+        max-width: var(--measure);
 
         @media (min-width: $bp-desktop-small) {
             grid-column: 1;

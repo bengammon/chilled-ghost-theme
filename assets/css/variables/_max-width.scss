@@ -4,4 +4,13 @@
 
 :root {   
    --maxWidth: 104rem;
+
+   /**
+    * The reading measure. The container is deliberately wider than this so a
+    * post's contents sidebar has somewhere to sit; running text is capped
+    * separately. ch rather than rem so it tracks the type scale - note that
+    * ch is the width of the zero glyph, so this is nearer 75 characters than
+    * 55 in Inter.
+    */
+   --measure: 55ch;
 }
