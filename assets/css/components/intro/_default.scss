@@ -6,4 +6,12 @@
     &__heading {
         text-wrap: pretty;
     }
+
+    /**
+     * The heading sets its own line breaks and the button sizes to its label,
+     * so only the running text needs capping at the reading measure.
+     */
+    &__text {
+        max-width: var(--measure);
+    }
 }

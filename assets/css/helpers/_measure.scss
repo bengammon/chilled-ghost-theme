@@ -1,0 +1,13 @@
+/*  ==========================================================================
+    #MEASURE
+    ========================================================================== */
+
+/**
+ * Caps running text at the reading measure without centring it, so content
+ * stays aligned to the left edge of the container and therefore to the site
+ * logo. Used wherever a template puts prose straight into the wide container.
+ */
+
+.measure {
+    max-width: var(--measure);
+}
