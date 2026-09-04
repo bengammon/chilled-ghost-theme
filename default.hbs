@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="{{asset "built/index.css"}}" />
 
-    <title>{{meta_title}}{{#is "post, page"}} — {{@site.title}}{{/is}}</title>
+    <title>{{#block "title"}}{{meta_title}}{{#is "post, page"}} — {{@site.title}}{{/is}}{{/block}}</title>
 
     {{ghost_head}}
     {{!-- Outputs important meta data and settings, should always be in <head> --}}
