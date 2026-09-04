@@ -9,21 +9,21 @@
         
     </a>
 
-    <div class="header__menu-toggle gh-burger">
-        <nav class="nav-container">
-            <ul class="nav nav--menu-toggle" role="menu">
-                <li class="nav__item" role="menuitem">
-                    <a>
-                        <svg class="header__burger" xmlns="http://www.w3.org/2000/svg" fill="none" height="24" width="24" viewBox="0 0 24 24"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                        <svg class="header__close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="header__menu-toggle">
+        <div class="nav-container">
+            <ul class="nav nav--menu-toggle">
+                <li class="nav__item">
+                    <button class="gh-burger" type="button" aria-controls="site-menu" aria-expanded="false">
+                        <svg class="header__burger" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" height="24" width="24" viewBox="0 0 24 24"><path stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                        <svg class="header__close" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6L6 18M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                         <span class="nav__item-label">Menu</span>
-                    </a>
+                    </button>
                 </li>
             </ul>
-        </nav>
+        </div>
     </div>
 
-    <div class="header__menu">
+    <div class="header__menu" id="site-menu">
 
         <div class="header__nav">
             {{> navigation}}
