@@ -33,11 +33,18 @@
         font-variant-numeric: tabular-nums;
     }
 
+    /**
+     * Type is pinned here rather than inherited from the heading element, so
+     * the tag can be chosen for document outline without changing the design.
+     */
     &__heading {
         grid-column: 1;
         margin-bottom: 0;
 
         font-size: var(--fontSizeBase);
+        font-weight: var(--fontWeightH3);
+        letter-spacing: var(--letterSpacingH3);
+        line-height: var(--lineHeightH3);
 
         @media (min-width: $bp-tablet-small) {
             grid-column: 2;
