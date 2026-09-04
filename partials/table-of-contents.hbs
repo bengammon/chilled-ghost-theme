@@ -1,0 +1,15 @@
+{{!--
+    Shell for tocbot, which fills .gh-toc on load. Marked up as <details> so
+    that with no JS, or on narrow screens where the sidebar stacks above the
+    post, the contents collapse behind the summary rather than pushing the
+    article down the page. toc.js opens it on desktop.
+--}}
+<details class="toc js-toc">
+
+    <summary class="toc__summary">Contents</summary>
+
+    <nav class="toc__nav" aria-label="Table of contents">
+        <div class="gh-toc"></div>
+    </nav>
+
+</details>

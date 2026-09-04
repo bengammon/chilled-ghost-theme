@@ -7,6 +7,29 @@
 
     font-family: var(--fontFamilyAlternative);
 
+    &__summary {
+        cursor: pointer;
+        margin-bottom: var(--spacing3);
+
+        color: var(--colorTextSubtle);
+        font-size: var(--fontSizeTiny);
+        letter-spacing: var(--letterSpacingSubheading);
+        text-transform: uppercase;
+
+        @media (min-width: $bp-desktop-small) {
+            /**
+             * In the sidebar the contents are open and stay open, so the
+             * disclosure marker would only mislead.
+             */
+            cursor: default;
+            list-style: none;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+        }
+    }
+
     &-list {
         overflow: hidden;
         list-style: none;
