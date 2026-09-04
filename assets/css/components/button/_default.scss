@@ -14,7 +14,6 @@
     vertical-align: middle;
 
     background-color: var(--colorCodeBg);
-    outline: none;
 
     color: var(--colorText);
     font-family: var(--fontFamilyHeading);
@@ -28,8 +27,12 @@
     cursor: pointer;
 
     &:hover {
-        background-color: var(--colorPrimaryActive);
-        border-color: var(--colorPrimaryActive);
+        background-color: var(--colorBorder);
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--colorPrimary);
+        outline-offset: 3px;
     }
 }
 
