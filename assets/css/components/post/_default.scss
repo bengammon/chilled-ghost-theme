@@ -12,6 +12,47 @@
         font-variant-numeric: tabular-nums;
     }
 
+    /**
+     * Only posts tagged #toc render a sidebar, so the two-column grid is
+     * keyed off its presence rather than a modifier class.
+     */
+    &__layout {
+        @media (min-width: $bp-desktop-small) {
+            &:has(.post__sidebar) {
+                align-items: start;
+                display: grid;
+                gap: var(--layoutGridGap);
+                grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+            }
+        }
+    }
+
+    /**
+     * The sidebar stays first in the source so that it stacks above the post
+     * on narrow screens, where a contents list below the article would be no
+     * use. On desktop both are placed explicitly, which puts the contents on
+     * the right and starts the post at the container edge, in line with the
+     * site logo in the header.
+     */
+    &__sidebar {
+        margin-bottom: var(--contentSpacingLarge);
+
+        @media (min-width: $bp-desktop-small) {
+            grid-column: 2;
+            grid-row: 1;
+            margin-bottom: 0;
+            position: sticky;
+            top: var(--spacing4);
+        }
+    }
+
+    &__body {
+        @media (min-width: $bp-desktop-small) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+    }
+
     &__meta {
         display: flex;
         gap: var(--spacing3);

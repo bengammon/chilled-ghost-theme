@@ -19,7 +19,21 @@
         {{/if}}
     </div>
 
-    {{content}}
+    <div class="post__layout">
+
+        {{#has tag="#toc"}}
+            <aside class="post__sidebar">
+                {{> "table-of-contents"}}
+            </aside>
+        {{/has}}
+
+        {{!-- js-toc-content scopes tocbot to the post body, so the title above
+             it is never picked up as a heading. --}}
+        <div class="post__body js-toc-content">
+            {{content}}
+        </div>
+
+    </div>
 
     {{!-- {{^has tag="note"}}
     <div class="post__subscribe">
