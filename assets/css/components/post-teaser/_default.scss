@@ -61,6 +61,18 @@
         }
     }
 
+    /**
+     * Featured posts get a star beside the title. The icon is aria-hidden
+     * and paired with a visually hidden label, so the heading still reads
+     * as "Title Featured".
+     */
+    &__featured {
+        display: inline-flex;
+        align-items: center;
+
+        color: var(--colorPrimary);
+    }
+
     &__number {
         color: var(--colorTextSubtle);
         font-variant-numeric: tabular-nums;
