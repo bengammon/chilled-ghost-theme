@@ -7,8 +7,10 @@ import "../css/index.scss";
 import menuOpen from "./menuOpen";
 import initToc from "./toc";
 import initPostNumbers from "./postNumber";
+import initTraining from "./training";
 import "./subscribeCta";
 
 menuOpen();
 initPostNumbers();
 initToc();
+initTraining();

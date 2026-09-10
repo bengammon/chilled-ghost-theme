@@ -122,3 +122,32 @@ On staleness, not on individual errors — one failed run at 3am is noise.
 email anyone — it is not running. Droplet reboots, Node upgrades and full disks all
 fail silently, and that is the entire class of failure internal monitoring is
 structurally blind to.
+
+## Previewing locally
+
+There is no nginx locally, so nothing serves `/training.json` and the panel renders
+nothing — which is correct behaviour, not a fault. To see it against real data:
+
+```bash
+# 1. Generate stats.json into a local directory. --skip-verify drops the public URL
+#    check, which has nothing to check against here. Never pass it on the droplet.
+HEVY_DATA_DIR=./dev-data HEVY_API_KEY=... node tools/hevy/fetch.js --skip-verify
+
+# 2. Serve it over CORS.
+HEVY_DATA_DIR=./dev-data node tools/hevy/serve-dev.js
+```
+
+Then point the theme at it from Ghost admin, under Settings → Code injection → Site
+header, so nothing in the repo has to change:
+
+```html
+<script>window.trainingDataUrl = 'http://localhost:8788/';</script>
+```
+
+Remove that injection before it reaches production, where the default `/training.json`
+is what you want.
+
+**A newly added template needs Ghost to rescan.** Ghost builds its list of available
+templates when a theme is activated, so `page-training.hbs` will not be picked up
+until you restart Ghost or re-activate the theme in admin. The symptom is a Training
+page that renders through `page.hbs` with no dashboard mount point in the markup.

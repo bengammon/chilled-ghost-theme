@@ -25,3 +25,5 @@ dist/
 assets/built/
 
 .claude/
+# Local stats output for previewing the training dashboard
+dev-data/

@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #TRAINING/SETTINGS
+   ========================================================================== */
+
+:root {
+    /**
+     * A single ramp, dark to vibrant. Gym and home sessions are deliberately not
+     * distinguished — a light gym day and a home day landing on the same shade is
+     * an accepted trade-off for a grid that reads as one gradient.
+     */
+    --trainingLevel0: #232320;
+    --trainingLevel1: #1a3b31;
+    --trainingLevel2: #0f6e56;
+    --trainingLevel3: #1d9e75;
+    --trainingLevel4: #4fd3a2;
+
+    --trainingDaySize: .9rem;
+    --trainingDayGap: .3rem;
+    --trainingGridColumnGap: .3rem;
+
+    @media (min-width: $bp-tablet) {
+        --trainingDaySize: 1.1rem;
+        --trainingDayGap: .4rem;
+        --trainingGridColumnGap: .4rem;
+    }
+}

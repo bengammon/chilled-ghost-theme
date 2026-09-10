@@ -1,0 +1,25 @@
+{{!< default}}
+
+{{!-- Ghost picks this up automatically for the page with the slug "training".
+      The page's own content is editable in Ghost as usual; the dashboard is
+      appended beneath it. --}}
+
+{{#post}}
+
+    {{#if @page.show_title_and_feature_image}}
+    <h1 class="page-header__title">{{title}}</h1>
+
+    <div class="spacer--extra-large"></div>
+    {{/if}}
+
+    {{!-- Matches the post template: the heading spans the container, the
+          running text is capped at the reading measure. --}}
+    <div class="measure">
+        {{content}}
+    </div>
+
+    <div class="spacer--extra-large"></div>
+
+    {{> training-dashboard}}
+
+{{/post}}

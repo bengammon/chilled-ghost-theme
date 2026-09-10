@@ -31,6 +31,11 @@ const args = new Set(process.argv.slice(2));
 const DRY_RUN = args.has('--dry-run');
 const FORCE_BACKFILL = args.has('--backfill');
 
+// For local runs, where there is no nginx and no public URL to check. Never pass
+// this on the droplet: the check is the only thing that notices a Ghost upgrade
+// silently dropping the location block.
+const SKIP_VERIFY = args.has('--skip-verify');
+
 const CACHE_PATH = path.join(DATA_DIR, 'cache.json');
 const STATE_PATH = path.join(DATA_DIR, 'state.json');
 const STATS_PATH = path.join(DATA_DIR, 'stats.json');
@@ -121,12 +126,16 @@ async function run() {
     ' kg over ' + stats.lifetime.workouts + ' sessions'
   );
 
-  try {
-    await verifyPublicUrl(stats.generated);
-    console.log('[fetch] public URL verified');
-  } catch (err) {
-    err.fatal = true; // nginx config lost, and no amount of waiting fixes it
-    throw err;
+  if (SKIP_VERIFY) {
+    console.log('[fetch] skipping the public URL check (--skip-verify)');
+  } else {
+    try {
+      await verifyPublicUrl(stats.generated);
+      console.log('[fetch] public URL verified');
+    } catch (err) {
+      err.fatal = true; // nginx config lost, and no amount of waiting fixes it
+      throw err;
+    }
   }
 
   // A round milestone is the prompt to write a post. Same lifetime figure as the

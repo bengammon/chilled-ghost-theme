@@ -1,0 +1,107 @@
+/* ==========================================================================
+   #TRAINING/GRID
+   ========================================================================== */
+
+/**
+ * Ninety days as columns of weeks, Monday at the top. On a narrow screen the whole
+ * thing scrolls sideways rather than shrinking the circles below the point where
+ * the ramp is readable; JS pins the opening position to the current week.
+ */
+
+.training {
+
+    &__grid-scroll {
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding-bottom: var(--spacing2);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    &__grid {
+        display: flex;
+        gap: var(--trainingGridColumnGap);
+        width: max-content;
+    }
+
+    /* Mon / Wed / Fri down the left, aligned to the rows they label. */
+    &__days {
+        color: var(--colorTextExtraSubtle);
+        display: grid;
+        font-size: var(--fontSizeTiny);
+        gap: var(--trainingDayGap);
+        grid-template-rows: repeat(7, var(--trainingDaySize));
+        margin-right: var(--spacing1);
+
+        span {
+            align-items: center;
+            display: flex;
+            line-height: 1;
+        }
+    }
+
+    /**
+     * Columns are weeks. Filling down the column and wrapping every seven cells is
+     * what puts consecutive days under one another.
+     */
+    &__cells {
+        display: grid;
+        gap: var(--trainingDayGap) var(--trainingGridColumnGap);
+        grid-auto-flow: column;
+        grid-template-rows: repeat(7, var(--trainingDaySize));
+    }
+
+    &__months {
+        color: var(--colorTextExtraSubtle);
+        display: flex;
+        font-size: var(--fontSizeTiny);
+        gap: var(--trainingGridColumnGap);
+        /* Clears the Mon/Wed/Fri gutter so labels sit over their own columns. */
+        margin-bottom: var(--spacing1);
+        margin-left: calc(2.6rem + var(--spacing1));
+        width: max-content;
+
+        span {
+            width: var(--trainingDaySize);
+        }
+    }
+
+    &__day {
+        background-color: var(--trainingLevel0);
+        border-radius: 50%;
+        display: block;
+        height: var(--trainingDaySize);
+        width: var(--trainingDaySize);
+
+        &[data-level="1"] { background-color: var(--trainingLevel1); }
+        &[data-level="2"] { background-color: var(--trainingLevel2); }
+        &[data-level="3"] { background-color: var(--trainingLevel3); }
+        &[data-level="4"] { background-color: var(--trainingLevel4); }
+
+        /* Padding days at the edges of the window keep the grid rectangular. */
+        &--void {
+            background-color: transparent;
+        }
+
+        &:focus-visible {
+            outline: var(--borderWidth) solid var(--colorPrimary);
+            outline-offset: .2rem;
+        }
+    }
+
+    /* Key
+       ====================================================================== */
+
+    &__key {
+        align-items: center;
+        color: var(--colorTextExtraSubtle);
+        display: flex;
+        font-size: var(--fontSizeTiny);
+        gap: var(--trainingDayGap);
+        justify-content: flex-end;
+        margin-top: var(--spacing2);
+    }
+
+    &__key-label {
+        margin: 0 var(--spacing1);
+    }
+}

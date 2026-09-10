@@ -1,0 +1,162 @@
+/* ==========================================================================
+   #TRAINING/DEFAULT
+   ========================================================================== */
+
+/**
+ * The dashboard is injected by assets/js/training.js, so the mount point is empty
+ * until the data arrives and has no styling of its own to leak beforehand.
+ */
+
+.training {
+    position: relative;
+
+    &__panel {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing4) var(--spacing6);
+        align-items: flex-start;
+        margin-bottom: var(--spacing5);
+    }
+
+    &__hero {
+        flex: 1 1 24rem;
+    }
+
+    &__hero-value {
+        color: var(--colorTextProminent);
+        font-size: 5.6rem;
+        font-weight: var(--fontWeightBold);
+        letter-spacing: var(--letterSpacingHeading);
+        line-height: 1;
+        margin-bottom: var(--spacing1);
+
+        @media (min-width: $bp-tablet) {
+            font-size: 7.2rem;
+        }
+    }
+
+    &__hero-unit {
+        font-size: .4em;
+        font-weight: var(--fontWeightDefault);
+        margin-left: .2em;
+    }
+
+    &__hero-label,
+    &__stat-label {
+        color: var(--colorTextSubtle);
+        font-size: var(--fontSizeSmall);
+        margin-bottom: var(--spacing1);
+    }
+
+    &__comparison {
+        color: var(--colorText);
+        font-size: var(--fontSizeSmall);
+    }
+
+    &__comparison-emoji {
+        margin-right: .3em;
+    }
+
+    &__stat {
+        flex: 0 1 auto;
+    }
+
+    &__stat-value {
+        color: var(--colorTextProminent);
+        font-size: 3.2rem;
+        font-weight: var(--fontWeightBold);
+        line-height: 1;
+        margin-bottom: var(--spacing1);
+    }
+
+    &__stat-note {
+        color: var(--colorTextExtraSubtle);
+        font-size: var(--fontSizeTiny);
+    }
+
+    /* Meta row
+       ====================================================================== */
+
+    &__meta {
+        border-top: var(--borderWidth) solid var(--colorBorder);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing3) var(--spacing5);
+        list-style: none;
+        margin: 0 0 var(--spacing5);
+        padding-top: var(--spacing3);
+    }
+
+    &__meta-item {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing1);
+    }
+
+    &__meta-label {
+        color: var(--colorTextExtraSubtle);
+        font-size: var(--fontSizeTiny);
+        letter-spacing: var(--letterSpacingSubheading);
+        text-transform: uppercase;
+    }
+
+    &__meta-value {
+        color: var(--colorText);
+        font-size: var(--fontSizeSmall);
+    }
+
+    /* Milestone
+       ====================================================================== */
+
+    &__milestone {
+        margin-bottom: var(--spacing5);
+    }
+
+    &__milestone-head {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing1) var(--spacing3);
+        justify-content: space-between;
+        margin-bottom: var(--spacing2);
+    }
+
+    &__milestone-label {
+        color: var(--colorText);
+        font-size: var(--fontSizeSmall);
+    }
+
+    &__milestone-remaining {
+        color: var(--colorTextExtraSubtle);
+        font-size: var(--fontSizeSmall);
+    }
+
+    &__milestone-track {
+        background-color: var(--trainingLevel0);
+        border-radius: 999px;
+        height: .6rem;
+        overflow: hidden;
+    }
+
+    &__milestone-bar {
+        background-color: var(--trainingLevel4);
+        border-radius: inherit;
+        height: 100%;
+    }
+
+    /* Tooltip
+       ====================================================================== */
+
+    &__tip {
+        background-color: var(--colorBlack);
+        border: var(--borderWidth) solid var(--colorBorder);
+        border-radius: var(--borderRadius);
+        color: var(--colorTextProminent);
+        font-size: var(--fontSizeTiny);
+        padding: var(--spacing1) var(--spacing2);
+        pointer-events: none;
+        position: absolute;
+        transform: translate(-50%, calc(-100% - var(--spacing1)));
+        white-space: nowrap;
+        z-index: 2;
+    }
+}

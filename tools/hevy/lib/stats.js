@@ -81,9 +81,12 @@ export function pickComparison(totalKg) {
 // so the bar always shows the thing about to happen.
 export function pickMilestone({ tonnageKg, workouts, reps }) {
   const candidates = [
-    { key: 'tonnageKg', value: tonnageKg, step: MILESTONES.tonnageKg, label: (t) => `${(t / 1000).toLocaleString('en-GB')} tonnes` },
-    { key: 'workouts',  value: workouts,  step: MILESTONES.workouts,  label: (t) => `${t}th session` },
-    { key: 'reps',      value: reps,      step: MILESTONES.reps,      label: (t) => `${t.toLocaleString('en-GB')} reps` },
+    { key: 'tonnageKg', value: tonnageKg, step: MILESTONES.tonnageKg, unit: 'kg',
+      label: (t) => `${(t / 1000).toLocaleString('en-GB')} tonnes` },
+    { key: 'workouts',  value: workouts,  step: MILESTONES.workouts,  unit: 'sessions',
+      label: (t) => `${t}th session` },
+    { key: 'reps',      value: reps,      step: MILESTONES.reps,      unit: 'reps',
+      label: (t) => `${t.toLocaleString('en-GB')} reps` },
   ].map((c) => {
     const target = Math.floor(c.value / c.step) * c.step + c.step;
     const progressed = c.value - (target - c.step);
@@ -91,7 +94,9 @@ export function pickMilestone({ tonnageKg, workouts, reps }) {
       key: c.key,
       label: c.label(target),
       target,
-      remaining: Math.round((target - c.value) * 10) / 10,
+      // Whole units: a milestone counting down in tenths of a kilo reads as noise.
+      remaining: Math.round(target - c.value),
+      remainingUnit: c.unit,
       pctComplete: Math.round((progressed / c.step) * 100),
     };
   });
