@@ -1,0 +1,7 @@
+# Runtime data. Lives on the droplet, never in the repo.
+.env
+cache.json
+state.json
+stats.json
+*.backup
+*.tmp

@@ -1,0 +1,13 @@
+{
+  "name": "hevy-training-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Pulls workout data from Hevy, derives stats.json for the training dashboard.",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "node fetch.js",
+    "dry-run": "node fetch.js --dry-run",
+    "backfill": "node fetch.js --backfill"
+  }
+}
