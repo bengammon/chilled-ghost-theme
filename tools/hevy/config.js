@@ -51,6 +51,31 @@ export const MILESTONES = {
 // A round milestone worth writing a post about — triggers a Brevo email.
 export const EMAIL_MILESTONE_KG = 500_000;
 
+// Jefit history, 2 January 2024 to 21 June 2026: the app used before Hevy. Added once
+// to the Hevy lifetime totals rather than merged session by session, so the grid and
+// the current streak stay Hevy-only. FROZEN, like the lists above: this is history,
+// and changing it moves every lifetime figure retroactively.
+//
+// Derived from Jefit's CSV export, which is kept privately. It holds personal data and
+// never belongs in this repo.
+//   tonnageKg   Jefit's own per-session total_weight, summed. Jefit's rules, not ours:
+//               it gives dips and pull-ups nothing, so this errs low.
+//   reps, sets  Parsed from the set strings, reps > 0 only. Timed work (walking,
+//               cycling, planks, dead bugs, dead hangs) is excluded, because Jefit
+//               stores seconds in the reps field.
+//   minutes     Session start to end. Five sessions count at the 71-minute median:
+//               one left running for 122 days, four logged after the fact.
+//   longestStreakWeeks  Consecutive weeks with a session, January to April 2024. The
+//               best streak shown is the longer of this and Hevy's own.
+export const JEFIT_BASELINE = Object.freeze({
+  tonnageKg: 1_057_640.1,
+  workouts: 169,
+  reps: 29_227,
+  sets: 3_425,
+  minutes: 12_265,
+  longestStreakWeeks: 16,
+});
+
 // Absurd comparison. Pick the largest unit still giving a count of 1 or more,
 // so it re-rolls upward as the number climbs. Tonnes.
 export const COMPARISONS = [

@@ -134,6 +134,11 @@ function renderMeta(data) {
         items.push(metaItem('Last session', relativeDay(last.date)));
     }
     items.push(metaItem('Sessions', formatNumber(lifetime.workouts)));
+
+    // Guarded: a stats.json written before sets were counted has no such field.
+    if (Number.isFinite(lifetime.sets)) {
+        items.push(metaItem('Sets', formatNumber(lifetime.sets)));
+    }
     items.push(metaItem('Reps', formatNumber(lifetime.reps)));
 
     if (lifetime.hours) {

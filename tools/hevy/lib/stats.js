@@ -127,13 +127,22 @@ export function buildDays(sessions, today, retained = DAYS_RETAINED) {
     .map((d) => ({ date: d.date, kg: Math.round(d.kg), name: d.names.join(' + ') }));
 }
 
-export function buildStats(sessions, { today, generated = new Date().toISOString() } = {}) {
+// A baseline (the Jefit history) is added to the lifetime totals and can supply the
+// best streak. The grid, current streak, last session and rolling year come from the
+// Hevy sessions alone: a baseline is a set of totals with no dates in it.
+export function buildStats(sessions, { today, generated = new Date().toISOString(), baseline = null } = {}) {
   const ordered = [...sessions].sort((a, b) => a.date.localeCompare(b.date));
   const day = today ?? new Date().toISOString().slice(0, 10);
+  const base = baseline ?? {};
 
-  const tonnageKg = ordered.reduce((a, s) => a + s.kg, 0);
-  const reps = ordered.reduce((a, s) => a + s.reps, 0);
-  const minutes = ordered.reduce((a, s) => a + s.durationMin, 0);
+  const tonnageKg = ordered.reduce((a, s) => a + s.kg, 0) + (base.tonnageKg ?? 0);
+  const workouts = ordered.length + (base.workouts ?? 0);
+  const reps = ordered.reduce((a, s) => a + s.reps, 0) + (base.reps ?? 0);
+  const sets = ordered.reduce((a, s) => a + (s.sets ?? 0), 0) + (base.sets ?? 0);
+  const minutes = ordered.reduce((a, s) => a + s.durationMin, 0) + (base.minutes ?? 0);
+
+  const streak = computeStreak(ordered, day);
+  streak.longestWeeks = Math.max(streak.longestWeeks, base.longestStreakWeeks ?? 0);
 
   const yearCutoff = new Date(day + 'T00:00:00Z');
   yearCutoff.setUTCDate(yearCutoff.getUTCDate() - 364);
@@ -145,11 +154,12 @@ export function buildStats(sessions, { today, generated = new Date().toISOString
     generated,
     lifetime: {
       tonnageKg: Math.round(tonnageKg),
-      workouts: ordered.length,
+      workouts,
       reps,
+      sets,
       hours: Math.round(minutes / 60),
     },
-    streak: computeStreak(ordered, day),
+    streak,
     last: last
       ? { name: last.name, date: last.date, tonnageKg: Math.round(last.kg), durationMin: last.durationMin }
       : null,
@@ -158,7 +168,18 @@ export function buildStats(sessions, { today, generated = new Date().toISOString
       tonnageKg: Math.round(inYear.reduce((a, s) => a + s.kg, 0)),
     },
     comparison: pickComparison(tonnageKg),
-    nextMilestone: pickMilestone({ tonnageKg, workouts: ordered.length, reps }),
+    nextMilestone: pickMilestone({ tonnageKg, workouts, reps }),
     days: buildDays(ordered, day),
   };
+}
+
+// The round milestone crossed since the previous run, in kg, or null. A first run has
+// no previous total, and whatever it appears to cross is history rather than news, so
+// it announces nothing. Without this, adding the Jefit baseline would open with a
+// "1,000,000 kg lifted" email on day one.
+export function emailMilestoneCrossed(previousKg, currentKg, step) {
+  if (!Number.isFinite(previousKg) || !Number.isFinite(currentKg)) return null;
+  const before = Math.floor(previousKg / step);
+  const now = Math.floor(currentKg / step);
+  return now > before ? now * step : null;
 }

@@ -26,6 +26,9 @@ export function validate(stats) {
     if (!Number.isFinite(lifetime.hours) || lifetime.hours < 0) {
       problems.push('hours invalid: ' + lifetime.hours);
     }
+    if (!Number.isInteger(lifetime.sets) || lifetime.sets < 0) {
+      problems.push('sets invalid: ' + lifetime.sets);
+    }
   }
   if (!Array.isArray(stats?.days)) problems.push('days is not an array');
   if (!stats?.last?.date) problems.push('last session missing');

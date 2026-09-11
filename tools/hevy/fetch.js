@@ -11,11 +11,11 @@
 
 import path from 'node:path';
 import { promises as fs } from 'node:fs';
-import { DATA_DIR, PUBLIC_URL, EMAIL_MILESTONE_KG } from './config.js';
+import { DATA_DIR, PUBLIC_URL, EMAIL_MILESTONE_KG, JEFIT_BASELINE } from './config.js';
 import { createClient, FatalApiError } from './lib/api.js';
 import { fetchBodyweightLog, makeLookup } from './lib/bodyweight.js';
 import { summariseWorkout } from './lib/tonnage.js';
-import { buildStats } from './lib/stats.js';
+import { buildStats, emailMilestoneCrossed } from './lib/stats.js';
 import {
   readJson,
   writeJsonAtomic,
@@ -103,7 +103,7 @@ async function run() {
   const bodyweightOn = makeLookup(bodyweightLog);
 
   const sessions = Object.values(cache.workouts).map((w) => summariseWorkout(w, bodyweightOn));
-  const stats = buildStats(sessions, { generated: runStartedAt });
+  const stats = buildStats(sessions, { generated: runStartedAt, baseline: JEFIT_BASELINE });
 
   const problems = [...validate(stats), ...sanityCheck(stats, state)];
   if (problems.length) {
@@ -140,10 +140,9 @@ async function run() {
 
   // A round milestone is the prompt to write a post. Same lifetime figure as the
   // progress bar, different divisor, so no extra state is needed.
-  const crossed = Math.floor(stats.lifetime.tonnageKg / EMAIL_MILESTONE_KG);
-  const before = Math.floor((state.lastTonnageKg ?? 0) / EMAIL_MILESTONE_KG);
-  if (crossed > before) {
-    const total = (crossed * EMAIL_MILESTONE_KG).toLocaleString('en-GB');
+  const crossedKg = emailMilestoneCrossed(state.lastTonnageKg, stats.lifetime.tonnageKg, EMAIL_MILESTONE_KG);
+  if (crossedKg) {
+    const total = crossedKg.toLocaleString('en-GB');
     await sendEmail(
       total + ' kg lifted',
       'You have crossed ' + total + ' kg total weight moved.\n\n' +

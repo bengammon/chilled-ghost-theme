@@ -144,10 +144,37 @@ header, so nothing in the repo has to change:
 <script>window.trainingDataUrl = 'http://localhost:8788/';</script>
 ```
 
-Remove that injection before it reaches production, where the default `/training.json`
-is what you want.
+The injection is safe to leave in place. Code injection is stored in Ghost's database,
+not the theme, and the local install has its own database separate from the droplet's
+— so it stays local and never ships with a theme deploy. The only way it could reach
+production is by copying the local database up.
 
 **A newly added template needs Ghost to rescan.** Ghost builds its list of available
 templates when a theme is activated, so `page-training.hbs` will not be picked up
 until you restart Ghost or re-activate the theme in admin. The symptom is a Training
 page that renders through `page.hbs` with no dashboard mount point in the markup.
+
+## Jefit history
+
+Before Hevy there was Jefit: 169 sessions from 2 January 2024 to 21 June 2026, a week
+before the first Hevy session. Its totals are added once, via `JEFIT_BASELINE` in
+`config.js`. They are not merged session by session:
+
+| Figure | Jefit |
+|---|---|
+| Weight moved | 1,057,640 kg |
+| Sessions | 169 |
+| Reps | 29,227 |
+| Sets | 3,425 |
+| Hours | 204.4 |
+| Best streak | 16 weeks |
+
+The grid, the current streak and the last session stay Hevy-only, since a set of totals
+has no dates in it. The best streak is the longer of Jefit's 16 weeks and Hevy's own.
+`config.js` records how each figure was derived. The export itself stays out of the
+repo, because it holds personal data.
+
+**The baseline has to ship before the droplet's first run.** On a first run there is no
+previous total, so it simply becomes the starting point. Added to a pipeline that has
+already run, it is exactly the jump the sanity guards refuse. A first run also sends no
+milestone email: whatever it crosses is history, not news.
