@@ -3,56 +3,100 @@
    ========================================================================== */
 
 /**
+ * The /training page: a header (title and the page's own text from Ghost),
+ * then the dashboard.
+ */
+.training-page {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        margin-bottom: 6.4rem;
+    }
+
+    &__title {
+        margin: 0;
+
+        font-size: clamp(3.2rem, 5.4vw, 4.6rem);
+        letter-spacing: -.025em;
+        line-height: 1.08;
+    }
+
+    &__intro > * {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    &__intro > * + * {
+        margin-top: 1.1em;
+    }
+}
+
+/**
  * The dashboard is injected by assets/js/training.js, so the mount point is empty
  * until the data arrives and has no styling of its own to leak beforehand.
  */
 
 .training {
+    font-family: var(--fontFamilyHeading);
     font-variant-numeric: tabular-nums;
     position: relative;
+
+    /**
+     * The small mono section labels, as on the homepage.
+     */
+    &__label {
+        margin: 0 0 1.6rem;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: .08em;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
 
     &__panel {
         display: flex;
         flex-wrap: wrap;
-        gap: var(--spacing4) var(--spacing6);
+        gap: 4rem;
         align-items: flex-start;
-        margin-bottom: var(--spacing5);
+        justify-content: space-between;
+        margin-bottom: 2.8rem;
     }
 
     &__hero {
-        flex: 1 1 24rem;
+        flex: 1 1 28rem;
     }
 
     &__hero-value {
-        color: var(--colorTextProminent);
-        font-size: 5.6rem;
-        font-variant-numeric: normal;
-        font-weight: var(--fontWeightBold);
-        letter-spacing: var(--letterSpacingHeading);
-        line-height: 1;
-        margin-bottom: var(--spacing1);
+        margin: 0 0 .6rem;
 
-        @media (min-width: $bp-tablet) {
-            font-size: 7.2rem;
-        }
+        color: var(--colorFg);
+        font-size: clamp(4.4rem, 10vw, 8rem);
+        font-weight: var(--fontWeightSemiBold);
+        letter-spacing: -.04em;
+        line-height: 1;
     }
 
     &__hero-unit {
+        margin-left: .15em;
+
+        color: var(--colorMuted);
         font-size: .4em;
-        font-weight: var(--fontWeightDefault);
-        margin-left: .2em;
+        font-weight: var(--fontWeightSemiBold);
+        letter-spacing: 0;
     }
 
     &__hero-label,
-    &__stat-label {
-        color: var(--colorTextSubtle);
-        font-size: var(--fontSizeSmall);
-        margin-bottom: var(--spacing1);
-    }
-
     &__comparison {
-        color: var(--colorText);
-        font-size: var(--fontSizeSmall);
+        margin: 0;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyProse);
+        font-size: 1.7rem;
+        line-height: 1.5;
     }
 
     &__comparison-emoji {
@@ -63,102 +107,137 @@
         flex: 0 1 auto;
     }
 
+    /**
+     * The current streak, in the accent like the design's "Current" figure.
+     */
     &__stat-value {
-        color: var(--colorTextProminent);
-        font-size: 3.2rem;
-        font-weight: var(--fontWeightBold);
+        margin: 0 0 .4rem;
+
+        color: var(--colorAccent);
+        font-size: 3.6rem;
+        font-weight: var(--fontWeightSemiBold);
+        letter-spacing: -.02em;
         line-height: 1;
-        margin-bottom: var(--spacing1);
+    }
+
+    &__stat-label {
+        margin: 0;
+
+        color: var(--colorMuted);
+        font-size: 1.4rem;
     }
 
     &__stat-note {
-        color: var(--colorTextExtraSubtle);
-        font-size: var(--fontSizeTiny);
+        margin: .6rem 0 0;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.2rem;
     }
 
     /* Meta row
        ====================================================================== */
 
+    /**
+     * Last session, sessions, sets, reps, hours: each ruled off above in the
+     * text colour, figure first and label underneath (column-reverse, so the
+     * markup keeps label-then-value for screen readers). Sized by content
+     * rather than equal columns, because "9 September" is far wider than
+     * "213": all five share a row in the column and wrap on a phone.
+     */
     &__meta {
-        border-top: var(--borderWidth) solid var(--colorBorder);
         display: flex;
         flex-wrap: wrap;
-        gap: var(--spacing3) var(--spacing5);
+        gap: 2rem 2.4rem;
         list-style: none;
-        margin: 0 0 var(--spacing5);
-        padding-top: var(--spacing3);
+        margin: 0 0 5.6rem;
+        padding: 0;
     }
 
     &__meta-item {
         display: flex;
-        flex-direction: column;
-        gap: var(--spacing1);
+        flex: 1 1 auto;
+        flex-direction: column-reverse;
+        gap: .4rem;
+        justify-content: flex-end;
+        margin: 0;
+        padding-top: 1rem;
+        white-space: nowrap;
+
+        border-top: .15rem solid var(--colorFg);
     }
 
     &__meta-label {
-        color: var(--colorTextExtraSubtle);
-        font-size: var(--fontSizeTiny);
-        letter-spacing: var(--letterSpacingSubheading);
-        text-transform: uppercase;
+        color: var(--colorMuted);
+        font-size: 1.4rem;
     }
 
     &__meta-value {
-        color: var(--colorText);
-        font-size: var(--fontSizeSmall);
+        color: var(--colorFg);
+        font-size: 2.6rem;
+        font-weight: var(--fontWeightSemiBold);
+        letter-spacing: -.015em;
+        line-height: 1.2;
     }
 
     /* Milestone
        ====================================================================== */
 
     &__milestone {
-        margin-bottom: var(--spacing5);
+        margin-bottom: 5.6rem;
     }
 
     &__milestone-head {
+        align-items: baseline;
         display: flex;
         flex-wrap: wrap;
-        gap: var(--spacing1) var(--spacing3);
+        gap: .4rem 1.2rem;
         justify-content: space-between;
-        margin-bottom: var(--spacing2);
+        margin-bottom: .8rem;
     }
 
     &__milestone-label {
-        color: var(--colorText);
-        font-size: var(--fontSizeSmall);
+        color: var(--colorFg);
+        font-size: 1.7rem;
+        font-weight: var(--fontWeightSemiBold);
     }
 
     &__milestone-remaining {
-        color: var(--colorTextExtraSubtle);
-        font-size: var(--fontSizeSmall);
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.3rem;
     }
 
     &__milestone-track {
-        background-color: var(--trainingLevel0);
-        border-radius: 999px;
         height: .6rem;
         overflow: hidden;
+
+        background-color: var(--colorSurface);
+        border-radius: .3rem;
     }
 
     &__milestone-bar {
-        background-color: var(--trainingLevel4);
-        border-radius: inherit;
         height: 100%;
+
+        background-color: var(--colorAccent);
     }
 
     /* Tooltip
        ====================================================================== */
 
     &__tip {
-        background-color: var(--colorBlack);
-        border: var(--borderWidth) solid var(--colorBorder);
-        border-radius: var(--borderRadius);
-        color: var(--colorTextProminent);
-        font-size: var(--fontSizeTiny);
-        padding: var(--spacing1) var(--spacing2);
+        padding: .4rem .8rem;
         pointer-events: none;
         position: absolute;
-        transform: translate(-50%, calc(-100% - var(--spacing1)));
+        transform: translate(-50%, calc(-100% - .6rem));
         white-space: nowrap;
         z-index: 2;
+
+        background-color: var(--colorSurface);
+        border: .1rem solid var(--colorRule);
+        border-radius: .4rem;
+        color: var(--colorFg);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.2rem;
     }
 }

@@ -15,12 +15,12 @@
     --trainingLevel3: color-mix(in oklch, var(--colorAccent) 80%, var(--colorSurface));
     --trainingLevel4: var(--colorAccent);
 
-    --trainingDaySize: .9rem;
+    --trainingDaySize: 1.4rem;
     --trainingDayGap: .3rem;
     --trainingGridColumnGap: .3rem;
 
     @media (min-width: $bp-tablet) {
-        --trainingDaySize: 1.1rem;
+        --trainingDaySize: 1.8rem;
         --trainingDayGap: .4rem;
         --trainingGridColumnGap: .4rem;
     }
