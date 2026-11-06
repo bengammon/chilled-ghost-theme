@@ -74,9 +74,14 @@ cd /var/www/hevy && node fetch.js             # for real
 ```nginx
 location = /training.json {
     alias /var/www/hevy/stats.json;
+    default_type application/json;
     add_header Cache-Control "public, max-age=900";
+    add_header X-Content-Type-Options $header_content_type_options;
 }
 ```
+
+On the droplet it sits in `/etc/nginx/sites-available/bengammon.co.uk-ssl.conf`, just
+above `location / {`.
 
 **`ghost setup nginx` regenerates the site config on major upgrades and will silently
 drop this block.** That is why every run curls the public URL afterwards and emails if
