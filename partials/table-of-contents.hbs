@@ -1,15 +1,30 @@
 {{!--
     Shell for tocbot, which fills .gh-toc on load. Marked up as <details> so
-    that with no JS, or on narrow screens where the sidebar stacks above the
-    post, the contents collapse behind the summary rather than pushing the
-    article down the page. toc.js opens it on desktop.
+    that with no JS, or on narrow screens where it sits between the title and
+    the post, the contents collapse behind the summary rather than pushing the
+    article down the page. toc.js opens it in the wide-screen margin, counts
+    the sections into the summary, and drives the progress rail and the
+    minutes-left line from data-reading-minutes.
 --}}
-<details class="toc js-toc">
+<details class="toc js-toc" data-reading-minutes="{{reading_time minute="1" minutes="%"}}">
 
-    <summary class="toc__summary">Contents</summary>
+    <summary class="toc__summary">
+        <span class="toc__label">Contents</span>
+        <span class="toc__count js-toc-count"></span>
+        <svg class="toc__chevron" aria-hidden="true" width="16" height="16" viewBox="0 0 16 16"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </summary>
 
-    <nav class="toc__nav" aria-label="Table of contents">
-        <div class="gh-toc"></div>
-    </nav>
+    <div class="toc__body">
+        <div class="toc__rail" aria-hidden="true"><div class="toc__progress js-toc-progress"></div></div>
+
+        <nav class="toc__nav" aria-label="Table of contents">
+            <div class="gh-toc"></div>
+        </nav>
+    </div>
+
+    <div class="toc__footer">
+        <span class="js-toc-remaining" aria-live="off"></span>
+        <a class="toc__top" href="#main">↑ Back to top</a>
+    </div>
 
 </details>

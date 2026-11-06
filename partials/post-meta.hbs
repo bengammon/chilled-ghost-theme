@@ -1,0 +1,12 @@
+{{!-- The date, optionally the reading time, then the tags, on one wrapping
+      line in the mono face. Used under a post's title, and under a note's
+      text. Pass readingTime=true to include Ghost's reading time. --}}
+<div class="post-meta">
+    <time class="post-meta__item" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD/MM/YYYY"}}</time>
+    {{#if readingTime}}
+        <span class="post-meta__item">{{reading_time}}</span>
+    {{/if}}
+    {{#foreach tags}}
+        <a class="post-meta__item post-meta__tag" href="{{url}}">#{{name}}</a>
+    {{/foreach}}
+</div>

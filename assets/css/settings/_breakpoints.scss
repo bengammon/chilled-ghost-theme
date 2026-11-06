@@ -16,3 +16,10 @@ $bp-desktop: 1280px;
 $bp-desktop-medium: 1440px;
 $bp-desktop-large: 1920px;
 $bp-desktop-huge: 2200px;
+
+/**
+ * Where a post's contents list moves out of the text and into the left
+ * margin: the first width at which that margin is 200px wide (the measure,
+ * two gaps, two gutters and two 200px margins).
+ */
+$bp-post-margin: 1120px;

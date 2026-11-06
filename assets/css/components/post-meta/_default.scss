@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #POST-META/DEFAULT
+   ========================================================================== */
+
+/**
+ * Date, reading time and tags on one wrapping line in the mono face: under a
+ * post's title, or under a note's text.
+ */
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem 1.6rem;
+
+    color: var(--colorMuted);
+    font-family: var(--fontFamilyMono);
+    font-size: 1.3rem;
+    font-variant-numeric: tabular-nums;
+
+    &__tag {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--colorAccent);
+        }
+    }
+}
