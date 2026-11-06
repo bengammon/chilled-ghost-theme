@@ -5,12 +5,14 @@ import "../css/index.scss";
 
 // Import JS
 import menuOpen from "./menuOpen";
+import initTheme from "./theme";
 import initToc from "./toc";
 import initPostNumbers from "./postNumber";
 import initTraining from "./training";
 import "./subscribeCta";
 
 menuOpen();
+initTheme();
 initPostNumbers();
 initToc();
 initTraining();

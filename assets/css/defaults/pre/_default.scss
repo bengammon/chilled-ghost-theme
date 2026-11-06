@@ -30,7 +30,7 @@ pre[class*=language-] {
     color: var(--colorText);
     background: 0 0;
     text-shadow: none;
-    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    font-family: var(--fontFamilyMono);
     font-size: var(--fontSizePre);
     text-align: left;
     white-space: pre-wrap;

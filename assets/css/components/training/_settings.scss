@@ -4,15 +4,16 @@
 
 :root {
     /**
-     * A single ramp, dark to vibrant. Gym and home sessions are deliberately not
+     * A single ramp from the surface colour to the accent, so it follows the
+     * light and dark themes. Gym and home sessions are deliberately not
      * distinguished — a light gym day and a home day landing on the same shade is
      * an accepted trade-off for a grid that reads as one gradient.
      */
-    --trainingLevel0: #232320;
-    --trainingLevel1: #1a3b31;
-    --trainingLevel2: #0f6e56;
-    --trainingLevel3: #1d9e75;
-    --trainingLevel4: #4fd3a2;
+    --trainingLevel0: var(--colorSurface);
+    --trainingLevel1: color-mix(in oklch, var(--colorAccent) 30%, var(--colorSurface));
+    --trainingLevel2: color-mix(in oklch, var(--colorAccent) 55%, var(--colorSurface));
+    --trainingLevel3: color-mix(in oklch, var(--colorAccent) 80%, var(--colorSurface));
+    --trainingLevel4: var(--colorAccent);
 
     --trainingDaySize: .9rem;
     --trainingDayGap: .3rem;

@@ -14,6 +14,30 @@
     &--default {
         font-family: var(--fontFamilyDefault);
     }
+
+    &--mono {
+        font-family: var(--fontFamilyMono);
+    }
+}
+
+/**
+ * Running text: the serif, at the reading size. Headings, captions and code
+ * inside it keep their own families, because those set font-family directly.
+ */
+.prose {
+    font-family: var(--fontFamilyProse);
+    font-size: var(--fontSizeProse);
+    line-height: var(--lineHeightProse);
+    text-wrap: pretty;
+
+    /**
+     * The element defaults set paragraphs and lists to the interface size;
+     * inside running text they take the prose size instead.
+     */
+    :where(p, ul, ol, li) {
+        font-size: inherit;
+        line-height: inherit;
+    }
 }
 
 .text {

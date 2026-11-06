@@ -2,19 +2,32 @@
    #VARIABLES/TYPOGRAPHY
    ========================================================================== */
 
+/**
+ * Archivo is the default: headings and every piece of interface text. Running
+ * text opts into the serif through the .prose helper, and dates, numbers and
+ * code use the mono. See settings/_font.scss for the files.
+ */
 :root {
-	--fontFamilyDefault: 'Inter', sans-serif;
-	--fontFamilyHeading: 'Inter', sans-serif;
-	--fontFamilyAlternative: 'Inter', sans-serif;
+	--fontFamilyDefault: 'Archivo', system-ui, sans-serif;
+	--fontFamilyHeading: 'Archivo', system-ui, sans-serif;
+	--fontFamilyAlternative: 'Archivo', system-ui, sans-serif;
+	--fontFamilyProse: 'Source Serif 4', Georgia, serif;
+	--fontFamilyMono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
 
 	--fontSizeBase: 1.6rem;
 
+	/**
+	 * Running text grows with the viewport between 17.5px and 19px, rather
+	 * than stepping at a breakpoint.
+	 */
+	--fontSizeProse: clamp(1.75rem, 1.3vw + 1.3rem, 1.9rem);
+
 	--fontSizeBlockquote: inherit;
-	--fontSizeCode: 1em;
-	--fontSizePre: 1em;
-	--fontSizeH1: 3.8rem;
-	--fontSizeH2: 3rem;
-	--fontSizeH3: 2.4rem;
+	--fontSizeCode: .85em;
+	--fontSizePre: 1.35rem;
+	--fontSizeH1: 3.2rem;
+	--fontSizeH2: 2.4rem;
+	--fontSizeH3: 2rem;
 	--fontSizeSubheading: 1.8rem;
 	--fontSizeLarge: 2.4rem;
 	--fontSizeSmall: 1.4rem;
@@ -26,34 +39,33 @@
 	--fontWeightSemiBold: 600;
 	--fontWeightBold: 700;
 	--fontWeightAnchor: var(--fontWeightDefault);
-	--fontWeightH1: 800;
+	--fontWeightH1: var(--fontWeightSemiBold);
 	--fontWeightH2: var(--fontWeightSemiBold);
 	--fontWeightH3: var(--fontWeightSemiBold);
 	--fontWeightSubheading: var(--fontWeightSemiBold);
 
 	--letterSpacingDefault: 0;
-	--letterSpacingHeading: -.08rem;
-	--letterSpacingH1: 0;
-	--letterSpacingH2: 0.1rem;
-	--letterSpacingH3: var(--letterSpacingDefault);
+	--letterSpacingHeading: -.015em;
+	--letterSpacingH1: -.025em;
+	--letterSpacingH2: -.015em;
+	--letterSpacingH3: -.01em;
 	--letterSpacingSubheading: .6rem;
-	--letterSpacingLargeText: -0.02rem;
+	--letterSpacingLargeText: -.01em;
 
 	--lineHeightDefault: 1.5;
+	--lineHeightProse: 1.7;
 	--lineHeightH1: 1.1;
-	--lineHeightH2: 1.2;
+	--lineHeightH2: 1.25;
 	--lineHeightH3: 1.3;
 	--lineHeightSubheading: 1.2;
 
 	@media (min-width: $bp-desktop-small) {
-		--fontSizeBase: 1.8rem;
-		--fontSizeH1: 4.8rem;
-		--fontSizeH2: 3.6rem;
-		--fontSizeH3: 2.4rem;
+		--fontSizeBase: 1.7rem;
+		--fontSizeH1: 4.4rem;
+		--fontSizeH2: 2.4rem;
+		--fontSizeH3: 2rem;
 		--fontSizeLarge: 2.4rem;
-		--fontSizeSmall: 1.6rem;
-		--fontSizeTiny: 1.4rem;
-
-		--lineHeightDefault: 1.5;
+		--fontSizeSmall: 1.5rem;
+		--fontSizeTiny: 1.3rem;
 	}
 }
