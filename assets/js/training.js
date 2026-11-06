@@ -116,12 +116,12 @@ function renderSummary(section, data) {
     const stats = [];
 
     if (last) {
-        const parts = [];
-        if (last.name) parts.push(escapeHtml(last.name));
-        if (last.tonnageKg) {
-            parts.push(`${formatNumber(last.tonnageKg)} kg${last.durationMin ? ` in ${formatNumber(last.durationMin)} min` : ''}`);
-        }
-        stats.push(summaryStat('Last workout', capitalise(relativeDay(last.date)), parts.join(' · ')));
+        // The workout name is left out, as on the grid: Hevy titles are mostly
+        // weekdays, which only repeat the date shown above them.
+        const note = last.tonnageKg
+            ? `${formatNumber(last.tonnageKg)} kg${last.durationMin ? ` in ${formatNumber(last.durationMin)} min` : ''}`
+            : '';
+        stats.push(summaryStat('Last workout', capitalise(relativeDay(last.date)), note));
     }
 
     stats.push(summaryStat(
