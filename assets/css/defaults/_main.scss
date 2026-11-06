@@ -4,11 +4,14 @@
 
 /**
   * 1. Required for skip-link
+  *
+  * The top space grows with the viewport, as in the design. There is none at
+  * the bottom: the footer brings its own.
   */
 
 main {
     flex: 1;
-    padding: var(--spacing8) 0 var(--spacing7);
+    padding-block: clamp(4rem, 7vw, 8.8rem) 0;
     width: 100%;
 
     &:focus {

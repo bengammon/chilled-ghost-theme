@@ -2,82 +2,65 @@
    #NAV/DEFAULT
    ========================================================================== */
 
+/**
+ * The main nav. Links sit in the muted colour; the page being viewed is in
+ * the text colour with a rule underneath. Inside the phone menu panel the
+ * links stack and grow.
+ */
 .nav {
-    @include list-reset;
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing3);
-    height: 100%;
+    &__list {
+        @include list-reset;
+        align-items: center;
+        display: flex;
+        gap: var(--navGap);
 
-    @media (min-width: $bp-desktop-small) {
-        flex-direction: row;
-        gap: var(--spacing4);
+        .gh-head-open & {
+            @media (max-width: $bp-tablet-small - 1) {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 0;
+            }
+        }
     }
 
     &__item {
-        align-items: center;
-        display: flex;
-        flex: 1 0 auto;
         margin: 0;
-        padding: var(--spacing1) 0;
-        position: relative;
+    }
 
-        opacity: var(--navItemOpacity);
+    &__link {
+        display: block;
+        padding: .6rem 0;
 
-        &:hover,
-        &:has(.nav-current) {
-            opacity: 1;
+        border-bottom: .15rem solid transparent;
+        color: var(--colorMuted);
+        font-size: var(--navFontSize);
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--colorFg);
+            text-decoration: none;
         }
 
-        a,
-        button {
-            align-items: center;
-            border: 0;
-            display: flex;
-            gap: var(--spacing2);
-            justify-content: center;
-            padding: 0;
-            width: 100%;
-    
-            background: transparent;
-            color: var(--colorText);
+        &--current {
+            border-bottom-color: var(--colorFg);
+            color: var(--colorFg);
+        }
 
-            cursor: pointer;
-    
-            @media (min-width: $bp-desktop-small) {
-                gap: var(--spacing1);
+        .gh-head-open & {
+            @media (max-width: $bp-tablet-small - 1) {
+                padding: var(--spacing3) 0;
+
+                border-bottom: .1rem solid var(--colorRule);
+                font-size: 2.4rem;
+                font-weight: 600;
+                letter-spacing: -.015em;
             }
-    
-            svg {
-                display: none;
-                flex-shrink: 0;
-    
-                path {
-                    stroke: var(--colorText);
-                }
-            }
-    
-            &:hover {
-                color: var(--colorText);
-                text-decoration: none;
-                
-                svg {
-                    path {
-                        stroke: var(--colorText);
-                    }
-                }
-            }
-    
-            &.nav-current {
-                color: var(--colorTextSubtle);
-                text-decoration: none;
-    
-                svg {
-                    path {
-                        stroke: var(--colorTextSubtle);
-                    }
-                }
+        }
+
+        .gh-head-open &--current {
+            @media (max-width: $bp-tablet-small - 1) {
+                color: var(--colorAccent);
             }
         }
     }

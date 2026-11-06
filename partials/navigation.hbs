@@ -1,8 +1,11 @@
-<nav class="nav-container">
-    <ul class="nav">
-        {{#foreach @site.navigation}}
+{{!-- Rendered by Ghost's {{navigation}} helper, which supplies the items from
+      Settings › Navigation along with a `current` flag for the page being
+      viewed. --}}
+<nav class="nav" aria-label="Main">
+    <ul class="nav__list">
+        {{#foreach navigation}}
         <li class="nav__item">
-            <a href="{{this.url}}">{{label}}</a>
+            <a class="nav__link{{#if current}} nav__link--current{{/if}}" href="{{url absolute="true"}}"{{#if current}} aria-current="page"{{/if}}>{{label}}</a>
         </li>
         {{/foreach}}
     </ul>

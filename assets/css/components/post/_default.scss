@@ -2,6 +2,19 @@
    #POST/DEFAULT
    ========================================================================== */
 
+/**
+ * Posts keep the wide container for their sidebar (see default.hbs), but the
+ * sidebar only appears from the desktop-small breakpoint. Below it the post
+ * takes the same reading column as every other page, so it lines up with the
+ * header and footer.
+ */
+.post-template .main.width {
+    @media (max-width: $bp-desktop-small - 1) {
+        max-width: calc(var(--measure) + (var(--columnGutter) * 2));
+        padding-inline: var(--columnGutter);
+    }
+}
+
 .post {
     &__title {
         margin-bottom: var(--spacing6);
