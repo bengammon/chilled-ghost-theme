@@ -2,42 +2,40 @@
    #TAGS/DEFAULT
    ========================================================================== */
 
+/**
+ * The tag filters at the top of the archives: a wrapping line of #tag links
+ * in the mono face, set like the tags in a post's meta line. The tag whose
+ * archive is being viewed is in the text colour and underlined, like the
+ * current page in the nav.
+ */
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing2);
+    gap: .6rem 1.6rem;
     margin: var(--contentSpacingLarge) 0;
-    
-    &__item {
-        border: var(--borderWidth) solid var(--colorBorder);
-        border-radius: var(--borderRadius);
-        padding: var(--spacing1) var(--spacing2);
 
-        background-color: var(--colorTagBg);
-        color: var(--colorTagText);
-        font-size: var(--fontSizeTiny);
+    font-family: var(--fontFamilyMono);
+    font-size: 1.3rem;
+
+    &__item {
+        padding: .2rem 0;
+
+        border-bottom: .15rem solid transparent;
+        color: var(--colorMuted);
         text-decoration: none;
         text-transform: lowercase;
 
-        /**
-         * The text colour comes from the anchor default; this brings the rest
-         * of the pill with it.
-         */
-        @include active-states() {
-            border-color: var(--colorPrimary);
-
-            background-color: color-mix(in srgb, var(--colorPrimary) 8%, transparent);
+        &:hover {
+            color: var(--colorAccent);
         }
 
         /**
-         * The tag whose archive is currently being viewed. Declared after the
-         * active states so the current tag stays put when hovered.
+         * Declared after the hover state so the current tag stays put when
+         * hovered.
          */
         &[aria-current="page"] {
-            border-color: var(--colorTextProminent);
-
-            background-color: var(--colorTextProminent);
-            color: var(--colorBackground);
+            border-bottom-color: var(--colorFg);
+            color: var(--colorFg);
         }
     }
 }

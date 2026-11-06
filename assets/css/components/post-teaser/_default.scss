@@ -2,17 +2,115 @@
    #POST-TEASER/DEFAULT
    ========================================================================== */
 
+/**
+ * One row in a list of posts: a fixed date column, then the title, ruled off
+ * underneath. The date column is sized by --teaserDateWidth: wide enough for
+ * DD/MM/YY by default, narrower in an archive where the date is DD Mon (see
+ * archive/_default.scss).
+ */
 .post-teaser {
     align-items: baseline;
-    column-gap: var(--spacing4);
+    column-gap: 1.6rem;
     display: grid;
-    grid-template-columns: 1fr;
-    margin: 0 auto var(--spacing4);
+    grid-template-columns: var(--teaserDateWidth, 9.2rem) minmax(0, 1fr);
+    margin: 0;
     position: relative;
     width: 100%;
 
-    @media (min-width: $bp-tablet-small) {
-        grid-template-columns: max-content 1fr;
+    border-bottom: .1rem solid var(--colorRule);
+    font-family: var(--fontFamilyHeading);
+
+    /**
+     * The year heading over the first row of each year in an archive. Hidden
+     * everywhere else; the archive turns it on.
+     */
+    &__year {
+        align-items: baseline;
+        display: none;
+        grid-column: 1 / -1;
+        margin: 5.6rem 0 0;
+        padding-bottom: 1rem;
+        position: relative;
+        z-index: 1; // above the title's stretched link, so it is not a link
+
+        border-bottom: .15rem solid var(--colorFg);
+        color: var(--colorFg);
+        font-size: 2rem;
+        font-weight: var(--fontWeightSemiBold);
+        line-height: 1.2;
+    }
+
+    &__date {
+        grid-column: 1;
+        padding-block: 1.3rem;
+        white-space: nowrap;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.3rem;
+        font-variant-numeric: tabular-nums;
+    }
+
+    &__date-short {
+        display: none;
+    }
+
+    /**
+     * Type is pinned here rather than inherited from the heading element, so
+     * the tag can be chosen for document outline without changing the design.
+     */
+    &__heading {
+        grid-column: 2;
+        margin: 0;
+        padding-block: 1.3rem;
+
+        font-size: 1.7rem;
+        font-weight: 500;
+        letter-spacing: 0;
+        line-height: 1.35;
+    }
+
+    &__title {
+        color: var(--colorFg);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--colorAccent);
+        }
+
+        /**
+         * Stretch the link over the whole row, so the date is a target too.
+         */
+        &::after {
+            content: "";
+            inset: 0;
+            position: absolute;
+        }
+    }
+
+    /**
+     * Featured posts get a filled star beside the title. The icon is
+     * aria-hidden and paired with a visually hidden label, so the heading
+     * still reads as "Title Featured".
+     */
+    &__featured {
+        display: inline-flex;
+        align-items: center;
+        vertical-align: .05em;
+
+        color: var(--colorAccent);
+
+        path {
+            fill: currentColor;
+        }
+    }
+
+    &__number {
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.2rem;
+        font-variant-numeric: tabular-nums;
+        font-weight: var(--fontWeightDefault);
     }
 
     &__avatar {
@@ -22,60 +120,6 @@
         position: absolute;
         top: 0;
         width: 5rem;
-    }
-
-    &__date {
-        grid-column: 1;
-        white-space: nowrap;
-
-        color: var(--colorTextSubtle);
-        font-family: var(--fontFamilyAlternative);
-        font-variant-numeric: tabular-nums;
-    }
-
-    /**
-     * Type is pinned here rather than inherited from the heading element, so
-     * the tag can be chosen for document outline without changing the design.
-     */
-    &__heading {
-        grid-column: 1;
-        margin-bottom: 0;
-
-        font-size: var(--fontSizeBase);
-        font-weight: var(--fontWeightH3);
-        letter-spacing: var(--letterSpacingH3);
-        line-height: var(--lineHeightH3);
-
-        @media (min-width: $bp-tablet-small) {
-            grid-column: 2;
-        }
-    }
-
-    &__title {
-        color: var(--colorTextProminent);
-        text-decoration: none;
-
-        .content & {
-            color: var(--colorTextProminent);
-            font-weight: var(--fontWeightBold);
-        }
-    }
-
-    /**
-     * Featured posts get a star beside the title. The icon is aria-hidden
-     * and paired with a visually hidden label, so the heading still reads
-     * as "Title Featured".
-     */
-    &__featured {
-        display: inline-flex;
-        align-items: center;
-
-        color: var(--colorPrimary);
-    }
-
-    &__number {
-        color: var(--colorTextSubtle);
-        font-variant-numeric: tabular-nums;
     }
 
     /**

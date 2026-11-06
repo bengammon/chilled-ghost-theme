@@ -1,19 +1,21 @@
 {{!< default}}
 {{#contentFor "title"}}{{tag.name}}{{#if pagination.prev}} (Page {{pagination.page}}){{/if}} — {{@site.title}}{{/contentFor}}
 
-{{#tag}}
+<header class="archive-header">
+    {{#tag}}
 
-    <h1>
-        Blog/<span class="color--text-subtle">{{name}}</span> {{#if ../pagination.prev}}<span class="color--text-subtle">(Page {{../pagination.page}})</span>{{/if}}
-    </h1>
+        <h1 class="archive-header__title">
+            Blog/<span class="archive-header__page">{{name}}</span> {{#if ../pagination.prev}}<span class="archive-header__page">(Page {{../pagination.page}})</span>{{/if}}
+        </h1>
 
-    {{#if description}}
-    <p class="tag__description">{{description}}</p>
-    {{/if}}
+        {{#if description}}
+        <p class="archive-header__description">{{description}}</p>
+        {{/if}}
 
-{{/tag}}
+    {{/tag}}
 
-{{> tags currentTag=tag.slug}}
+    {{> tags currentTag=tag.slug}}
+</header>
 
 <div class="archive">
     {{#foreach posts}}
