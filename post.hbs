@@ -2,39 +2,37 @@
 
 {{#post}}
 
-<article class="{{post_class}} gh-content" data-post-date="{{published_at}}" data-post-id="{{id}}">
+<article class="{{post_class}}{{#has tag="note"}} post--note{{/has}}" data-post-date="{{published_at}}" data-post-id="{{id}}">
 
-    <h1 class="post__title">{{title}} <span class="post__number js-post-number" style="opacity: 0;"></span></h1>
-
+    {{!-- One grid for the whole post: the reading column in the middle and,
+          on wide screens, the contents list in the left margin. On narrow
+          screens everything stacks in source order: header, contents, body. --}}
     <div class="post__layout">
 
-        {{!-- The sidebar carries the post meta on every post, so the column is
-              never empty; the contents list joins it only where it is asked
-              for. --}}
-        <aside class="post__sidebar">
+        <header class="post__header">
+            <h1 class="post__title">{{title}} <span class="post__number js-post-number" style="opacity: 0;"></span></h1>
 
-            <div class="post__meta">
-                <time class="post__date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD/MM/YYYY"}}</time>
-                {{#if tags}}
-                    <div class="tags">
-                        {{#foreach tags}}
-                        <a class="tags__item" href="{{url}}" title="{{name}}">#{{name}}</a>
-                        {{/foreach}}
-                    </div>
-                {{/if}}
-            </div>
-
-            {{#has tag="#toc"}}
-                {{> "table-of-contents"}}
+            {{!-- Notes carry their meta under the text instead (below). --}}
+            {{^has tag="note"}}
+                {{> "post-meta" readingTime=true}}
             {{/has}}
+        </header>
 
-        </aside>
+        {{#has tag="#toc"}}
+            {{> "table-of-contents"}}
+        {{/has}}
 
         {{!-- js-toc-content scopes tocbot to the post body, so the title above
              it is never picked up as a heading. --}}
         <div class="post__body prose js-toc-content">
             {{content}}
         </div>
+
+        {{#has tag="note"}}
+            <footer class="post__footer">
+                {{> "post-meta"}}
+            </footer>
+        {{/has}}
 
     </div>
 

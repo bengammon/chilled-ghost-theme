@@ -100,9 +100,9 @@
 
 {{> header}}
 
-{{!-- Every page sits in the centred reading column except posts, whose
-     sidebar still needs the wide container until their own restyle. --}}
-<main class="main {{#is "post"}}width{{else}}column{{/is}}" id="main" tabindex="-1">
+{{!-- Every page sits in the centred reading column except posts, which
+     lay out their own grid so the contents list can use the margin. --}}
+<main class="main{{^is "post"}} column{{/is}}" id="main" tabindex="-1">
 
     {{{body}}}
     {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}

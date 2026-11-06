@@ -3,122 +3,91 @@
    ========================================================================== */
 
 /**
- * Posts keep the wide container for their sidebar (see default.hbs), but the
- * sidebar only appears from the desktop-small breakpoint. Below it the post
- * takes the same reading column as every other page, so it lines up with the
- * header and footer.
+ * The single post and note view. Note that Ghost's post_class also puts
+ * .post on every archive teaser, so nothing here styles .post itself; the
+ * layout hangs off .post__layout instead.
  */
-.post-template .main.width {
-    @media (max-width: $bp-desktop-small - 1) {
-        max-width: calc(var(--measure) + (var(--columnGutter) * 2));
-        padding-inline: var(--columnGutter);
-    }
-}
-
 .post {
-    &__title {
-        margin-bottom: var(--spacing6);
-    }
-    
-    &__number {
-        color: var(--colorTextExtraSubtle);
-        font-variant-numeric: tabular-nums;
-    }
 
     /**
-     * Every post has a sidebar now that the meta lives there, so the grid is
-     * unconditional rather than keyed off the contents list.
+     * A three-column grid: the reading column in the middle, a margin either
+     * side. Everything sits in the middle column and stacks in source order
+     * (header, contents, body, footer) until the margin is wide enough for
+     * the contents list, which then moves into the left margin alongside the
+     * body. The gutter matches .column, so the text lines up with the header.
      */
     &__layout {
-        @media (min-width: $bp-desktop-small) {
-            align-items: start;
-            display: grid;
-            gap: var(--layoutGridGap);
-            grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
-        }
-    }
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) min(var(--measure), 100%) minmax(0, 1fr);
+        padding-inline: var(--columnGutter);
 
-    /**
-     * The sidebar stays first in the source so that it stacks above the post
-     * on narrow screens, keeping the meta directly under the title as it has
-     * always read. On desktop both are placed explicitly, which puts the
-     * sidebar on the right and starts the post at the container edge, in line
-     * with the site logo in the header.
-     */
-    &__sidebar {
-        margin-bottom: var(--contentSpacingLarge);
+        /**
+         * Full-width cards are 100vw, which includes the scrollbar; clip
+         * rather than hide, so this is not a scroll container and the sticky
+         * contents list still works.
+         */
+        overflow-x: clip;
 
-        @media (min-width: $bp-desktop-small) {
-            /**
-             * Stretched to the full row height so that the contents list
-             * inside has somewhere to travel while sticky; the meta above it
-             * stays put at the top.
-             */
-            align-self: stretch;
+        > * {
             grid-column: 2;
-            grid-row: 1;
-            margin-bottom: 0;
         }
+
+        @media (min-width: $bp-post-margin) {
+            column-gap: 4rem;
+        }
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        margin-bottom: 4rem;
+    }
+
+    &__title {
+        margin: 0;
+
+        font-size: clamp(3rem, 4.6vw, 4.2rem);
+        letter-spacing: -.025em;
+        line-height: 1.12;
+        text-wrap: balance;
     }
 
     /**
-     * Caps the measure whether or not a contents list is present: without one
-     * the post would otherwise run the full width of the container. ch rather
-     * than rem so the measure tracks the type scale.
+     * The #N post number, filled in by postNumber.js. Half the title size in
+     * the mono face, centred on the title's line.
      */
-    &__body {
-        max-width: var(--measure);
-
-        @media (min-width: $bp-desktop-small) {
-            grid-column: 1;
-            grid-row: 1;
-        }
+    &__number {
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: .5em;
+        font-variant-numeric: tabular-nums;
+        font-weight: var(--fontWeightDefault);
+        letter-spacing: 0;
+        vertical-align: middle;
     }
 
-    &__meta {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--spacing3);
-        margin-bottom: var(--spacing6);
-
-        color: var(--colorTextSubtle);
-        font-family: var(--fontFamilyAlternative);
-
-        /**
-         * The shared tag pills carry block margins for the archive pages;
-         * in the meta stack the spacing comes from the gap instead.
-         */
-        .tags {
-            margin: 0;
-        }
-
-        /**
-         * Stacked in the sidebar, where a single row of date plus tags would
-         * not fit the narrow column.
-         */
-        @media (min-width: $bp-desktop-small) {
-            flex-direction: column;
-            gap: var(--spacing2);
-            margin-bottom: var(--spacing4);
-        }
+    &__footer {
+        margin-top: 2.4rem;
     }
 
-    ol + h2,
-    ol + h3,
-    ul + h2,
-    ul + h3,
-    blockquote + h2,
-    blockquote + h3,
-    p + h2,
-    p + h3,
-    .kg-card + h2,
-    .kg-card + h3 {
-        margin-top: var(--contentSpacingLarge);
-    }
+    /**
+     * Notes are short, so their title drops to the size of a section heading
+     * and the number sits at the meta size rather than scaling with it.
+     */
+    &--note {
+        .post__header {
+            margin-bottom: 2rem;
+        }
 
-    .kg-card,
-    pre {
-        margin-bottom: var(--spacing4);
-        margin-top: var(--spacing4);
+        .post__title {
+            font-size: 2.4rem;
+            letter-spacing: -.015em;
+            line-height: 1.25;
+        }
+
+        .post__number {
+            font-size: 1.3rem;
+        }
     }
 }
