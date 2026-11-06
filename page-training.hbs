@@ -6,19 +6,15 @@
 
 {{#post}}
 
-    {{#if @page.show_title_and_feature_image}}
-    <h1 class="page-header__title">{{title}}</h1>
+    <header class="training-page__header">
+        {{#if @page.show_title_and_feature_image}}
+        <h1 class="training-page__title">{{title}}</h1>
+        {{/if}}
 
-    <div class="spacer--extra-large"></div>
-    {{/if}}
-
-    {{!-- Matches the post template: the heading spans the container, the
-          running text is capped at the reading measure. --}}
-    <div class="measure">
-        {{content}}
-    </div>
-
-    <div class="spacer--extra-large"></div>
+        <div class="training-page__intro prose">
+            {{content}}
+        </div>
+    </header>
 
     {{> training-dashboard}}
 

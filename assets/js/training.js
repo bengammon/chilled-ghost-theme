@@ -169,6 +169,7 @@ function renderPanel(data) {
     return `
         <div class="training__panel">
             <div class="training__hero">
+                <h2 class="training__label">Lifetime</h2>
                 <p class="training__hero-value">
                     ${formatNumber(lifetime.tonnageKg)}<span class="training__hero-unit">kg</span>
                 </p>
@@ -177,6 +178,7 @@ function renderPanel(data) {
             </div>
 
             <div class="training__stat">
+                <h2 class="training__label">Streak</h2>
                 <p class="training__stat-value">${streak ? streak.currentWeeks : 0}</p>
                 <p class="training__stat-label">${pluralise(streak ? streak.currentWeeks : 0, 'week')} on the trot</p>
                 ${best}
@@ -298,6 +300,7 @@ function renderGrid(days) {
 
     return `
         <div class="training__grid-wrap">
+            <h2 class="training__label">Last ${GRID_DAYS} days</h2>
             <div class="training__grid-scroll">
                 <div class="training__months" aria-hidden="true">${labelRow}</div>
                 <div class="training__grid">

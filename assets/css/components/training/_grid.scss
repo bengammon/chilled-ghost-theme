@@ -3,9 +3,10 @@
    ========================================================================== */
 
 /**
- * Ninety days as columns of weeks, Monday at the top. On a narrow screen the whole
- * thing scrolls sideways rather than shrinking the circles below the point where
- * the ramp is readable; JS pins the opening position to the current week.
+ * Ninety days as columns of weeks, Monday at the top, as small rounded squares.
+ * On a narrow screen the whole thing scrolls sideways rather than shrinking the
+ * squares below the point where the ramp is readable; JS pins the opening
+ * position to the current week.
  */
 
 .training {
@@ -25,9 +26,10 @@
 
     /* Mon / Wed / Fri down the left, aligned to the rows they label. */
     &__days {
-        color: var(--colorTextExtraSubtle);
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
         display: grid;
-        font-size: var(--fontSizeTiny);
+        font-size: 1.1rem;
         gap: var(--trainingDayGap);
         grid-template-rows: repeat(7, var(--trainingDaySize));
         margin-right: var(--spacing1);
@@ -51,9 +53,10 @@
     }
 
     &__months {
-        color: var(--colorTextExtraSubtle);
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
         display: flex;
-        font-size: var(--fontSizeTiny);
+        font-size: 1.1rem;
         gap: var(--trainingGridColumnGap);
         /* Clears the Mon/Wed/Fri gutter so labels sit over their own columns. */
         margin-bottom: var(--spacing1);
@@ -67,7 +70,7 @@
 
     &__day {
         background-color: var(--trainingLevel0);
-        border-radius: 50%;
+        border-radius: .2rem;
         display: block;
         height: var(--trainingDaySize);
         width: var(--trainingDaySize);
@@ -83,7 +86,7 @@
         }
 
         &:focus-visible {
-            outline: var(--borderWidth) solid var(--colorPrimary);
+            outline: .15rem solid var(--colorFg);
             outline-offset: .2rem;
         }
     }
@@ -93,9 +96,10 @@
 
     &__key {
         align-items: center;
-        color: var(--colorTextExtraSubtle);
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
         display: flex;
-        font-size: var(--fontSizeTiny);
+        font-size: 1.1rem;
         gap: var(--trainingDayGap);
         justify-content: flex-end;
         margin-top: var(--spacing2);
