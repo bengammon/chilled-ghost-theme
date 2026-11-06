@@ -13,7 +13,13 @@
         gap: var(--spacing4);
     }
 
+    /**
+     * The auto margin pushes the menu button over to sit beside the theme
+     * button, rather than space-between centring it.
+     */
     &__menu-toggle {
+        margin-left: auto;
+
         @media (min-width: $bp-desktop-small) {
             display: none;
         }
@@ -92,8 +98,14 @@
         position: relative;
         width: var(--headerSiteLogoDimensions);
 
-        svg {
-            filter: drop-shadow(2px 4px 12px black);
+        color: var(--colorFg);
+
+        /**
+         * The logo is drawn in currentColor so it follows the theme; the bar
+         * across the "b" is the same colour, knocked back.
+         */
+        .header__logo-bar {
+            opacity: .45;
         }
 
         &:hover {

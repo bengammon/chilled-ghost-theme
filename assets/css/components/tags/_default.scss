@@ -26,7 +26,7 @@
         @include active-states() {
             border-color: var(--colorPrimary);
 
-            background-color: rgba(var(--colorPrimaryRgb), .08);
+            background-color: color-mix(in srgb, var(--colorPrimary) 8%, transparent);
         }
 
         /**

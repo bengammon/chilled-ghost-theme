@@ -4,7 +4,25 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#131312" media="(prefers-color-scheme: dark)">
+
+    {{!-- Re-applies a theme the visitor picked with the header button before
+          anything paints, so a stored choice never flashes the system theme
+          first. Kept inline and tiny for that reason; assets/js/theme.js does
+          the rest. The two colours match --colorBg in variables/_color.scss. --}}
+    <script>
+        try {
+            var theme = localStorage.getItem('theme');
+            if (theme === 'light' || theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', theme);
+                document.querySelectorAll('meta[name="theme-color"]').forEach(function (meta) {
+                    meta.setAttribute('content', theme === 'dark' ? '#131312' : '#f6f5f1');
+                });
+            }
+        } catch (e) {}
+    </script>
+
     <link rel="stylesheet" href="{{asset "built/index.css"}}" />
 
     <title>{{#block "title"}}{{meta_title}}{{#is "post, page"}} — {{@site.title}}{{/is}}{{/block}}</title>

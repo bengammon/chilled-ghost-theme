@@ -8,9 +8,8 @@
    /**
     * The reading measure. The container is deliberately wider than this so a
     * post's contents sidebar has somewhere to sit; running text is capped
-    * separately. ch rather than rem so it tracks the type scale - note that
-    * ch is the width of the zero glyph, so this is nearer 75 characters than
-    * 55 in Inter.
+    * separately. 59.2rem is the design's 640px reading column less its 24px
+    * gutters: roughly 70 characters of the serif at its largest size.
     */
-   --measure: 55ch;
+   --measure: 59.2rem;
 }

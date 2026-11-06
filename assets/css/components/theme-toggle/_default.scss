@@ -1,0 +1,32 @@
+/* ==========================================================================
+   #THEME-TOGGLE/DEFAULT
+   ========================================================================== */
+
+/**
+ * The half-moon button in the header that switches light and dark. A 44px
+ * hit area around an 18px icon, pulled back by its own padding so the icon
+ * lines up with the container edge.
+ */
+.theme-toggle {
+    display: grid;
+    flex-shrink: 0;
+    height: 4.4rem;
+    margin-right: -1.3rem;
+    place-items: center;
+    width: 4.4rem;
+
+    background: none;
+    border: 0;
+    border-radius: 50%;
+    color: var(--colorFg);
+    cursor: pointer;
+
+    /**
+     * Hover and keyboard focus only: a plain :focus would leave the circle
+     * showing after every mouse click.
+     */
+    &:hover,
+    &:focus-visible {
+        background: var(--colorSurface);
+    }
+}
