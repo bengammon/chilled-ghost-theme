@@ -1,9 +1,11 @@
 {{!< default}}
 {{#contentFor "title"}}Blog{{#if pagination.prev}} (Page {{pagination.page}}){{/if}} — {{@site.title}}{{/contentFor}}
 
-<h1>Blog {{#if pagination.prev}}<span class="color--text-subtle">(Page {{pagination.page}})</span>{{/if}}</h1>
+<header class="archive-header">
+    <h1 class="archive-header__title">Blog {{#if pagination.prev}}<span class="archive-header__page">(Page {{pagination.page}})</span>{{/if}}</h1>
 
-{{> tags}}
+    {{> tags}}
+</header>
 
 <div class="archive">
     {{#foreach posts}}

@@ -2,33 +2,73 @@
    #ARCHIVE/DEFAULT
    ========================================================================== */
 
-.archive {
-    position: relative;
+/**
+ * The blog, tag and author archives: a header (title, optional description,
+ * tag filters), then rows of post teasers grouped under year headings.
+ */
+.archive-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-bottom: 5.6rem;
 
-    .post-teaser {
-        &:first-of-type {
-            .post-teaser__year {
-                margin-top: 0;
-            }
-        }
+    &__title {
+        margin: 0;
+
+        font-size: clamp(3.2rem, 5.4vw, 4.6rem);
+        letter-spacing: -.025em;
+        line-height: 1.08;
     }
 
-    .post-year-2026 ~ .post-year-2026,
-    .post-year-2025 ~ .post-year-2025,
-    .post-year-2024 ~ .post-year-2024,
-    .post-year-2023 ~ .post-year-2023,
-    .post-year-2022 ~ .post-year-2022,
-    .post-year-2021 ~ .post-year-2021,
-    .post-year-2020 ~ .post-year-2020,
-    .post-year-2019 ~ .post-year-2019,
-    .post-year-2018 ~ .post-year-2018,
-    .post-year-2017 ~ .post-year-2017,
-    .post-year-2016 ~ .post-year-2016,
-    .post-year-2015 ~ .post-year-2015,
-    .post-year-2014 ~ .post-year-2014,
-    .post-year-2013 ~ .post-year-2013,
-    .post-year-2012 ~ .post-year-2012 {
-        .post-teaser__year {    
+    &__page {
+        color: var(--colorMuted);
+    }
+
+    &__description {
+        margin: 0;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyProse);
+        font-size: var(--fontSizeProse);
+        line-height: 1.65;
+        text-wrap: pretty;
+    }
+
+    .tags {
+        margin: 0;
+    }
+}
+
+/**
+ * In an archive the dates drop their year, because each year gets a heading:
+ * the year label every teaser carries, shown only on the first teaser of
+ * each year on the page.
+ */
+.archive {
+    --teaserDateWidth: 6.4rem;
+
+    .post-teaser__year {
+        display: flex;
+    }
+
+    .post-teaser:first-child .post-teaser__year {
+        margin-top: 0;
+    }
+
+    .post-teaser__date-short {
+        display: inline;
+    }
+
+    .post-teaser__date-full {
+        display: none;
+    }
+
+    /**
+     * Hide the year on every teaser after the first of its year. Generated
+     * for the years the site has posts in, with room to grow.
+     */
+    @for $year from 2012 through 2040 {
+        .post-year-#{$year} ~ .post-year-#{$year} .post-teaser__year {
             display: none;
         }
     }

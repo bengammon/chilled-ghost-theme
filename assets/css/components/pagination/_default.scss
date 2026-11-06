@@ -2,16 +2,49 @@
    #PAGINATION/DEFAULT
    ========================================================================== */
 
+/**
+ * Newer on the left, the page count in the middle, older on the right. Each
+ * has its own grid column, so a missing link on the first or last page
+ * leaves the others where they were.
+ */
 .pagination {
-    padding-top: var(--spacing7);
+    align-items: baseline;
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: 1fr auto 1fr;
+    padding-top: 4rem;
 
-    font-size: var(--fontSizeSmall);
+    font-family: var(--fontFamilyHeading);
+    font-size: 1.5rem;
 
-    .newer-posts {
-        margin-right: $content-gutter-small;
+    &__link {
+        padding: .6rem 0;
+
+        color: var(--colorFg);
+        font-weight: 500;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--colorAccent);
+        }
+
+        &--newer {
+            grid-column: 1;
+            justify-self: start;
+        }
+
+        &--older {
+            grid-column: 3;
+            justify-self: end;
+        }
     }
-    
-    .older-posts {
-        margin-left: $content-gutter-small;
+
+    &__page {
+        grid-column: 2;
+        grid-row: 1;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.3rem;
     }
 }
