@@ -1,25 +1,55 @@
 {{!< default}}
 
-{{#is "home"}}
-<div class="intro">
-    <h1 class="intro__heading">Hi, I'm Ben. <br>Creative developer.<br>Web building since 2007.</h1>
+<div class="home">
 
-    <div class="spacer--medium"></div>
+    {{#is "home"}}
+    <section class="intro">
+        <h1 class="intro__heading">Hi, I'm Ben. <br>Creative developer.<br><span class="intro__muted">Web building since 2007.</span></h1>
 
-    <p class="intro__text">I've spent nearly 20 years building for the web, including websites for major game franchises like <em>No Man's Sky</em>, <em>Dead Island</em>, <em>Saints Row</em>, and <em>Fable Legends (RIP)</em>. This is my personal site and microblog: a stream of what I'm learning, making, playing, and thinking about.</p>
+        <p class="intro__text">I've spent nearly 20 years building for the web, including websites for major game franchises like <em>No Man's Sky</em>, <em>Dead Island</em>, <em>Saints Row</em>, and <em>Fable Legends (RIP)</em>. This is my personal site and microblog: a stream of what I'm learning, making, playing, and thinking about.</p>
 
-    <div class="spacer--medium"></div>
+        <a class="home-link" href="/about">More about me →</a>
+    </section>
+    {{/is}}
 
-    <a class="btn" href="/about">More about me</a>
+    <section class="home-section">
+        <h2 class="home-section__label">Recent writing</h2>
+
+        <div class="home-section__rows">
+            {{#get "posts" include="tags" filter="tag:-note" limit="5"}}
+                {{#foreach posts}}
+                    {{> post-teaser}}
+                {{/foreach}}
+            {{/get}}
+        </div>
+
+        <a class="home-link home-link--muted" href="/blog">See more of my writing →</a>
+    </section>
+
+    {{!-- Hidden until assets/js/training.js has loaded the training data and
+          filled the summary; if the data is missing or slow, the section never
+          appears. --}}
+    <section class="home-section" data-training-summary hidden>
+        <h2 class="home-section__label">Training</h2>
+
+        <div class="js-training-summary"></div>
+
+        <a class="home-link" href="/training/">View training log →</a>
+    </section>
+
+    <section class="home-section">
+        <h2 class="home-section__label">Notes</h2>
+
+        <div class="home-section__notes">
+            {{#get "posts" filter="tag:note" limit="2"}}
+                {{#foreach posts}}
+                    <article class="note-card">
+                        <h3 class="note-card__title"><a href="{{url}}">{{title}}</a></h3>
+                        <p class="note-card__excerpt">{{excerpt characters="180"}}</p>
+                    </article>
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </section>
+
 </div>
-{{/is}}
-
-<h2 class="subheading">Recent writing</h2>
-    
-{{#get "posts" include="tags" limit="12"}}
-    {{#foreach posts}}
-        {{> post-teaser}}
-    {{/foreach}}
-{{/get}}
-
-<a class="link link--subtle" href="/blog">See more of my writing</a>

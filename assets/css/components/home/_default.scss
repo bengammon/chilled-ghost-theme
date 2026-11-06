@@ -1,0 +1,105 @@
+/* ==========================================================================
+   #HOME/DEFAULT
+   ========================================================================== */
+
+/**
+ * The homepage: the intro, then sections each headed by a small mono label.
+ * Recent writing reuses the post-teaser rows; notes get a title and excerpt.
+ */
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 7.2rem;
+}
+
+.home-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &[hidden] {
+        display: none;
+    }
+
+    &__label {
+        margin: 0;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: .08em;
+        line-height: 1.4;
+        text-transform: uppercase;
+    }
+
+    /**
+     * The teaser rows rule themselves off underneath; the list adds the rule
+     * above the first.
+     */
+    &__rows {
+        border-top: .1rem solid var(--colorRule);
+    }
+
+    &__notes {
+        border-top: .1rem solid var(--colorRule);
+    }
+}
+
+/**
+ * The "More about me →" style text links that close a section.
+ */
+.home-link {
+    align-self: flex-start;
+    padding: .6rem 0;
+
+    color: var(--colorFg);
+    font-family: var(--fontFamilyHeading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover {
+        color: var(--colorAccent);
+    }
+
+    &--muted {
+        color: var(--colorMuted);
+    }
+}
+
+.note-card {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding: 1.8rem 0;
+
+    border-bottom: .1rem solid var(--colorRule);
+
+    &__title {
+        margin: 0;
+
+        font-size: 1.6rem;
+        font-weight: var(--fontWeightSemiBold);
+        letter-spacing: 0;
+        line-height: 1.35;
+
+        a {
+            color: var(--colorFg);
+            text-decoration: none;
+
+            &:hover {
+                color: var(--colorAccent);
+            }
+        }
+    }
+
+    &__excerpt {
+        margin: 0;
+
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyProse);
+        font-size: 1.7rem;
+        line-height: 1.6;
+    }
+}

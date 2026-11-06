@@ -2,16 +2,34 @@
    #INTRO/DEFAULT
    ========================================================================== */
 
+/**
+ * The homepage introduction: a three-line heading whose last line is muted,
+ * a paragraph of running text, and a link to the About page.
+ */
 .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
     &__heading {
-        text-wrap: pretty;
+        margin: 0;
+
+        font-size: clamp(3.2rem, 5.4vw, 4.6rem);
+        letter-spacing: -.025em;
+        line-height: 1.08;
+        text-wrap: balance;
     }
 
-    /**
-     * The heading sets its own line breaks and the button sizes to its label,
-     * so only the running text needs capping at the reading measure.
-     */
+    &__muted {
+        color: var(--colorMuted);
+    }
+
     &__text {
-        max-width: var(--measure);
+        margin: 0;
+
+        font-family: var(--fontFamilyProse);
+        font-size: var(--fontSizeProse);
+        line-height: 1.65;
+        text-wrap: pretty;
     }
 }

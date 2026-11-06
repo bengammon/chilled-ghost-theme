@@ -1,0 +1,50 @@
+/* ==========================================================================
+   #HOME/TRAINING-SUMMARY
+   ========================================================================== */
+
+/**
+ * The homepage's three-stat training summary, filled in by training.js:
+ * last workout, lifetime weight and streak. Each stat is ruled off above in
+ * the text colour. The minimum column width is chosen so the three sit side
+ * by side in the full column and drop straight to a single stack on a phone,
+ * never two and an orphan.
+ */
+.training-summary {
+    display: grid;
+    gap: 2.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+
+    &__stat {
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        padding-top: 1.2rem;
+
+        border-top: .15rem solid var(--colorFg);
+    }
+
+    &__label {
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyMono);
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+    }
+
+    &__value {
+        font-family: var(--fontFamilyHeading);
+        font-size: 2.4rem;
+        font-variant-numeric: tabular-nums;
+        font-weight: var(--fontWeightSemiBold);
+        letter-spacing: -.01em;
+        line-height: 1.2;
+    }
+
+    &__note {
+        color: var(--colorMuted);
+        font-family: var(--fontFamilyProse);
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+}

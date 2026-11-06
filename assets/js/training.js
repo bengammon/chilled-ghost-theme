@@ -2,7 +2,8 @@
  * Training dashboard.
  *
  * Fetches /training.json and injects the stats panel and activity grid into the
- * mount point in partials/training-dashboard.hbs.
+ * mount point in partials/training-dashboard.hbs, and the three-stat summary
+ * into the homepage's [data-training-summary] section.
  *
  * The panel renders nothing on failure — no error state, no empty skeleton. A
  * training dashboard is not worth breaking a page over, so every exit path here
@@ -31,8 +32,9 @@ function levelFor(kg) {
 
 export default function initTraining() {
     const mount = document.querySelector('[data-training]');
+    const summary = document.querySelector('[data-training-summary]');
 
-    if (!mount) {
+    if (!mount && !summary) {
         return;
     }
 
@@ -40,13 +42,19 @@ export default function initTraining() {
     // somewhere else: the data attribute for a template-level override, or
     // window.trainingDataUrl, which can be set from Ghost's code injection without
     // touching the repo at all. Same pattern as window.ghostContentApiKey.
-    const endpoint = mount.dataset.trainingSrc || window.trainingDataUrl || ENDPOINT;
+    const host = mount || summary;
+    const endpoint = host.dataset.trainingSrc || window.trainingDataUrl || ENDPOINT;
 
     load(endpoint).then((data) => {
         if (!data) {
             return;
         }
-        render(mount, data);
+        if (mount) {
+            render(mount, data);
+        }
+        if (summary) {
+            renderSummary(summary, data);
+        }
     });
 }
 
@@ -90,6 +98,58 @@ function render(mount, data) {
 
     attachTooltip(mount);
     pinToCurrentWeek(mount);
+}
+
+/**
+ * The homepage summary: last workout, lifetime weight, streak. The section
+ * stays hidden (and so does its heading) unless the data arrived, matching the
+ * dashboard's rule of rendering nothing rather than a broken panel.
+ */
+function renderSummary(section, data) {
+    const target = section.querySelector('.js-training-summary');
+
+    if (!target) {
+        return;
+    }
+
+    const { lifetime, streak, last } = data;
+    const stats = [];
+
+    if (last) {
+        const parts = [];
+        if (last.name) parts.push(escapeHtml(last.name));
+        if (last.tonnageKg) {
+            parts.push(`${formatNumber(last.tonnageKg)} kg${last.durationMin ? ` in ${formatNumber(last.durationMin)} min` : ''}`);
+        }
+        stats.push(summaryStat('Last workout', capitalise(relativeDay(last.date)), parts.join(' · ')));
+    }
+
+    stats.push(summaryStat(
+        'Lifetime',
+        `${formatNumber(lifetime.tonnageKg)} kg`,
+        `Across ${formatNumber(lifetime.workouts)} ${pluralise(lifetime.workouts, 'workout')}`
+    ));
+
+    if (streak) {
+        stats.push(summaryStat(
+            'Streak',
+            `${streak.currentWeeks} ${pluralise(streak.currentWeeks, 'week')}`,
+            streak.longestWeeks ? `Best run: ${streak.longestWeeks} ${pluralise(streak.longestWeeks, 'week')}` : ''
+        ));
+    }
+
+    target.innerHTML = `<div class="training-summary">${stats.join('')}</div>`;
+    section.hidden = false;
+}
+
+function summaryStat(label, value, note) {
+    return `
+        <div class="training-summary__stat">
+            <span class="training-summary__label">${label}</span>
+            <span class="training-summary__value">${value}</span>
+            ${note ? `<span class="training-summary__note">${note}</span>` : ''}
+        </div>
+    `;
 }
 
 function renderPanel(data) {
@@ -396,6 +456,10 @@ function mondayOffset(date) {
 
 function formatNumber(value) {
     return Number(value).toLocaleString('en-GB', { maximumFractionDigits: 1 });
+}
+
+function capitalise(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
 }
 
 function pluralise(count, word) {
