@@ -2,103 +2,31 @@
    #HEADER/DEFAULT
    ========================================================================== */
 
+/**
+ * Logo on the left; nav, search and the theme button on the right. Below the
+ * tablet-small breakpoint the nav folds into a panel behind a Menu button.
+ */
 .header {
     align-items: center;
     display: flex;
-    flex-wrap: wrap;
+    gap: var(--spacing4);
     justify-content: space-between;
-    height: var(--headerHeight);
+    padding-top: var(--headerPaddingTop);
 
-    @media (min-width: $bp-desktop-small) {
-        gap: var(--spacing4);
-    }
-
-    /**
-     * The auto margin pushes the menu button over to sit beside the theme
-     * button, rather than space-between centring it.
-     */
-    &__menu-toggle {
-        margin-left: auto;
-
-        @media (min-width: $bp-desktop-small) {
-            display: none;
-        }
-    }
-
-    &__burger {
-        .gh-head-open & {
-            display: none;
-        }
-    }
-
-    &__close {
-        display: none;
-
-        .gh-head-open & {
-            display: block;
-        }
-    }
-
-    &__menu {
-        display: none;
-        flex-direction: column;
-        gap: var(--spacing5);
-        inset: var(--headerHeight) 0 0;
-        height: calc(100vh - var(--headerHeight));
-        padding: var(--headerMenuPadding);
-        position: absolute;
-        width: 100%;
-
-        @media (min-width: $bp-desktop-small) {
-            align-items: center;
-            display: flex;
-            flex: 1;
-            flex-direction: row;
-            height: auto;
-            inset: auto;
-            justify-content: space-between;
-            position: relative;
-            width: auto;
-
-            background: transparent;
-        }
-
-        .gh-head-open & {
-            display: flex;
-
-            background-color: var(--colorBackground);
-            background-image: var(--imageBackground);
-            background-repeat: repeat;
-            background-size: 70px;
-        }
-    }
-
-    &__social {
-        display: flex;
-    }
-
-    &__site-info {
-        align-items: center;
-        display: flex;
-        gap: var(--spacing3);
-        
-        font-family: var(--fontFamilyHeading);
-        font-weight: var(--fontWeightSemiBold);
-        text-decoration: none;
-
-        @media (min-width: $bp-tablet) {
-            gap: var(--spacing3);
-        }
-    }
+    font-family: var(--fontFamilyHeading);
 
     &__logo {
-        display: block;
+        display: flex;
         flex-shrink: 0;
         height: var(--headerSiteLogoDimensions);
-        position: relative;
         width: var(--headerSiteLogoDimensions);
 
         color: var(--colorFg);
+
+        svg {
+            height: 100%;
+            width: 100%;
+        }
 
         /**
          * The logo is drawn in currentColor so it follows the theme; the bar
@@ -109,50 +37,80 @@
         }
 
         &:hover {
-            svg {
-                path {
-                    fill: var(--colorPrimary);
-                }
-            }
+            color: var(--colorAccent);
         }
     }
 
-    &__site-copy {
+    /**
+     * The negative right margin pulls the last button's hit area back, so its
+     * icon lines up with the column edge the way the logo does on the left.
+     */
+    &__actions {
+        align-items: center;
         display: flex;
-        flex-direction: column;
         gap: var(--spacing2);
+        margin-right: -1.3rem;
+
+        @media (min-width: $bp-tablet-small) {
+            gap: var(--spacing1);
+        }
     }
 
-    &__site-title {
-        flex: none;
-        margin: 0;
-        position: relative;
-        z-index: $z-index-front;
+    &__menu {
+        display: none;
 
-        color: var(--colorPrimary);
-        line-height: 1;
-    }
-
-    &__site-strapline {
-        margin: 0;
-
-        color: var(--colorTextSubtle);
-        line-height: 1;
-    }
-}
-
-.is-nav-visible {
-    .header {
-        &__nav {
-            display: flex;
+        @media (min-width: $bp-tablet-small) {
+            display: block;
+            margin-right: var(--spacing3);
         }
 
-        &__nav-button {
-            display: none;
+        /**
+         * The phone panel: everything below the header row, in the page
+         * colour, with the nav stacked large.
+         */
+        .gh-head-open & {
+            @media (max-width: $bp-tablet-small - 1) {
+                display: block;
+                inset: var(--headerHeight) 0 0;
+                overflow-y: auto;
+                padding: var(--spacing5) 2.4rem;
+                position: fixed;
+                z-index: $z-index-nav;
 
-            &--close {
-                display: flex;
+                background-color: var(--colorBg);
             }
+        }
+    }
+
+    &__menu-button {
+        align-items: center;
+        display: flex;
+        gap: var(--spacing2);
+        min-height: 4.4rem;
+        padding: 0 var(--spacing1);
+
+        background: none;
+        border: 0;
+        color: var(--colorFg);
+        cursor: pointer;
+        font: 500 1.5rem var(--fontFamilyHeading);
+
+        @media (min-width: $bp-tablet-small) {
+            display: none;
+        }
+    }
+
+    &__close {
+        display: none;
+    }
+
+    .gh-head-open & {
+        .header__burger {
+            display: none;
+        }
+
+        .header__close {
+            display: block;
         }
     }
 }

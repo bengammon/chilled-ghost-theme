@@ -1,17 +1,16 @@
 /* ==========================================================================
-   #THEME-TOGGLE/DEFAULT
+   #ICON-BUTTON/DEFAULT
    ========================================================================== */
 
 /**
- * The half-moon button in the header that switches light and dark. A 44px
- * hit area around an 18px icon, pulled back by its own padding so the icon
- * lines up with the container edge.
+ * A round, icon-only button: the header's search and theme buttons. A 44px
+ * hit area around an 18px icon.
  */
-.theme-toggle {
+.icon-button {
     display: grid;
     flex-shrink: 0;
     height: 4.4rem;
-    margin-right: -1.3rem;
+    padding: 0;
     place-items: center;
     width: 4.4rem;
 

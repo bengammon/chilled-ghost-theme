@@ -2,28 +2,51 @@
    #FOOTER/DEFAULT
    ========================================================================== */
 
+/**
+ * A rule, then the links and the copyright line, which share a row on wider
+ * screens and wrap underneath each other on a phone.
+ */
 .footer {
-    border-radius: var(--borderRadiusLarge);
-    border-top: var(--borderWidth) solid var(--colorBorder);
-    padding-block-start: var(--contentSpacing);
-    padding-block-end: var(--contentSpacing);
-    z-index: $z-index-front;
+    padding-bottom: 4.8rem;
+    padding-top: 8.8rem;
 
-    color: var(--colorTextSubtle);
+    color: var(--colorMuted);
+    font-family: var(--fontFamilyDefault);
+    font-size: 1.4rem;
 
     a {
         color: inherit;
+        text-decoration: none;
+
+        &:hover {
+            color: var(--colorAccent);
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing2) var(--spacing4);
+        justify-content: space-between;
+        padding-top: var(--spacing4);
+
+        border-top: .1rem solid var(--colorRule);
     }
 
     &__links {
+        @include list-reset;
         display: flex;
         flex-wrap: wrap;
-        gap: var(--spacing3);
+        gap: .6rem 1.8rem;
+
+        li {
+            margin: 0;
+        }
     }
 
     &__legal {
-        margin-top: var(--contentSpacing);
+        margin: 0;
 
-        font-family: var(--fontFamilyAlternative);
+        font-size: inherit;
     }
 }

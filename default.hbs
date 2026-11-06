@@ -100,7 +100,9 @@
 
 {{> header}}
 
-<main class="main width" id="main" tabindex="-1">
+{{!-- Every page sits in the centred reading column except posts, whose
+     sidebar still needs the wide container until their own restyle. --}}
+<main class="main {{#is "post"}}width{{else}}column{{/is}}" id="main" tabindex="-1">
 
     {{{body}}}
     {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
@@ -108,8 +110,6 @@
 </main>
 
 {{> footer}}
-
-<div class="blur"></div>
 
 {{!-- <foot> --}}
 <script src="{{asset "built/index.js"}}"></script>

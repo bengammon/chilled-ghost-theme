@@ -12,4 +12,10 @@
     * gutters: roughly 70 characters of the serif at its largest size.
     */
    --measure: 59.2rem;
+
+   /**
+    * The gutter either side of the reading column (.column), the same at
+    * every width as in the design.
+    */
+   --columnGutter: 2.4rem;
 }

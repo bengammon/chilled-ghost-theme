@@ -21,3 +21,15 @@
         @include content-wide;
     }
 }
+
+/**
+ * The centred reading column: the measure plus a fixed gutter either side,
+ * so the header, page content and footer all share one edge. The wider
+ * .width container above remains for layouts that need a sidebar.
+ */
+.column {
+    margin-inline: auto;
+    max-width: calc(var(--measure) + (var(--columnGutter) * 2));
+    padding-inline: var(--columnGutter);
+    width: 100%;
+}
