@@ -1,8 +1,17 @@
 {
-  "extends": [
-    "@tryghost:theme"
-  ],
-  "node": {
-    "supportPolicy": ["lts_latest"]
-  }
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "@tryghost:theme"
+    ],
+    "description": "The TryGhost preset automerges every update, but merging to main deploys the live site, so every Renovate PR here waits for a human.",
+    "lockFileMaintenance": {
+        "automerge": false
+    },
+    "packageRules": [
+        {
+            "description": "Override the preset's automerge for all dependencies and actions.",
+            "matchPackageNames": ["*"],
+            "automerge": false
+        }
+    ]
 }
