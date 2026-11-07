@@ -40,16 +40,15 @@
     <section class="home-section">
         <h2 class="home-section__label">Notes</h2>
 
-        <div class="home-section__notes">
-            {{#get "posts" filter="tag:note" limit="2"}}
+        <div class="home-section__rows">
+            {{#get "posts" include="tags" filter="tag:note" limit="2"}}
                 {{#foreach posts}}
-                    <article class="note-card">
-                        <h3 class="note-card__title"><a href="{{url}}">{{title}}</a></h3>
-                        <p class="note-card__excerpt">{{excerpt characters="180"}}</p>
-                    </article>
+                    {{> post-teaser}}
                 {{/foreach}}
             {{/get}}
         </div>
+
+        <a class="home-link home-link--muted" href="/tag/note/">See more of my notes →</a>
     </section>
 
 </div>

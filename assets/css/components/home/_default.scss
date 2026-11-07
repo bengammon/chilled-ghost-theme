@@ -4,7 +4,7 @@
 
 /**
  * The homepage: the intro, then sections each headed by a small mono label.
- * Recent writing reuses the post-teaser rows; notes get a title and excerpt.
+ * Recent writing and notes both use the post-teaser rows.
  */
 .home {
     display: flex;
@@ -40,10 +40,6 @@
     &__rows {
         border-top: .1rem solid var(--colorRule);
     }
-
-    &__notes {
-        border-top: .1rem solid var(--colorRule);
-    }
 }
 
 /**
@@ -65,41 +61,5 @@
 
     &--muted {
         color: var(--colorMuted);
-    }
-}
-
-.note-card {
-    display: flex;
-    flex-direction: column;
-    gap: .8rem;
-    padding: 1.8rem 0;
-
-    border-bottom: .1rem solid var(--colorRule);
-
-    &__title {
-        margin: 0;
-
-        font-size: 1.6rem;
-        font-weight: var(--fontWeightSemiBold);
-        letter-spacing: 0;
-        line-height: 1.35;
-
-        a {
-            color: var(--colorFg);
-            text-decoration: none;
-
-            &:hover {
-                color: var(--colorAccent);
-            }
-        }
-    }
-
-    &__excerpt {
-        margin: 0;
-
-        color: var(--colorMuted);
-        font-family: var(--fontFamilyProse);
-        font-size: 1.7rem;
-        line-height: 1.6;
     }
 }
