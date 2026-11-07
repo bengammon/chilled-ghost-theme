@@ -1,0 +1,18 @@
+{{!< default}}
+{{!-- Every post and note on one page, grouped under year headings: the
+      /archive/ channel in routes.yaml sets limit: all, so there is no
+      pagination here. Tag and author archives are one page too, through
+      posts_per_page in package.json. --}}
+{{#contentFor "title"}}Archive — {{@site.title}}{{/contentFor}}
+
+<header class="archive-header">
+    <h1 class="archive-header__title">Archive</h1>
+
+    {{> tags}}
+</header>
+
+<div class="archive">
+    {{#foreach posts}}
+        {{> post-teaser}}
+    {{/foreach}}
+</div>

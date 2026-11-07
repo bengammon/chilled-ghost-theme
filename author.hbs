@@ -1,11 +1,11 @@
 {{!< default}}
-{{#contentFor "title"}}{{#author}}{{name}}{{/author}}{{#if pagination.prev}} (Page {{pagination.page}}){{/if}} — {{@site.title}}{{/contentFor}}
+{{#contentFor "title"}}{{#author}}{{name}}{{/author}} — {{@site.title}}{{/contentFor}}
 
 <header class="archive-header">
     {{#author}}
 
         <h1 class="archive-header__title">
-            Blog/<span class="archive-header__page">{{name}}</span> {{#if ../pagination.prev}}<span class="archive-header__page">(Page {{../pagination.page}})</span>{{/if}}
+            Archive/<span class="archive-header__page">{{name}}</span>
         </h1>
 
         {{#if bio}}
@@ -20,5 +20,3 @@
         {{> post-teaser}}
     {{/foreach}}
 </div>
-
-{{> pagination}}

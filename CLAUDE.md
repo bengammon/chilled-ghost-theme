@@ -21,12 +21,12 @@ This is a custom [Ghost](https://ghost.org) theme for bengammon.co.uk built on t
 ### Template hierarchy
 
 - `default.hbs` — root layout shell: `<head>` (including the inline script that re-applies a stored light/dark choice before paint), `{{ghost_head}}`, `{{ghost_foot}}`, wraps all pages with `{{> header}}` and `{{> footer}}`. `<main>` gets the centred `.column` on every page except posts, which lay out their own grid
-- `index.hbs` — home page: intro, five recent posts (`tag:-note`), a training summary filled by `training.js` (hidden unless the data loads), and the two latest notes (`tag:note`)
-- `blog.hbs` — the combined archive of posts and notes, as `{{> post-teaser}}` rows with year headings
+- `index.hbs` — home page: intro, five recent posts (`tag:-note`), a training summary filled by `training.js` (hidden unless the data loads), and the two latest notes (`tag:note`), both as `{{> post-teaser}}` rows
+- `archive.hbs` — `/archive/` (formerly `/blog/`, which 301s here): every post and note on one page (`limit: all` in routes.yaml), as `{{> post-teaser}}` rows with year headings. `tag.hbs` and `author.hbs` are single pages too, because `posts_per_page` in package.json is 1000; nothing renders `{{> pagination}}` any more
 - `post.hbs` — individual post/note view: a three-column `.post__layout` grid with the reading column in the middle and, on `#toc` posts, the contents list in the left margin from 1120px
 - `page-training.hbs` — the `/training` page: Ghost content plus `{{> training-dashboard}}`
 - `page.hbs`, `author.hbs`, `tag.hbs`, `error.hbs` — standard Ghost templates
-- `notes.hbs` — unused: the `/notes` route was retired, and notes now live in `/blog` and `/tag/note/`
+- `notes.hbs` — unused: the `/notes` route was retired, and notes now live in `/archive/` and `/tag/note/`
 
 The site distinguishes "posts" (long-form writing) from "notes" (short-form) via the Ghost tag `note`. Notes get a smaller title on `post.hbs`, with their date and tags under the text and no reading time.
 
