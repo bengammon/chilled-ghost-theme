@@ -3,16 +3,16 @@
    ========================================================================== */
 
 /**
- * One row in a list of posts: a fixed date column, then the title, ruled off
- * underneath. The date column is sized by --teaserDateWidth: wide enough for
- * DD/MM/YY by default, narrower in an archive where the date is DD Mon (see
- * archive/_default.scss).
+ * One row in a list of posts: the date, the title, then the post number
+ * right-aligned at the end, ruled off underneath. The date column is auto, so
+ * it wraps tightly round the date; dates are mono and always the same number
+ * of characters, so the column comes out the same width on every row.
  */
 .post-teaser {
     align-items: baseline;
-    column-gap: 1.6rem;
+    column-gap: 2.4rem;
     display: grid;
-    grid-template-columns: var(--teaserDateWidth, 9.2rem) minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto;
     margin: 0;
     position: relative;
     width: 100%;
@@ -47,7 +47,7 @@
 
         color: var(--colorMuted);
         font-family: var(--fontFamilyMono);
-        font-size: 1.3rem;
+        font-size: 1.5rem;
         font-variant-numeric: tabular-nums;
     }
 
@@ -91,14 +91,17 @@
     /**
      * Featured posts get a filled star beside the title. The icon is
      * aria-hidden and paired with a visually hidden label, so the heading
-     * still reads as "Title Featured".
+     * still reads as "Title Featured". The star's points stop about 2 units
+     * short of the bottom of its 24-unit viewBox (allowing for the stroke), so
+     * the icon drops by that much to put the points on the title's baseline.
      */
     &__featured {
-        display: inline-flex;
-        align-items: center;
-        vertical-align: .05em;
-
         color: var(--colorAccent);
+
+        svg {
+            display: inline;
+            vertical-align: -.07em;
+        }
 
         path {
             fill: currentColor;
@@ -106,9 +109,13 @@
     }
 
     &__number {
+        grid-column: 3;
+        justify-self: end;
+        white-space: nowrap;
+
         color: var(--colorMuted);
         font-family: var(--fontFamilyMono);
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-variant-numeric: tabular-nums;
         font-weight: var(--fontWeightDefault);
     }

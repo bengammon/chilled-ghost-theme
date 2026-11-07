@@ -1,4 +1,5 @@
-{{!-- One row in a list of posts: date, then title. In an archive the first
+{{!-- One row in a list of posts: date, title, then the post number (filled
+      in by assets/js/postNumber.js). In an archive the first
       row of each year also carries a year heading (repeats on the same page
       are hidden in archive/_default.scss), so the date there drops the year;
       elsewhere, such as the homepage, the full date shows instead. --}}
@@ -11,6 +12,8 @@
         <span class="post-teaser__date-full">{{date format="DD/MM/YY"}}</span>
     </time>
 
-    <h2 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a>{{#if featured}} <span class="post-teaser__featured"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9998 17.75L5.82784 20.995L7.00684 14.122L2.00684 9.25501L8.90684 8.25501L11.9928 2.00201L15.0788 8.25501L21.9788 9.25501L16.9788 14.122L18.1578 20.995L11.9998 17.75Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden">Featured</span></span>{{/if}} <span class="post-teaser__number js-post-number" style="opacity: 0;"></span></h2>
+    <h2 class="post-teaser__heading"><a class="post-teaser__title" href="{{url}}">{{title}}</a>{{#if featured}} <span class="post-teaser__featured"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.9998 17.75L5.82784 20.995L7.00684 14.122L2.00684 9.25501L8.90684 8.25501L11.9928 2.00201L15.0788 8.25501L21.9788 9.25501L16.9788 14.122L18.1578 20.995L11.9998 17.75Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="visually-hidden">Featured</span></span>{{/if}}</h2>
+
+    <span class="post-teaser__number js-post-number" style="opacity: 0;"></span>
 
 </article>
