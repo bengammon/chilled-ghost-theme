@@ -46,7 +46,7 @@ The site distinguishes "posts" (long-form writing) from "notes" (short-form) via
 Rollup bundles everything from `assets/js/index.js` and `assets/css/index.scss`, outputting to `assets/built/`. The pipeline uses:
 
 - **PostCSS** with `postcss-import` and `postcss-preset-env` for CSS (CSS variables are kept as-is — `custom-properties: false` in config)
-- **Babel** + **Terser** for JS
+- **Terser** for JS minification. There is no Babel: with `browserslist: ["defaults"]` it changed nothing in the bundle, so it was removed (2026-11). If new JS syntax ever needs transpiling for the target browsers, it would have to come back
 - **Livereload** in dev mode, watching `.hbs` files too
 
 ### CSS structure (`assets/css/`)

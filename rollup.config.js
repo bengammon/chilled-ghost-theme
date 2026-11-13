@@ -3,8 +3,6 @@ import { defineConfig } from 'rollup';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 // A Rollup plugin to convert CommonJS modules to ES6, so they can be included in a Rollup bundle
 import commonjs from '@rollup/plugin-commonjs';
-// Use the latest JS features in your Rollup bundle
-import babel from '@rollup/plugin-babel';
 // Minifies the bundle
 import terser from '@rollup/plugin-terser';
 
@@ -31,8 +29,7 @@ export default defineConfig({
     },
     plugins: [
         commonjs(), 
-        nodeResolve(), 
-        babel({ babelHelpers: 'bundled' }),
+        nodeResolve(),
         postcss({
             extract: true,
             colormin: false,
