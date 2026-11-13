@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "@tryghost:theme"
+        "local>TryGhost/renovate-config:theme.json5"
     ],
     "description": "The TryGhost preset automerges every update, but merging to main deploys the live site, so every Renovate PR here waits for a human.",
     "lockFileMaintenance": {
@@ -12,6 +12,11 @@
             "description": "Override the preset's automerge for all dependencies and actions.",
             "matchPackageNames": ["*"],
             "automerge": false
+        },
+        {
+            "description": "Keep the ^ ranges in package.json instead of the preset's exact-version pinning: in-range updates stay lockfile-only PRs, out-of-range ones widen the range.",
+            "matchDepTypes": ["dependencies", "devDependencies"],
+            "rangeStrategy": "auto"
         }
     ]
 }
