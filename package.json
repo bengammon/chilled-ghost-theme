@@ -41,7 +41,7 @@
         "@rollup/plugin-commonjs": "^29.0.0",
         "@rollup/plugin-node-resolve": "^16.0.0",
         "@rollup/plugin-terser": "^1.0.2",
-        "bestzip": "^2.2.1",
+        "bestzip": "^4.0.0",
         "postcss": "^8.4.24",
         "postcss-import": "^17.0.1",
         "postcss-preset-env": "^11.6.2",
