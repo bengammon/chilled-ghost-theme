@@ -46,7 +46,8 @@ jobs:
       - name: Upload theme
         if: github.event_name == 'push'
         # Only what Ghost needs: tools/hevy, CI config and sources of the
-        # build toolchain stay out of the deployed theme.
+        # build toolchain stay out of the deployed theme. tools/zip-theme.js
+        # (npm run zip) packs the same list for manual uploads.
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: theme
